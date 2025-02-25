@@ -19,6 +19,11 @@ namespace Platformer.Mechanics
         /// </summary>
         public float gravityModifier = 1f;
 
+        ///<summary>
+        /// Adding a custom mechanic for pushing objects
+        /// </summary>
+        public float pushObject = 5f;
+
         /// <summary>
         /// The current velocity of the entity.
         /// </summary>
@@ -171,6 +176,24 @@ namespace Platformer.Mechanics
             }
             body.position = body.position + move.normalized * distance;
         }
+        private void OnCollisionStay2D(Collision2D collision){
+            if (collision.gameObject.CompareTag("Push")){
+                Rigidbody2D boxRb = collision.gameObject.GetComponent<Rigidbody2D>();
+                if (boxRb!=null){
+                    float dir = Mathf.Sign(transform.localScale.x);
+                    boxRb.linearVelocity = new Vector2(dir * pushObject, boxRb.linearVelocityY);
+                }
+            }
+        }
+        private void OnCollisionExit2D(Collision2D collision){
+            if (collision.gameObject.CompareTag("Push")){
+                Rigidbody2D boxRb = collision.gameObject.GetComponent<Rigidbody2D>();
+                if (boxRb != null){
+                    boxRb.linearVelocity = new Vector2(0, boxRb.linearVelocityY);
+                }
+            }
+        }
+    
 
     }
 }
