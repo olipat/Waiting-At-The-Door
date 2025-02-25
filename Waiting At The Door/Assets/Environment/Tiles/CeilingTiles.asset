@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InvisibleTile
+  m_Name: CeilingTiles
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 4ab30a6b78053f440ad8969d54c83d95, type: 3}
-  m_Color: {r: 0.990566, g: 0.042052314, b: 0.042052314, a: 0}
+  m_Color: {r: 0.04996673, g: 0.04338732, b: 0.3679245, a: 1}
   m_Transform:
     e00: 1
     e01: 0
