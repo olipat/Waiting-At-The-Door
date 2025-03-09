@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(playScene);
 
-        //AudioManager.instance.PlaySFX(0);
+        AudioManager.instance.PlaySFX(0);
     }
 
     public void QuitGame()
@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
 
         Debug.Log("Quitting Game");
 
-        //AudioManager.instance.PlaySFX(0);
+        AudioManager.instance.PlaySFX(0);
     }
 
     IEnumerator FadeLoop()

@@ -16,12 +16,16 @@ public class UIImageAnimation : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= frameRate)
+        if (Input.GetKey(KeyCode.W))
         {
-            timer = 0f;
-            currentFrame = (currentFrame + 1) % spriteFrames.Length;
-            imageComponent.sprite = spriteFrames[currentFrame];
+
+            timer += Time.deltaTime;
+            if (timer >= frameRate)
+            {
+                timer = 0f;
+                currentFrame = (currentFrame + 1) % spriteFrames.Length;
+                imageComponent.sprite = spriteFrames[currentFrame];
+            }
         }
     }
 }
