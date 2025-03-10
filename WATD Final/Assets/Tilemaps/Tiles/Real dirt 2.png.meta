@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 1a7d6c7471ad4ad499e366884d0ae863
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3226236480033948256
+    second: Real dirt 2_0
+  - first:
+      213: 5672031935666727765
+    second: Real dirt 2_1
+  - first:
+      213: -6880755844981331150
+    second: Real dirt 2_2
+  - first:
+      213: -6022014451928289444
+    second: Real dirt 2_3
+  - first:
+      213: 8464483737430535721
+    second: Real dirt 2_4
+  - first:
+      213: 5242824180425312103
+    second: Real dirt 2_5
+  - first:
+      213: -5489507383828458163
+    second: Real dirt 2_6
+  - first:
+      213: 4785058970790154445
+    second: Real dirt 2_7
+  - first:
+      213: -8141637710024593984
+    second: Real dirt 2_8
+  - first:
+      213: -3889352952798476868
+    second: Real dirt 2_9
+  - first:
+      213: -5071178606193612003
+    second: Real dirt 2_10
+  - first:
+      213: 6656631213882325838
+    second: Real dirt 2_11
+  - first:
+      213: 5709599352715753940
+    second: Real dirt 2_12
+  - first:
+      213: -506732836732815986
+    second: Real dirt 2_13
+  - first:
+      213: 1406766300435586716
+    second: Real dirt 2_14
+  - first:
+      213: 4055067731016129051
+    second: Real dirt 2_15
+  - first:
+      213: -1914959917040308805
+    second: Real dirt 2_16
+  - first:
+      213: -5619362622403295988
+    second: Real dirt 2_17
+  - first:
+      213: 4573654311281907917
+    second: Real dirt 2_18
+  - first:
+      213: -7582351648101162853
+    second: Real dirt 2_19
+  - first:
+      213: -8389878024241862372
+    second: Real dirt 2_20
+  - first:
+      213: 5982199156650438104
+    second: Real dirt 2_21
+  - first:
+      213: 5018856528492027282
+    second: Real dirt 2_22
+  - first:
+      213: 8101628804770287535
+    second: Real dirt 2_23
+  - first:
+      213: -7022708679809492678
+    second: Real dirt 2_24
+  - first:
+      213: 2585734976834992427
+    second: Real dirt 2_25
+  - first:
+      213: -5774563513452201323
+    second: Real dirt 2_26
+  - first:
+      213: 1938153540204638
+    second: Real dirt 2_27
+  - first:
+      213: -617368023862553978
+    second: Real dirt 2_28
+  - first:
+      213: -3017311468007686918
+    second: Real dirt 2_29
+  - first:
+      213: -6678429903460953385
+    second: Real dirt 2_30
+  - first:
+      213: -6285197899331893999
+    second: Real dirt 2_31
+  - first:
+      213: 5745983107679260520
+    second: Real dirt 2_32
+  - first:
+      213: 5715045584556800374
+    second: Real dirt 2_33
+  - first:
+      213: 9203562797312104134
+    second: Real dirt 2_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Real dirt 2_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1891
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad7b26c30b1a33d0800000000000000
+      internalID: -3226236480033948256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1345
+        width: 576
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b26186efa17be40800000000000000
+      internalID: 5672031935666727765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_2
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1345
+        width: 576
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23be1b9c305a280a0800000000000000
+      internalID: -6880755844981331150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_3
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1345
+        width: 576
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fab8013c18d6ca0800000000000000
+      internalID: -6022014451928289444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_4
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1345
+        width: 576
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e2e98cc13e77570800000000000000
+      internalID: 8464483737430535721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_5
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 1345
+        width: 576
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767441e70d042c840800000000000000
+      internalID: 5242824180425312103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_6
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 1345
+        width: 567
+        height: 806
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45550b7e1a51d3b0800000000000000
+      internalID: -5489507383828458163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1177
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc05e3718c1f76240800000000000000
+      internalID: 4785058970790154445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_8
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 691
+        width: 537
+        height: 585
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd2f0493a7130f80800000000000000
+      internalID: -8141637710024593984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_9
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 692
+        width: 576
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5845a981e360ac0800000000000000
+      internalID: -3889352952798476868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_10
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 692
+        width: 576
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1be4490ded8f99b0800000000000000
+      internalID: -5071178606193612003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_11
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 692
+        width: 576
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4bbb3812da116c50800000000000000
+      internalID: 6656631213882325838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_12
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 692
+        width: 576
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d93c6c4c529c3f40800000000000000
+      internalID: 5709599352715753940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_13
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 689
+        width: 536
+        height: 587
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85b3867b29b7f8f0800000000000000
+      internalID: -506732836732815986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_14
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 1235
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e14733f76d58310800000000000000
+      internalID: 1406766300435586716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_15
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 1206
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a9d5fdd9e764830800000000000000
+      internalID: 4055067731016129051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_16
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1203
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd63b1f912bc65e0800000000000000
+      internalID: -1914959917040308805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_17
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 592
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c054b83b7730402b0800000000000000
+      internalID: -5619362622403295988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_18
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 603
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc854652d52e87f30800000000000000
+      internalID: 4573654311281907917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_19
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 42
+        width: 542
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9025dc595316c690800000000000000
+      internalID: -7582351648101162853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_20
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 41
+        width: 581
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c192530736a219b80800000000000000
+      internalID: -8389878024241862372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_21
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 42
+        width: 581
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd6acb107a050350800000000000000
+      internalID: 5982199156650438104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_22
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 42
+        width: 581
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29dda6feb6f86a540800000000000000
+      internalID: 5018856528492027282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_23
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 42
+        width: 581
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafc7624974ce6070800000000000000
+      internalID: 8101628804770287535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_24
+      rect:
+        serializedVersion: 2
+        x: 3237
+        y: 42
+        width: 540
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3917e2e9a35a8e90800000000000000
+      internalID: -7022708679809492678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_25
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 555
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b297d89f24062e320800000000000000
+      internalID: 2585734976834992427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 388
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59affb75411acdfa0800000000000000
+      internalID: -5774563513452201323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_27
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 374
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58b8498db2e60000800000000000000
+      internalID: 1938153540204638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_28
+      rect:
+        serializedVersion: 2
+        x: 3790
+        y: 97
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682dcf1ad0bae67f0800000000000000
+      internalID: -617368023862553978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_29
+      rect:
+        serializedVersion: 2
+        x: 3633
+        y: 40
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc70bcc43b5026d0800000000000000
+      internalID: -3017311468007686918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_30
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 59
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d21ddaf2637153a0800000000000000
+      internalID: -6678429903460953385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_31
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 41
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1158a4b9fcd76c8a0800000000000000
+      internalID: -6285197899331893999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_32
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 41
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f0e926135ddbf40800000000000000
+      internalID: 5745983107679260520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_33
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 41
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6793ca6fdabef4f40800000000000000
+      internalID: 5715045584556800374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Real dirt 2_34
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 41
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6d9c10a9f99bf70800000000000000
+      internalID: 9203562797312104134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d78ceb694a6b48c469db0b1a51b08e0c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Real dirt 2_0: -3226236480033948256
+      Real dirt 2_1: 5672031935666727765
+      Real dirt 2_10: -5071178606193612003
+      Real dirt 2_11: 6656631213882325838
+      Real dirt 2_12: 5709599352715753940
+      Real dirt 2_13: -506732836732815986
+      Real dirt 2_14: 1406766300435586716
+      Real dirt 2_15: 4055067731016129051
+      Real dirt 2_16: -1914959917040308805
+      Real dirt 2_17: -5619362622403295988
+      Real dirt 2_18: 4573654311281907917
+      Real dirt 2_19: -7582351648101162853
+      Real dirt 2_2: -6880755844981331150
+      Real dirt 2_20: -8389878024241862372
+      Real dirt 2_21: 5982199156650438104
+      Real dirt 2_22: 5018856528492027282
+      Real dirt 2_23: 8101628804770287535
+      Real dirt 2_24: -7022708679809492678
+      Real dirt 2_25: 2585734976834992427
+      Real dirt 2_26: -5774563513452201323
+      Real dirt 2_27: 1938153540204638
+      Real dirt 2_28: -617368023862553978
+      Real dirt 2_29: -3017311468007686918
+      Real dirt 2_3: -6022014451928289444
+      Real dirt 2_30: -6678429903460953385
+      Real dirt 2_31: -6285197899331893999
+      Real dirt 2_32: 5745983107679260520
+      Real dirt 2_33: 5715045584556800374
+      Real dirt 2_34: 9203562797312104134
+      Real dirt 2_4: 8464483737430535721
+      Real dirt 2_5: 5242824180425312103
+      Real dirt 2_6: -5489507383828458163
+      Real dirt 2_7: 4785058970790154445
+      Real dirt 2_8: -8141637710024593984
+      Real dirt 2_9: -3889352952798476868
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
