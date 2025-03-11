@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WATD_Intro_Screen_mockup_0: 7106320106736793868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

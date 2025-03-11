@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WAITING AT THE DOOR_0: -3231412973631710143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
