@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: f09a7a8cf7f7ad047b44bed9be7b1cc9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1783688990682624438
+    second: UI_sprites_0
+  - first:
+      213: 2557895055164215664
+    second: UI_sprites_1
+  - first:
+      213: 7254156022827176632
+    second: UI_sprites_2
+  - first:
+      213: -3574485128076222142
+    second: UI_sprites_3
+  - first:
+      213: 2497281989349870248
+    second: UI_sprites_4
+  - first:
+      213: 9103111656876769380
+    second: UI_sprites_5
+  - first:
+      213: 4193471429285753759
+    second: UI_sprites_6
+  - first:
+      213: -7019490226128972908
+    second: UI_sprites_7
+  - first:
+      213: -814681217994028981
+    second: UI_sprites_8
+  - first:
+      213: 3599670674734058116
+    second: UI_sprites_9
+  - first:
+      213: 7932502893181062898
+    second: UI_sprites_10
+  - first:
+      213: -6271844491507138897
+    second: UI_sprites_11
+  - first:
+      213: 4010283364100712030
+    second: UI_sprites_12
+  - first:
+      213: -8014893694828508268
+    second: UI_sprites_13
+  - first:
+      213: 4775559958104227787
+    second: UI_sprites_14
+  - first:
+      213: 6762784220949572839
+    second: UI_sprites_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Path_Available
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 52
+        width: 315
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8698989af000347b86a22aff6923ef
+      internalID: -409231087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Path_Unavailable
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 40
+        width: 314
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446145ae0a67bfb489c40cd9032df1ea
+      internalID: -1560407652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Full
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 940
+        width: 199
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf3a0e0113ebdc4e8cc715dae62b36f
+      internalID: -1394990545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Empty
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 929
+        width: 199
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3ab517a1636704c91e75a612db9041
+      internalID: 224189219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bark_Available
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 54
+        width: 304
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48886127afbb82047803b4db4b41123e
+      internalID: 677522057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bark_Unavailable
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 51
+        width: 306
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669fb6d3bacaa5b47a99b335b3cbf4d9
+      internalID: -1077079915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 45e960e6fba7ca24ba4b1ca725c9f791
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bark_Available: 677522057
+      Bark_Unavailable: -1077079915
+      Heart_Empty: 224189219
+      Heart_Full: -1394990545
+      Path_Available: -409231087
+      Path_Unavailable: -1560407652
+      UI_sprites_10: 1992907717
+      UI_sprites_11: 63039878
+      UI_sprites_12: 262232525
+      UI_sprites_13: 1607199438
+      UI_sprites_14: 128402499
+      UI_sprites_15: -839979617
+      UI_sprites_2: -883093828
+      UI_sprites_4: -892422984
+      UI_sprites_7: -366502442
+      UI_sprites_8: -2015663957
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

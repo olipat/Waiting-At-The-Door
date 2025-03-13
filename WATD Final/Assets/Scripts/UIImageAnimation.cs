@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class UIImageAnimation : MonoBehaviour
 {
-    public Sprite[] spriteFrames; // Assign sliced sprite frames in Inspector
+    public Sprite[] spriteFrames;
     public float frameRate = 0.1f;
     private Image imageComponent;
     private int currentFrame;
@@ -16,16 +16,13 @@ public class UIImageAnimation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        timer += Time.deltaTime;
+        if (timer >= frameRate)
         {
-
-            timer += Time.deltaTime;
-            if (timer >= frameRate)
-            {
-                timer = 0f;
-                currentFrame = (currentFrame + 1) % spriteFrames.Length;
-                imageComponent.sprite = spriteFrames[currentFrame];
-            }
+            timer = 0f;
+            currentFrame = (currentFrame + 1) % spriteFrames.Length;
+            imageComponent.sprite = spriteFrames[currentFrame];
+            
         }
     }
 }

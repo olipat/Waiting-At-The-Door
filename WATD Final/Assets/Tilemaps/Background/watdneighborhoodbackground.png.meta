@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      watdneighborhoodbackground_0: 316468582042996568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

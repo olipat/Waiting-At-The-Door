@@ -936,7 +936,14 @@ MonoBehaviour:
   currentBGM: 0
   playingBGM: 0
   BGMScene: 0
-  sfx: []
+  sfx:
+  - {fileID: 1255447643}
+  - {fileID: 1032564614}
+  - {fileID: 1804345259}
+  - {fileID: 1460125061}
+  - {fileID: 198151394}
+  - {fileID: 1370549298}
+  - {fileID: 1896462295}
 --- !u!1 &542497573
 GameObject:
   m_ObjectHideFlags: 0
