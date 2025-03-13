@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -52,6 +52,12 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 270187461
+    locked: 0
+  - name: Player
+    uniqueID: 1895511847
+    locked: 0
+  - name: Particles
+    uniqueID: 1400053797
     locked: 0
   m_RenderingLayers:
   - Default
