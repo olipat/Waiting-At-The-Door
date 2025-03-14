@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            instance.StopMusic();
+            //instance.StopMusic
             Destroy(gameObject);
             return;
         }
@@ -34,6 +34,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] sfx;
 
+    public int level = 0;
+
 
 
 
@@ -41,11 +43,17 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         AudioManager.instance.PlayMenuMusic();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (level > 0)
+        {
+            BGMScene = true;
+        }
+
         if (playingBGM)
         {
             if (bgm[currentBGM].isPlaying == false)
@@ -78,6 +86,7 @@ public class AudioManager : MonoBehaviour
     {
         StopMusic();
         menuMusic.Play();
+        level = 0;
     }
 
     public void PlayBattleSelectMusic()

@@ -16,6 +16,7 @@ public class UIImageAnimation : MonoBehaviour
 
     void Update()
     {
+        /*
         timer += Time.deltaTime;
         if (timer >= frameRate)
         {
@@ -24,5 +25,6 @@ public class UIImageAnimation : MonoBehaviour
             imageComponent.sprite = spriteFrames[currentFrame];
             
         }
+        */
     }
 }

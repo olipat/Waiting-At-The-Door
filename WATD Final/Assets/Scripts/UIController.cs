@@ -32,6 +32,12 @@ public class UIController : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public Image[] abilities;
+    public Sprite pathAvailable;
+    public Sprite pathNotAvailable;
+
+    public Sprite barkAvailable;
+    public Sprite barkNotAvailable;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -62,6 +68,7 @@ public class UIController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
+            AudioManager.instance.PlaySFX(6);
             ApplyDamage();
         }
 
@@ -77,11 +84,18 @@ public class UIController : MonoBehaviour
 
     public void MainMenu()
     {
+
+        AudioManager.instance.PlaySFX(0);
+
+        AudioManager.instance.PlayMenuMusic();
+
         SceneManager.LoadScene(mainMenuScene);
 
         Time.timeScale = 1f;
 
-        AudioManager.instance.PlaySFX(0);
+        
+
+        
     }
 
     public void RestartLevel()
