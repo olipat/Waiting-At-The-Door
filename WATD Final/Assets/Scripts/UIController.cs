@@ -33,22 +33,63 @@ public class UIController : MonoBehaviour
     public Sprite emptyHeart;
 
     public Image[] abilities;
-    public Sprite pathAvailable;
-    public Sprite pathNotAvailable;
+    public TMP_Text[] cooldownTexts; // Array for cooldown texts
+    public Sprite[] abilitySprites; // Holds available/not available sprites: [0=available(1st), 1=notAvailable(1st), 2=available(2nd), etc.]
+    public float[] cooldownTimes; // Cooldown duration per ability
 
-    public Sprite barkAvailable;
-    public Sprite barkNotAvailable;
+    private bool[] isOnCooldown; // Track cooldown for each ability
+    private Outline[] abilityOutlines; // Store outline components
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        AudioManager.instance.PlayBGM();
+
+        int abilityCount = abilities.Length;
+        isOnCooldown = new bool[abilityCount];
+        abilityOutlines = new Outline[abilityCount];
+
+        for (int i = 0; i < abilityCount; i++)
+        {
+            // Ensure each ability has an outline
+            abilityOutlines[i] = abilities[i].GetComponent<Outline>();
+            if (abilityOutlines[i] == null)
+            {
+                abilityOutlines[i] = abilities[i].gameObject.AddComponent<Outline>();
+            }
+
+            // Set the outline properties (Effect Distance & Effect Color)
+            abilityOutlines[i].effectDistance = new Vector2(2, 2);
+            abilityOutlines[i].effectColor = new Color32(255, 0, 0, 200);
+            abilityOutlines[i].enabled = false; // Initially disable outlines
+
+            // Ensure cooldown text starts hidden
+            if (cooldownTexts[i] != null)
+            {
+                cooldownTexts[i].enabled = false;
+            }
+        }
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+
+            ApplyDamage();
+            AudioManager.instance.PlaySFX(6);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
+
+
         if (warningCounter > 0)
         {
             warningCounter -= Time.deltaTime;
@@ -59,17 +100,14 @@ public class UIController : MonoBehaviour
             }
         }
 
+        
 
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        for (int i = 0; i < abilities.Length; i++)
         {
-            PauseUnpause();
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            AudioManager.instance.PlaySFX(6);
-            ApplyDamage();
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                ActivateAbility(i);
+            }
         }
 
 
@@ -85,17 +123,16 @@ public class UIController : MonoBehaviour
     public void MainMenu()
     {
 
-        AudioManager.instance.PlaySFX(0);
-
-        AudioManager.instance.PlayMenuMusic();
-
         SceneManager.LoadScene(mainMenuScene);
 
         Time.timeScale = 1f;
 
-        
+        AudioManager.instance.PlaySFX(0);
+        AudioManager.instance.PlayMenuMusic();
 
-        
+
+
+
     }
 
     public void RestartLevel()
@@ -195,4 +232,60 @@ public class UIController : MonoBehaviour
         canvasGroup.alpha = 1f; // Ensure it's fully visible
     }
 
+    void ActivateAbility(int abilityIndex)
+    {
+        if (abilityIndex < 0 || abilityIndex >= abilities.Length) return;
+        
+        if (isOnCooldown[abilityIndex])
+        {
+            UIController.Instance.ShowWarning(); 
+            return;
+        }
+
+        // Change sprite using the new index logic (2i = available, 2i+1 = not available)
+        int spriteIndex = abilityIndex * 2 + 1;
+        if (spriteIndex < abilitySprites.Length)
+        {
+            abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
+
+        // Enable outline
+        abilityOutlines[abilityIndex].enabled = true;
+
+        // Start cooldown coroutine
+        StartCoroutine(AbilityCooldown(abilityIndex));
+    }
+
+    IEnumerator AbilityCooldown(int abilityIndex)
+    {
+        isOnCooldown[abilityIndex] = true;
+        float cooldownTime = cooldownTimes[abilityIndex];
+
+        if (cooldownTexts[abilityIndex] != null)
+        {
+            cooldownTexts[abilityIndex].gameObject.SetActive(true); // Ensure text is visible
+            cooldownTexts[abilityIndex].enabled = true;
+
+            for (int i = (int)cooldownTime; i > 0; i--)
+            {
+                cooldownTexts[abilityIndex].text = i.ToString(); // Update text each second
+                yield return new WaitForSeconds(1f);
+            }
+
+            cooldownTexts[abilityIndex].enabled = false;
+            cooldownTexts[abilityIndex].gameObject.SetActive(false); // Hide after cooldown
+        }
+
+        // Reset ability to "Available" sprite
+        int spriteIndex = abilityIndex * 2;
+        if (spriteIndex < abilitySprites.Length)
+        {
+            abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
+
+        // Disable outline when cooldown ends
+        abilityOutlines[abilityIndex].enabled = false;
+
+        isOnCooldown[abilityIndex] = false;
+    }
 }
