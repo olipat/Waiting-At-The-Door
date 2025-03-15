@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 public class SaveManager : MonoBehaviour
 {
@@ -16,26 +17,38 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
-        //Create a file
         FileStream file = new FileStream(Application.persistentDataPath + "/Save.dat", FileMode.OpenOrCreate);
 
-        //Binary Formatter
-        BinaryFormatter formatter = new BinaryFormatter();
-
-        //Serization method
-        formatter.Serialize(file, UIController.Instance.saveStats);
-
-        file.Close();
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(file, UIController.Instance.saveStats);
+        }
+        catch(SerializationException e)
+        {
+            Debug.LogError("There was an issue serializing this data: " + e.Message);
+        }
+        finally
+        {
+            file.Close();
+        }        
     }
 
     public void load()
     {
         FileStream file = new FileStream(Application.persistentDataPath + "/Save.dat", FileMode.Open);
-        
-        BinaryFormatter formatter = new BinaryFormatter();
-        
-        UIController.Instance.saveStats = formatter.Deserialize(file) as Stats;
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
 
-        file.Close();
+            UIController.Instance.saveStats = formatter.Deserialize(file) as Stats;
+        }catch(SerializationException e)
+        {
+            Debug.LogError("There was an issue deserializing this data: " + e.Message);
+        }
+        finally
+        {
+            file.Close();
+        }
     }
 }
