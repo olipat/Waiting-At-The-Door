@@ -11,7 +11,11 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        
     }
 
     public Stats saveStats;
@@ -24,6 +28,10 @@ public class UIController : MonoBehaviour
     public GameObject cooldownWarning;
     public float warningTime;
     private float warningCounter;
+
+    public GameObject abilityWarning;
+    public float abilityWarningTime;
+    private float abilityWarningCounter;
 
     public string mainMenuScene;
 
@@ -41,6 +49,7 @@ public class UIController : MonoBehaviour
 
     private bool[] isOnCooldown; // Track cooldown for each ability
     private Outline[] abilityOutlines; // Store outline components
+    private bool[] isUnlocked;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,7 +65,11 @@ public class UIController : MonoBehaviour
 
         int abilityCount = abilities.Length;
         isOnCooldown = new bool[abilityCount];
+        isUnlocked = new bool[abilityCount];
         abilityOutlines = new Outline[abilityCount];
+
+        isUnlocked[0] = true;
+        isUnlocked[1] = true;
 
         for (int i = 0; i < abilityCount; i++)
         {
@@ -108,7 +121,16 @@ public class UIController : MonoBehaviour
             }
         }
 
-        
+        if (abilityWarningCounter > 0)
+        {
+            abilityWarningCounter -= Time.deltaTime;
+
+            if (abilityWarningCounter <= 0)
+            {
+                abilityWarning.SetActive(false);
+            }
+        }
+
 
         for (int i = 0; i < abilities.Length; i++)
         {
@@ -124,8 +146,18 @@ public class UIController : MonoBehaviour
 
     public void ShowWarning()
     {
+        abilityWarning.SetActive(false);
+        
         cooldownWarning.SetActive(true);
         warningCounter = warningTime;
+    }
+
+    public void ShowAbilityWarning()
+    {
+        cooldownWarning.SetActive(false);
+
+        abilityWarning.SetActive(true);
+        abilityWarningCounter = abilityWarningTime;
     }
 
     public void MainMenu()
@@ -273,9 +305,15 @@ public class UIController : MonoBehaviour
     {
         if (abilityIndex < 0 || abilityIndex >= abilities.Length) return;
         
-        if (isOnCooldown[abilityIndex])
+        if (isOnCooldown[abilityIndex] == true)
         {
-            UIController.Instance.ShowWarning(); 
+            ShowWarning(); 
+            return;
+        }
+
+        if (isUnlocked[abilityIndex] == false)
+        {
+            ShowAbilityWarning();
             return;
         }
 

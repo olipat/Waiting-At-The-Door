@@ -145,54 +145,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Path_Available
+      name: Full_Heart
       rect:
         serializedVersion: 2
-        x: 21
-        y: 52
-        width: 315
-        height: 261
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca8698989af000347b86a22aff6923ef
-      internalID: -409231087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Path_Unavailable
-      rect:
-        serializedVersion: 2
-        x: 349
-        y: 40
-        width: 314
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 446145ae0a67bfb489c40cd9032df1ea
-      internalID: -1560407652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heart_Full
-      rect:
-        serializedVersion: 2
-        x: 44
+        x: 46
         y: 940
         width: 199
         height: 196
@@ -204,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaf3a0e0113ebdc4e8cc715dae62b36f
-      internalID: -1394990545
+      spriteID: c13056261093f674899b4ff0fd527b34
+      internalID: 1169074178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heart_Empty
+      name: Empty_Heart
       rect:
         serializedVersion: 2
         x: 311
@@ -226,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c3ab517a1636704c91e75a612db9041
-      internalID: 224189219
+      spriteID: 99b290b3e0d98b943945fe4b623cc01f
+      internalID: -1367153398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bark_Available
+      name: Locked
       rect:
         serializedVersion: 2
-        x: 721
-        y: 54
-        width: 304
-        height: 233
+        x: 73
+        y: 400
+        width: 212
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +204,162 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48886127afbb82047803b4db4b41123e
-      internalID: 677522057
+      spriteID: 2e2b912f0b7f59543a09a27206d70210
+      internalID: -883093828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 404
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4cc4bd39a09c047bd77f735f00ecbf
+      internalID: -1337281664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key2
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 404
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9da1f8e56b063c4887899dbbd6ab3ba
+      internalID: -892422984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key3
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 405
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c091a0b33c4633498458daf5f92799d
+      internalID: 530407461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key4
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 404
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0fa2ea121982749ad57804bf2fb514
+      internalID: 1348146654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Path_Available
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 53
+        width: 316
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e872272d9bf5a8e479371eb17cdf4636
+      internalID: -2015663957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Path_Unavailable
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 40
+        width: 316
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6127d69dd8b53479db2f3f3b914bdf
+      internalID: 1992907717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bark Available
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 54
+        width: 303
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee88fd7979dcc34e9a31e8a6bdd23ad
+      internalID: 63039878
       vertices: []
       indices: 
       edges: []
@@ -259,9 +369,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1075
-        y: 51
-        width: 306
-        height: 241
+        y: 55
+        width: 293
+        height: 237
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,8 +380,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 669fb6d3bacaa5b47a99b335b3cbf4d9
-      internalID: -1077079915
+      spriteID: 1bb3008874c01b9439fa93b309f3808c
+      internalID: 128402499
       vertices: []
       indices: 
       edges: []
@@ -290,22 +400,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bark_Available: 677522057
-      Bark_Unavailable: -1077079915
-      Heart_Empty: 224189219
-      Heart_Full: -1394990545
-      Path_Available: -409231087
-      Path_Unavailable: -1560407652
-      UI_sprites_10: 1992907717
-      UI_sprites_11: 63039878
+      Bark Available: 63039878
+      Bark_Unavailable: 128402499
+      Empty_Heart: -1367153398
+      Full_Heart: 1169074178
+      Key1: -1337281664
+      Key2: -892422984
+      Key3: 530407461
+      Key4: 1348146654
+      Locked: -883093828
+      Path_Available: -2015663957
+      Path_Unavailable: 1992907717
       UI_sprites_12: 262232525
       UI_sprites_13: 1607199438
-      UI_sprites_14: 128402499
       UI_sprites_15: -839979617
-      UI_sprites_2: -883093828
-      UI_sprites_4: -892422984
+      UI_sprites_16: -1334639459
+      UI_sprites_17: 1626111983
+      UI_sprites_18: 177329281
+      UI_sprites_19: -1758888564
+      UI_sprites_20: 1272657616
       UI_sprites_7: -366502442
-      UI_sprites_8: -2015663957
+      UI_sprites_9: 1305504915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
