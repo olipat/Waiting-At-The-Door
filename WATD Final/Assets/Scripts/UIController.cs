@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     }
 
     public Stats saveStats;
+    public GameObject player;
 
     public GameObject endScreen;
     public bool playerDied = false;
@@ -182,6 +183,21 @@ public class UIController : MonoBehaviour
         Debug.Log("Saving");
         saveStats.health = playerHealth;
         saveStats.level = GameManager.instance.currentLevel;
+        saveStats.myPos.SetPos(player.transform.position);
+
+        SaveManager.Instance.Save();
+        
+    }
+
+    public void loadGame()
+    {
+        SaveManager.Instance.load();
+        
+        endScreen.SetActive(false);
+
+        playerHealth = saveStats.health;
+        GameManager.instance.currentLevel = saveStats.level; 
+        player.transform.position = saveStats.myPos.GetPos();
     }
 
     public void ApplyDamage(int damageAmount = 1)
