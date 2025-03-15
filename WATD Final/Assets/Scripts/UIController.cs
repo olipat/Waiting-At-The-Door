@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
         Instance = this;
     }
 
+    public Stats saveStats;
 
     public GameObject endScreen;
     public bool playerDied = false;
@@ -44,7 +45,13 @@ public class UIController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudioManager.instance.PlayBGM();
+        saveGame();
+
+        if(AudioManager.instance.playingBGM == false)
+        {
+            AudioManager.instance.PlayBGM();
+        }
+            
 
         int abilityCount = abilities.Length;
         isOnCooldown = new bool[abilityCount];
@@ -128,12 +135,18 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1f;
 
         AudioManager.instance.PlaySFX(0);
-        AudioManager.instance.PlayMenuMusic();
+
+        if(AudioManager.instance.playingMenuMusic == false)
+        {
+            AudioManager.instance.PlayMenuMusic();
+        }
+        
 
 
 
 
     }
+
 
     public void RestartLevel()
     {
@@ -161,6 +174,14 @@ public class UIController : MonoBehaviour
         }
 
         AudioManager.instance.PlaySFX(0);
+    }
+
+
+    public void saveGame()
+    {
+        Debug.Log("Saving");
+        saveStats.health = playerHealth;
+        saveStats.level = GameManager.instance.currentLevel;
     }
 
     public void ApplyDamage(int damageAmount = 1)

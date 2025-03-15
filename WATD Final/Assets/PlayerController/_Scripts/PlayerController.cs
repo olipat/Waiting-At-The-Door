@@ -7,6 +7,8 @@ namespace Controller
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
+        public static PlayerController Instance;
+       
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
@@ -26,6 +28,7 @@ namespace Controller
 
         private void Awake()
         {
+            Instance = this;
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
 
