@@ -3,49 +3,47 @@ using UnityEngine;
 public class crawler : MonoBehaviour
 {
 
-    public float distance;
-    public Transform groundDetection;
     public float speed;
-    private bool movingRight = true;
+    public float radius;
+    private Rigidbody2D EnemyRB;
+    public GameObject groundCheck;
+    public LayerMask groundLayer;
+    public bool facingRight;
+    public bool isGrounded;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        EnemyRB = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        //EnemyRB.linearVelocity = Vector2.right * speed * Time.deltaTime;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-
-        if (groundInfo.collider == false)
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, radius, groundLayer);
+        if (!isGrounded && facingRight)
         {
-
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
+            Flip();
+        }
+        else if (!isGrounded && !facingRight)
+        {
+            Flip();
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void Flip()
     {
-        if ((col.gameObject.tag == "Wall" || col.gameObject.tag == "Breakable Wall"))
-        {
-            //print("prtol collison with ground is working");
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-            }
-            else if (movingRight == false)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
-        }
+        facingRight = !facingRight;
+        transform.Rotate(new Vector3(0, 180, 0));
+        //speed = -speed;
+        print("FLIP");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.transform.position, radius);
     }
 }
