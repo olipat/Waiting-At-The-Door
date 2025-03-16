@@ -7,9 +7,11 @@ public class crawler : MonoBehaviour
     public float radius;
     private Rigidbody2D EnemyRB;
     public GameObject groundCheck;
+    public GameObject wallCheck;
     public LayerMask groundLayer;
     public bool facingRight;
     public bool isGrounded;
+    public bool isWall;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,11 +25,12 @@ public class crawler : MonoBehaviour
         //EnemyRB.linearVelocity = Vector2.right * speed * Time.deltaTime;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, radius, groundLayer);
-        if (!isGrounded && facingRight)
+        isWall = Physics2D.OverlapCircle(wallCheck.transform.position, radius, groundLayer);
+        if ((!isGrounded || isWall) && facingRight)
         {
             Flip();
         }
-        else if (!isGrounded && !facingRight)
+        else if ((!isGrounded || isWall) && !facingRight)
         {
             Flip();
         }
@@ -45,5 +48,6 @@ public class crawler : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundCheck.transform.position, radius);
+        Gizmos.DrawWireSphere(wallCheck.transform.position, radius);
     }
 }
