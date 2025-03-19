@@ -322,7 +322,7 @@ public class UIController : MonoBehaviour
             DenialAbility denial = player.GetComponent<DenialAbility>();
             if (denial != null)
             {
-                denial.SpawnPlatform();
+                //denial.SpawnPlatform();
             }
             else
             {
