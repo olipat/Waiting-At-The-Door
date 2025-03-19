@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Obsticles_0: -8112249239420894759
+      Obsticles_1: 3663834563818963889
+      Obsticles_2: 2980535610392394474
+      Obsticles_3: 1441600567981717898
+      Obsticles_4: 2057586538025002216
+      Obsticles_5: 2847915960626027291
+      Obsticles_6: -5659169521480743694
+      Obsticles_7: -908772057367974187
+      Obsticles_8: -117369067579858843
+      Obsticles_9: -3239467172608978487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      watdwoodstodenialtransition_0: 8055825048256840370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
