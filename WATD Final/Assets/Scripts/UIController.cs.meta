@@ -1,2 +1,18 @@
 fileFormatVersion: 2
 guid: 0c6f4f1dae8c50c4989f66ff44a49ee3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 1544650614272011804, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+  - endScreen: {instanceID: 0}
+  - cooldownWarning: {instanceID: 0}
+  - abilityWarning: {instanceID: 0}
+  - pauseScreen: {instanceID: 0}
+  - fullHeart: {instanceID: 0}
+  - emptyHeart: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

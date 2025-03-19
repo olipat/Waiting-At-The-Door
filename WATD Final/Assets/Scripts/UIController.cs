@@ -235,7 +235,7 @@ public class UIController : MonoBehaviour
     public void ApplyDamage(int damageAmount = 1)
     {
         playerHealth -= damageAmount;
-        playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesn’t go below 0
+        playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesnï¿½t go below 0
 
         UpdateHealthUI();
 
@@ -315,6 +315,19 @@ public class UIController : MonoBehaviour
         {
             ShowAbilityWarning();
             return;
+        }
+
+        if (abilityIndex == 0)
+        {
+            DenialAbility denial = player.GetComponent<DenialAbility>();
+            if (denial != null)
+            {
+                denial.SpawnPlatform();
+            }
+            else
+            {
+                Debug.LogError("DenialAbility script not found on the player GameObject.");
+            }
         }
 
         // Change sprite using the new index logic (2i = available, 2i+1 = not available)

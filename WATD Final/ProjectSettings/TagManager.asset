@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Memento
+  - PhantomPlat
   layers:
   - Default
   - TransparentFX
@@ -43,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1737727411
+    locked: 0
+  - name: BG no parallax
+    uniqueID: 550698225
     locked: 0
   - name: Level
     uniqueID: 3817324647
