@@ -8,6 +8,12 @@ namespace Controller
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         public static PlayerController Instance;
+        //I think the player controller is canceling my bounce mechanic
+        //Adding variables to allow for bounce on trampoline
+        private bool isBouncing = false;
+        private float bounceDuration = 0.5f; 
+        private float bounceTimer = 0f;
+
        
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
@@ -63,8 +69,25 @@ namespace Controller
             }
         }
 
+        public void TriggerBounce(float velocity)
+        {
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, velocity);
+            isBouncing = true;
+            bounceTimer = bounceDuration;
+            Debug.Log("Bounce triggered in PlayerController! Velocity: " + velocity);
+        }
+
         private void FixedUpdate()
         {
+            if (isBouncing)
+            {
+                bounceTimer -= Time.fixedDeltaTime;
+                if (bounceTimer <= 0f)
+                {
+                    isBouncing = false;
+                }
+                return; 
+            }
             CheckCollisions();
 
             HandleJump();
