@@ -14,8 +14,7 @@ public class UIController : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
-        }
-        
+        }       
     }
 
     public Stats saveStats;
@@ -32,6 +31,10 @@ public class UIController : MonoBehaviour
     public GameObject abilityWarning;
     public float abilityWarningTime;
     private float abilityWarningCounter;
+
+    public GameObject pathWarning;
+    public float pathWarningTime;
+    private float pathWarningCounter;
 
     public string mainMenuScene;
 
@@ -110,7 +113,19 @@ public class UIController : MonoBehaviour
             PauseUnpause();
         }
 
+        CheckCooldown();
+        
+        CheckAbilityWarning();
 
+        CheckPathWarning();
+
+        CheckAbilityActivation();
+
+        UpdateHealthUI();
+    }
+
+    public void CheckCooldown()
+    {
         if (warningCounter > 0)
         {
             warningCounter -= Time.deltaTime;
@@ -120,7 +135,10 @@ public class UIController : MonoBehaviour
                 cooldownWarning.SetActive(false);
             }
         }
+    }
 
+    public void CheckAbilityWarning()
+    {
         if (abilityWarningCounter > 0)
         {
             abilityWarningCounter -= Time.deltaTime;
@@ -130,8 +148,23 @@ public class UIController : MonoBehaviour
                 abilityWarning.SetActive(false);
             }
         }
+    }
 
+    public void CheckPathWarning()
+    {
+        if (pathWarningCounter > 0)
+        {
+            pathWarningCounter -= Time.deltaTime;
 
+            if (pathWarningCounter <= 0)
+            {
+                pathWarning.SetActive(false);
+            }
+        }
+    }
+
+    public void CheckAbilityActivation()
+    {
         for (int i = 0; i < abilities.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -139,14 +172,12 @@ public class UIController : MonoBehaviour
                 ActivateAbility(i);
             }
         }
-
-
-        UpdateHealthUI();
     }
 
     public void ShowWarning()
     {
         abilityWarning.SetActive(false);
+        pathWarning.SetActive(false);
         
         cooldownWarning.SetActive(true);
         warningCounter = warningTime;
@@ -155,14 +186,23 @@ public class UIController : MonoBehaviour
     public void ShowAbilityWarning()
     {
         cooldownWarning.SetActive(false);
+        pathWarning.SetActive(false);
 
         abilityWarning.SetActive(true);
         abilityWarningCounter = abilityWarningTime;
     }
 
+    public void ShowPathWarning()
+    {
+        cooldownWarning.SetActive(false);
+        abilityWarning.SetActive(false);
+
+        pathWarning.SetActive(true);
+        pathWarningCounter = pathWarningTime;
+    }
+
     public void MainMenu()
     {
-
         SceneManager.LoadScene(mainMenuScene);
 
         Time.timeScale = 1f;
@@ -173,11 +213,6 @@ public class UIController : MonoBehaviour
         {
             AudioManager.instance.PlayMenuMusic();
         }
-        
-
-
-
-
     }
 
 
@@ -224,7 +259,8 @@ public class UIController : MonoBehaviour
     public void loadGame()
     {
         SaveManager.Instance.load();
-        
+        Time.timeScale = 1f;
+
         endScreen.SetActive(false);
 
         playerHealth = saveStats.health;
@@ -297,19 +333,13 @@ public class UIController : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / fadeDuration);
             yield return null;
         }
-
+        Time.timeScale = 0f;
         canvasGroup.alpha = 1f; // Ensure it's fully visible
     }
 
     void ActivateAbility(int abilityIndex)
     {
         if (abilityIndex < 0 || abilityIndex >= abilities.Length) return;
-        
-        if (isOnCooldown[abilityIndex] == true)
-        {
-            ShowWarning(); 
-            return;
-        }
 
         if (isUnlocked[abilityIndex] == false)
         {
@@ -322,26 +352,38 @@ public class UIController : MonoBehaviour
             DenialAbility denial = player.GetComponent<DenialAbility>();
             if (denial != null)
             {
-                //denial.SpawnPlatform();
+                if (DenialAbility.Instance.GetPlatformCount() == 3)
+                {
+                    ShowPathWarning();
+                    return;
+                }
             }
             else
             {
                 Debug.LogError("DenialAbility script not found on the player GameObject.");
+                return;
             }
         }
-
-        // Change sprite using the new index logic (2i = available, 2i+1 = not available)
-        int spriteIndex = abilityIndex * 2 + 1;
-        if (spriteIndex < abilitySprites.Length)
+        else if (isOnCooldown[abilityIndex] == true)
         {
-            abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+            ShowWarning();
+            return;
         }
+        else
+        {
+            // Change sprite using the new index logic (2i = available, 2i+1 = not available)
+            int spriteIndex = abilityIndex * 2 + 1;
+            if (spriteIndex < abilitySprites.Length)
+            {
+                abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+            }
 
-        // Enable outline
-        abilityOutlines[abilityIndex].enabled = true;
+            // Enable outline
+            abilityOutlines[abilityIndex].enabled = true;
 
-        // Start cooldown coroutine
-        StartCoroutine(AbilityCooldown(abilityIndex));
+            // Start cooldown coroutine
+            StartCoroutine(AbilityCooldown(abilityIndex));
+        }
     }
 
     IEnumerator AbilityCooldown(int abilityIndex)

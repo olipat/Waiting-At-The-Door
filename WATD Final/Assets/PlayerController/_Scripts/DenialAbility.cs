@@ -4,10 +4,21 @@ using Controller;
 
 public class DenialAbility : MonoBehaviour
 {
+    public static DenialAbility Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     public GameObject platformPrefab; 
     public float platformLifetime = 5f;
     public float fallSpeed = 0.5f;
     public int maxPlatforms = 3;
+    
 
     private List<GameObject> activePlatforms = new List<GameObject>();
     private bool facingRight = true; 
@@ -63,5 +74,10 @@ public class DenialAbility : MonoBehaviour
         yield return new WaitForSeconds(5f);
         activePlatforms.Remove(platform);
         Destroy(platform);
+    }
+
+    public int GetPlatformCount()
+    {
+        return activePlatforms.Count;
     }
 }

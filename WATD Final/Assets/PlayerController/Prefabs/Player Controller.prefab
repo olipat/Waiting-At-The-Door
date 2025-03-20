@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1544650614272011793}
   - component: {fileID: 1544650614272011794}
   - component: {fileID: 7854537430474224694}
+  - component: {fileID: 3993465251732035006}
   m_Layer: 6
   m_Name: Player Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +111,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0011565676, y: 0.009406448}
-  m_Size: {x: 2.052089, y: 1.9909067}
+  m_Offset: {x: 0.062014814, y: -0.08852269}
+  m_Size: {x: 2.9729648, y: 2.440972}
   m_Direction: 1
 --- !u!61 &7854537430474224694
 BoxCollider2D:
@@ -147,7 +148,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.44704533, y: -2.4766567}
+  m_Offset: {x: -0.44704533, y: -2.4735732}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -157,8 +158,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5020728, y: 0.12384176}
+  m_Size: {x: 2.5020728, y: 0.13000846}
   m_EdgeRadius: 0
+--- !u!114 &3993465251732035006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544650614272011804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1adfa6c2932514fb2afb0847da174e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformPrefab: {fileID: 8630352624785788107, guid: 5f5beca1d29a98646b3c1ddffa1d0455, type: 3}
+  platformLifetime: 5
+  fallSpeed: 0.5
+  maxPlatforms: 3
 --- !u!1 &2969068311587289281
 GameObject:
   m_ObjectHideFlags: 0
@@ -29692,7 +29709,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895511847
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -208249514, guid: 5434d3dbd6d17b1449a4cc237382d0f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
