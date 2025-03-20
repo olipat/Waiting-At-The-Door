@@ -1,73 +1,53 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class denialBoss : MonoBehaviour
 {
-
-    public Transform[] targetLocations;
-    private int light;
+    public Transform[] targetLocations; // Array of light positions
+    private List<int> activeLights = new List<int>(); // Stores currently active lights
     private bool loopFlag = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        StartCoroutine(bossCoroutine());
+        StartCoroutine(BossCoroutine());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(loopFlag == true)
+        if (loopFlag)
         {
             loopFlag = false;
-            StartCoroutine(bossCoroutine());
+            StartCoroutine(BossCoroutine());
         }
     }
 
-    IEnumerator bossCoroutine()
+    IEnumerator BossCoroutine()
     {
-        light = Random.Range(0, 8);
+        // Clear previously active lights
+        activeLights.Clear();
 
-        switch (light)
+        // Determine how many lights to turn on (e.g., 2 to 5 lights)
+        int numLightsToActivate = Random.Range(2, 6);
+
+        // Pick random unique lights
+        while (activeLights.Count < numLightsToActivate)
         {
-            case 8:
-                //shine light on pos 8
-                print("shine light on point 8");
-                break;
-            case 7:
-                //shine light on pos 7
-                print("shine light on point 7");
-                break;
-            case 6:
-                //shine light on pos 6
-                print("shine light on point 6");
-                break;
-            case 5:
-                //shine light on pos 5
-                print("shine light on point 5");
-                break;
-            case 4:
-                //shine light on pos 4
-                print("shine light on point 4");
-                break;
-            case 3:
-                //shine light on pos 3
-                print("shine light on point 3");
-                break;
-            case 2:
-                //shine light on pos 2
-                print("shine light on point 2");
-                break;
-            case 1:
-                //shine light on pos 1
-                print("shine light on point 1");
-                break;
-            default:
-                //shine light on pos 0
-                print("shine light on point 0");
-                break;
+            int randomLight = Random.Range(0, targetLocations.Length);
+            if (!activeLights.Contains(randomLight))
+            {
+                activeLights.Add(randomLight);
+            }
         }
 
-        //yield on a new YieldInstruction that waits for 5 seconds.
+        // Print active lights (replace with actual light activation)
+        foreach (int lightIndex in activeLights)
+        {
+            print("Shine light on point " + lightIndex);
+            // You can replace this with actual light activation logic
+        }
+
+        // Wait for 5 seconds before changing lights again
         yield return new WaitForSeconds(5);
 
         loopFlag = true;
