@@ -27,7 +27,6 @@ public class DenialAbility : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("SpawnPlatform() triggered!");
             SpawnPlatform();
         }
 
@@ -41,11 +40,9 @@ public class DenialAbility : MonoBehaviour
     {
         if (platformPrefab == null)
         {
-            Debug.LogError("Platform Prefab not assigned in the Inspector!");
             return;
         }
 
-        Debug.Log("Trying to spawn platform...");
         if (activePlatforms.Count >= maxPlatforms) return;
 
         Vector3 spawnOffset = facingRight ? Vector3.right : Vector3.left;
@@ -54,7 +51,6 @@ public class DenialAbility : MonoBehaviour
 
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         activePlatforms.Add(newPlatform);
-        Debug.Log("Spawned platform at: " + spawnPosition);
 
         StartCoroutine(HandlePlatformLifecycle(newPlatform));
 

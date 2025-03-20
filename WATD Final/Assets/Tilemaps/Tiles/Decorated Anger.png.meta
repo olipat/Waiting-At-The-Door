@@ -156,7 +156,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 570
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -190,6 +190,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -601,72 +614,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decorated Anger_18
-      rect:
-        serializedVersion: 2
-        x: 3688
-        y: 1707
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 627779385810af800800000000000000
-      internalID: 646831169431107366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decorated Anger_19
-      rect:
-        serializedVersion: 2
-        x: 3686
-        y: 1681
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ce9f6239d9b071f0800000000000000
-      internalID: -1049134370672107839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decorated Anger_20
-      rect:
-        serializedVersion: 2
-        x: 3691
-        y: 1678
-        width: 12
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 246d9e2d8111e0ce0800000000000000
-      internalID: -1437192432769182142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Decorated Anger_21
       rect:
         serializedVersion: 2
@@ -799,72 +746,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decorated Anger_27
-      rect:
-        serializedVersion: 2
-        x: 3688
-        y: 1067
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07be804e1a5543180800000000000000
-      internalID: -9136583590224008336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decorated Anger_28
-      rect:
-        serializedVersion: 2
-        x: 3686
-        y: 1041
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4777f4afda27a3260800000000000000
-      internalID: 7078095855920576372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decorated Anger_29
-      rect:
-        serializedVersion: 2
-        x: 3691
-        y: 1038
-        width: 12
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 61ec098b7300d5980800000000000000
-      internalID: -8548676278359634410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Decorated Anger_30
       rect:
         serializedVersion: 2
@@ -909,28 +790,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decorated Anger_32
-      rect:
-        serializedVersion: 2
-        x: 987
-        y: 0
-        width: 82
-        height: 104
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 404fa6a98d7f5e180800000000000000
-      internalID: -9086584163474410492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Decorated Anger_33
       rect:
         serializedVersion: 2
@@ -948,28 +807,6 @@ TextureImporter:
       bones: []
       spriteID: cbc5cf1c5f09a85c0800000000000000
       internalID: -4212395116255748932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decorated Anger_34
-      rect:
-        serializedVersion: 2
-        x: 1159
-        y: 0
-        width: 56
-        height: 75
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 179b28631f7efac30800000000000000
-      internalID: 4372968786387712369
       vertices: []
       indices: 
       edges: []

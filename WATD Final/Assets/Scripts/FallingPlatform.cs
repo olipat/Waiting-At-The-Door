@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
@@ -6,11 +7,12 @@ public class FallingPlatform : MonoBehaviour
     private SpriteRenderer sr;
     public float fallDelay = 1.5f;
     private bool hasFallen = false;
+    private SpriteRenderer[] spriteRenderers;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,24 +29,25 @@ public class FallingPlatform : MonoBehaviour
         yield return new WaitForSeconds(fallDelay);
 
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = 1f; // Ensure it falls
+        rb.gravityScale = 1f; 
     }
 
-    // Called by sniff ability to warn player
+    //Use this later for sniff ability 
     public void WarnPlatform(float warningDuration)
     {
         StartCoroutine(GlowRedTemporarily(warningDuration));
     }
 
-    private System.Collections.IEnumerator GlowRedTemporarily(float duration)
+    private IEnumerator GlowRedTemporarily(float duration)
     {
-        if (sr == null) yield break;
+        Color originalColor = spriteRenderers[0].color;
 
-        Color originalColor = sr.color;
-        sr.color = Color.red;
+        foreach (SpriteRenderer sr in spriteRenderers)
+            sr.color = Color.red;
 
         yield return new WaitForSeconds(duration);
 
-        sr.color = originalColor;
+        foreach (SpriteRenderer sr in spriteRenderers)
+            sr.color = originalColor;
     }
 }
