@@ -16,6 +16,7 @@ public class DenialAbility : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            Debug.Log("SpawnPlatform() triggered!");
             SpawnPlatform();
         }
 
