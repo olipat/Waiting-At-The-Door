@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      teddy-mem_0: -6473875370472804643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

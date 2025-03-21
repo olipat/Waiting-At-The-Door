@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      baseball-mem_0: -153450177470755365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
