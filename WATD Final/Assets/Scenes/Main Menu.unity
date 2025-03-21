@@ -456,6 +456,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1011167451 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3507605673330168409, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+  m_PrefabInstance: {fileID: 1140461294035517178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1079679735
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +545,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 82.4
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1193,6 +1198,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3507605673330168409, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e3e038843ea74e4ea39a5270cee837c, type: 3}
+    - target: {fileID: 3507605673330168409, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e3e038843ea74e4ea39a5270cee837c, type: 3}
+    - target: {fileID: 6207462995849995434, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+      propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 1011167451}
+    - target: {fileID: 7173811805539262632, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 77fbc8ef20ae6064b8042734d39149cb, type: 3}
+    - target: {fileID: 7173811805539262632, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 77fbc8ef20ae6064b8042734d39149cb, type: 3}
     - target: {fileID: 8039424372573556921, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 935.45776

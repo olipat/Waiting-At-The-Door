@@ -364,6 +364,26 @@ public class UIController : MonoBehaviour
                 return;
             }
         }
+        //Added anger bark here 
+        else if (abilityIndex == 1)
+        {
+            if (isOnCooldown[abilityIndex] == true)
+            {
+                ShowWarning();
+                return;
+            }
+
+            AngerBarkAbility anger = player.GetComponent<AngerBarkAbility>();
+            if (anger != null)
+            {
+                anger.UseAngerBark();  
+            }
+            else
+            {
+                Debug.LogError("AngerBarkAbility script not found on the player GameObject.");
+                return;
+            }
+        }
         else if (isOnCooldown[abilityIndex] == true)
         {
             ShowWarning();

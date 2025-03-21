@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 9a01fcecd1d31584a914c79ddee33498
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - menuMusic: {instanceID: 0}
+  - battleSelectMusic: {instanceID: 0}
+  - denialBGM: {fileID: 8764144739532058893, guid: 8b3f20b03967a854f95b8c93d9b26534, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

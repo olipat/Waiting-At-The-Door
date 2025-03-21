@@ -16,6 +16,9 @@ public class StopSignEnemy : MonoBehaviour
     public bool isWall;
 
     private bool isBlocking;
+    //adding vars to handle basic bark ability
+    private bool pushedBack = false;
+    public float pushDuration = 1f;
 
     void Start()
     {
@@ -27,7 +30,7 @@ public class StopSignEnemy : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.2f, groundLayer);
         isWall = Physics2D.OverlapCircle(wallCheck.transform.position, 0.2f, groundLayer);
 
-        if (player == null) return; // Avoid errors if no player is assigned
+        if (pushedBack || player == null) return; // Avoid errors if no player is assigned
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -94,4 +97,22 @@ public class StopSignEnemy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, stopDistance);
     }
+
+    //functions below added to handle bark ability being applied 
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        enemyRB.AddForce(direction * force, ForceMode2D.Impulse);
+        StartCoroutine(KnockbackCoroutine());
+    }
+
+    private System.Collections.IEnumerator KnockbackCoroutine()
+    {
+        pushedBack = true;
+        enemyRB.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(pushDuration);
+
+        pushedBack = false;
+    }
+
 }

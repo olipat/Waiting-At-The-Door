@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Memento
   - PhantomPlat
+  - Small Enemy
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - ground
   - Sniffable Objects
   - Memento Sniff
-  - 
-  - 
+  - Enemy Layer
+  - Breakable Object
   - 
   - 
   - 
