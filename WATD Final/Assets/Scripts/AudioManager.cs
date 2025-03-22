@@ -26,7 +26,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource menuMusic;
     public bool playingMenuMusic;
-    public AudioSource battleSelectMusic;
     public AudioSource[] bgm;
     public int currentBGM;
     public bool playingBGM;
@@ -71,7 +70,7 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         menuMusic.Stop();
-        battleSelectMusic.Stop();
+     
         foreach (AudioSource track in bgm)
         {
             track.Stop();
@@ -88,20 +87,11 @@ public class AudioManager : MonoBehaviour
         GameManager.instance.currentLevel = 0;
     }
 
-    public void PlayBattleSelectMusic()
-    {
-        if (battleSelectMusic.isPlaying == false)
-        {
-            StopMusic();
-            battleSelectMusic.Play();
-        }
-    }
-
     public void PlayBGM()
     {
         StopMusic();
 
-        currentBGM = Random.Range(0, bgm.Length);
+        currentBGM = GameManager.instance.currentLevel - 1;
 
         bgm[currentBGM].Play();
         playingBGM = true;
