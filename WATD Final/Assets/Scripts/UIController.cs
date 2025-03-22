@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public class UIController : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class UIController : MonoBehaviour
         abilityOutlines = new Outline[abilityCount];
 
         isUnlocked[0] = true;
-        isUnlocked[1] = true;
+        
 
         for (int i = 0; i < abilityCount; i++)
         {
@@ -244,6 +245,13 @@ public class UIController : MonoBehaviour
         AudioManager.instance.PlaySFX(0);
     }
 
+    public void Unpause()
+    {
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
+        AudioManager.instance.PlaySFX(0);
+    }
+
 
     public void saveGame()
     {
@@ -253,19 +261,24 @@ public class UIController : MonoBehaviour
         saveStats.myPos.SetPos(player.transform.position);
 
         SaveManager.Instance.Save();
-        
+        Unpause();
     }
 
     public void loadGame()
     {
+        StopAllCoroutines();
+
         SaveManager.Instance.load();
         Time.timeScale = 1f;
+
+        Controller.PlayerController playerController = FindFirstObjectByType<Controller.PlayerController>();
+        playerController.enabled = true;
 
         endScreen.SetActive(false);
 
         playerHealth = saveStats.health;
         GameManager.instance.currentLevel = saveStats.level; 
-        player.transform.position = saveStats.myPos.GetPos();
+        player.transform.position = saveStats.myPos.GetPos();        
     }
 
     public void ApplyDamage(int damageAmount = 1)
