@@ -6,6 +6,7 @@ using System; // Fix IEnumerator error
 public class BossRoomTrigger : MonoBehaviour
 {
     public Collider2D bossRoomBounds; // Assign Boss Camera Bounds in Inspector
+    public Collider2D bossRoomDoor;
     public float zoomOutSize = 10f;   // Final zoom level
     public float zoomSpeed = 2f;      // Speed of zooming out
     public float moveSpeed = 2f;      // Speed of camera movement
@@ -96,5 +97,7 @@ public class BossRoomTrigger : MonoBehaviour
         vCam.Follow = originalFollowTarget;
         vCam.PreviousStateIsValid = false;
         playerController.enabled = true;
+
+        bossRoomDoor.isTrigger = false;
     }
 }
