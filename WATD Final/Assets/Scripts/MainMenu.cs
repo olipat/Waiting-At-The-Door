@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(playScene);
+        LevelLoader.Instance.LoadNextLevel();
 
         AudioManager.instance.PlayBGM();
         AudioManager.instance.PlaySFX(0);
