@@ -24,6 +24,8 @@ public class UIController : MonoBehaviour
     public GameObject player;
 
     public Button saveButton;
+    public Sprite buttonNotAvailable;
+    private Sprite ButtonSprite;
 
     public Collider2D bossRoomBounds;
     public Collider2D cameraBounds;
@@ -86,6 +88,7 @@ public class UIController : MonoBehaviour
         confiner = vCam.GetComponent<CinemachineConfiner2D>(); // Get Camera Confiner
         zoomSize = vCam.Lens.OrthographicSize;
 
+        ButtonSprite = saveButton.spriteState.selectedSprite;
        
         bossEntrancePosition = bossEntrance.transform.position;
 
@@ -156,10 +159,14 @@ public class UIController : MonoBehaviour
     {
         if (GameManager.instance.FightingDenialBoss) 
         {
+            saveButton.GetComponent<Image>().sprite = buttonNotAvailable;
+
             saveButton.enabled = false;
         }
         else
         {
+            saveButton.GetComponent<Image>().sprite = ButtonSprite;
+
             saveButton.enabled = true;
         }
     }
