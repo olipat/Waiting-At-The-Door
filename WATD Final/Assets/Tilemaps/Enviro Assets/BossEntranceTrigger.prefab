@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030807718144995407}
   - component: {fileID: 497902402322540232}
+  - component: {fileID: 3727092625949181236}
   m_Layer: 0
   m_Name: BossEntranceTrigger
   m_TagString: Untagged
@@ -78,3 +79,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.027069, y: 4.98044}
   m_EdgeRadius: 0
+--- !u!114 &3727092625949181236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109226923101573074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b244a6fa9b7371c41b964950d7ea464d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockadeWall: {fileID: 0}
+  playerTag: Player
+  delayBeforeBlockade: 4
+  moveDistance: 5
+  moveDuration: 1

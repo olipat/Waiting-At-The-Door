@@ -1,7 +1,17 @@
 using UnityEngine;
+using System.Collections;
 
 public class BossEntranceTrigger : MonoBehaviour
 {
+    public static BossEntranceTrigger Instance;
+    public void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     public GameObject blockadeWall; // Assign in Inspector
     public string playerTag = "Player";
     public float delayBeforeBlockade = 5f;
@@ -16,13 +26,20 @@ public class BossEntranceTrigger : MonoBehaviour
         if (!triggered && other.CompareTag(playerTag))
         {
             triggered = true;
-            StartCoroutine(TriggerBlockadeAfterDelay());
+            //StartCoroutine(TriggerBlockadeAfterDelay());
 
             GetComponent<Collider2D>().enabled = false;
         }
     }
 
-    System.Collections.IEnumerator TriggerBlockadeAfterDelay()
+
+
+    public void TriggerBlockade()
+    {
+        StartCoroutine(TriggerBlockadeAfterDelay());
+    }
+
+    IEnumerator TriggerBlockadeAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeBlockade);
 
@@ -32,7 +49,8 @@ public class BossEntranceTrigger : MonoBehaviour
 
             // Start drop animation
             Vector3 startPos = blockadeWall.transform.position;
-            Vector3 endPos = startPos + Vector3.down * moveDistance;
+            Vector3 endPos = startPos;
+            endPos.y = 0.56f;
 
             float elapsed = 0f;
             while (elapsed < moveDuration)

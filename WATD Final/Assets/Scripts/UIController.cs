@@ -72,7 +72,11 @@ public class UIController : MonoBehaviour
         isUnlocked = new bool[abilityCount];
         abilityOutlines = new Outline[abilityCount];
 
-        isUnlocked[0] = true;
+        for(int i = 0; i < GameManager.instance.currentLevel; i++)
+        {
+            isUnlocked[i] = true;
+        }
+        
         
 
         for (int i = 0; i < abilityCount; i++)
@@ -102,8 +106,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
-        {
-
+        { 
             ApplyDamage();
             AudioManager.instance.PlaySFX(6);
         }
@@ -284,7 +287,7 @@ public class UIController : MonoBehaviour
     public void ApplyDamage(int damageAmount = 1)
     {
         playerHealth -= damageAmount;
-        playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesn�t go below 0
+        playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesn't go below 0
 
         UpdateHealthUI();
 

@@ -39,6 +39,7 @@ public class BossRoomTrigger : MonoBehaviour
             playerController.enabled = false;
             inBossRoom = true;
             playerRB.linearVelocity = Vector2.zero; // Stop all movement
+            BossEntranceTrigger.Instance.TriggerBlockade();
             StartCoroutine(HandleCameraMovement());
         }
     }
