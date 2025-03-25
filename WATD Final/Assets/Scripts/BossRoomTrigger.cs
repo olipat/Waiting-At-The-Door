@@ -5,6 +5,16 @@ using System; // Fix IEnumerator error
 
 public class BossRoomTrigger : MonoBehaviour
 {
+    public static BossRoomTrigger Instance;
+
+    public void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        
+    }
     public Collider2D bossRoomBounds; // Assign Boss Camera Bounds in Inspector
     public Collider2D bossRoomDoor;
     public float zoomOutSize = 10f;   // Final zoom level
@@ -15,10 +25,11 @@ public class BossRoomTrigger : MonoBehaviour
     public Vector3 cameraMoveUpOffset = new Vector3(0f, 3f, 0);    // Then move up
 
     public GameObject player;
+    public Vector3 savePosition;
 
     private CinemachineConfiner2D confiner;
     private CinemachineCamera vCam;
-    private bool inBossRoom = false;
+    public bool inBossRoom = false;
     private Transform originalFollowTarget; // Store the original target
     private Controller.PlayerController playerController;
     private Rigidbody2D playerRB;
@@ -38,8 +49,12 @@ public class BossRoomTrigger : MonoBehaviour
             Debug.Log("Entered Boss Room, stopping player.");
             playerController.enabled = false;
             inBossRoom = true;
+            GameManager.instance.FightingDenialBoss = true;
             playerRB.linearVelocity = Vector2.zero; // Stop all movement
+
+            UIController.Instance.saveGame(savePosition);
             BossEntranceTrigger.Instance.TriggerBlockade();
+
             StartCoroutine(HandleCameraMovement());
         }
     }

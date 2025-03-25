@@ -64,7 +64,7 @@ public class BossEntranceTrigger : MonoBehaviour
             blockadeWall.transform.position = endPos;
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
 

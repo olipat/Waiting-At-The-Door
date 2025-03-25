@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int currentLevel; // Auto-updated based on scene index
+    public bool FightingDenialBoss;
 
     private void Awake()
     {

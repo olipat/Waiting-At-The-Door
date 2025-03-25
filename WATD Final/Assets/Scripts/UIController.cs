@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 
 public class UIController : MonoBehaviour
 {
@@ -20,6 +22,11 @@ public class UIController : MonoBehaviour
 
     public Stats saveStats;
     public GameObject player;
+
+    public Button saveButton;
+
+    public Collider2D bossRoomBounds;
+    public Collider2D cameraBounds;
 
     public GameObject endScreen;
     public bool playerDied = false;
@@ -55,17 +62,32 @@ public class UIController : MonoBehaviour
     private Outline[] abilityOutlines; // Store outline components
     private bool[] isUnlocked;
 
+    private CinemachineConfiner2D confiner;
+    private CinemachineCamera vCam;
+    public float zoomSize;
+
+    public GameObject bossEntrance;
+    public Vector3 bossEntrancePosition;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         saveGame();
 
-        if(AudioManager.instance.playingBGM == false)
+        
+
+        if (AudioManager.instance.playingBGM == false)
         {
             AudioManager.instance.PlayBGM();
         }
-            
+
+        vCam = FindFirstObjectByType<CinemachineCamera>(); // Get Cinemachine Camera
+        confiner = vCam.GetComponent<CinemachineConfiner2D>(); // Get Camera Confiner
+        zoomSize = vCam.Lens.OrthographicSize;
+
+       
+        bossEntrancePosition = bossEntrance.transform.position;
 
         int abilityCount = abilities.Length;
         isOnCooldown = new bool[abilityCount];
@@ -117,6 +139,8 @@ public class UIController : MonoBehaviour
             PauseUnpause();
         }
 
+        CheckButton();
+
         CheckCooldown();
         
         CheckAbilityWarning();
@@ -126,6 +150,18 @@ public class UIController : MonoBehaviour
         CheckAbilityActivation();
 
         UpdateHealthUI();
+    }
+
+    public void CheckButton()
+    {
+        if (GameManager.instance.FightingDenialBoss) 
+        {
+            saveButton.enabled = false;
+        }
+        else
+        {
+            saveButton.enabled = true;
+        }
     }
 
     public void CheckCooldown()
@@ -267,6 +303,17 @@ public class UIController : MonoBehaviour
         Unpause();
     }
 
+    public void saveGame(Vector3 position)
+    {
+        Debug.Log("Saving");
+        saveStats.health = playerHealth;
+        saveStats.level = GameManager.instance.currentLevel;
+        saveStats.myPos.SetPos(position);
+
+        SaveManager.Instance.Save();
+        Unpause();
+    }
+
     public void loadGame()
     {
         StopAllCoroutines();
@@ -281,7 +328,20 @@ public class UIController : MonoBehaviour
 
         playerHealth = saveStats.health;
         GameManager.instance.currentLevel = saveStats.level; 
-        player.transform.position = saveStats.myPos.GetPos();        
+        player.transform.position = saveStats.myPos.GetPos();
+
+        
+
+        confiner.BoundingShape2D = cameraBounds;
+        confiner.InvalidateBoundingShapeCache();
+
+        vCam.Follow = player.transform;
+        vCam.Lens.OrthographicSize = zoomSize;
+
+        vCam.PreviousStateIsValid = false;
+
+        bossEntrance.transform.position = bossEntrancePosition;
+        BossRoomTrigger.Instance.inBossRoom = false;
     }
 
     public void ApplyDamage(int damageAmount = 1)
