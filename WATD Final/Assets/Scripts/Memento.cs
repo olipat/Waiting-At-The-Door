@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Memento : MonoBehaviour
 {
+    public int index = 0;
+
     private bool playerInRange = false;
     private SpriteRenderer sr;
     private SpriteRenderer[] spriteRenderers;
@@ -17,7 +19,7 @@ public class Memento : MonoBehaviour
 
     void PickupMemento()
     {
-        MementoManager.instance.CollectMemento(); 
+        MementoManager.instance.CollectMemento(index); 
         Destroy(gameObject); 
     }
 

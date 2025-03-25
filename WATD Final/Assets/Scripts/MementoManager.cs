@@ -16,11 +16,11 @@ public class MementoManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void CollectMemento()
+    public void CollectMemento(int index)
     {
-        if (collectedCount < mementoSlots.Length)
+        if (collectedCount < mementoSlots.Length && index < mementoSlots.Length)
         {
-            mementoSlots[collectedCount].color = Color.white; 
+            mementoSlots[index].color = Color.white; 
             collectedCount++;
         }
     }
