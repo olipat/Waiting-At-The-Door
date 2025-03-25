@@ -41,7 +41,7 @@ public class crawler : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(new Vector3(0, 180, 0));
         //speed = -speed;
-        print("FLIP");
+        //print("FLIP");
     }
 
     private void OnDrawGizmosSelected()

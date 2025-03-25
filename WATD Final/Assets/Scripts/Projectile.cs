@@ -10,8 +10,7 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        //grab player,
-        // targetDirection = (FindObjectOfType<PlayerController>().transform.position - transform.position).normalized;
+        targetDirection = (GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).normalized;
         Destroy(gameObject, lifetime);
     }
 
@@ -20,13 +19,22 @@ public class Projectile : MonoBehaviour
         transform.position += targetDirection * speed * Time.deltaTime;
     }
 
-    void OnTriggerEnter(Collider other)
+    //void OnTriggerEnter2D(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        print("tire hit player");
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            //assuming the player has a script with a TakeDamage method
-            //other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+            print("tire hit player");
             Destroy(gameObject);
         }
     }
+
 }

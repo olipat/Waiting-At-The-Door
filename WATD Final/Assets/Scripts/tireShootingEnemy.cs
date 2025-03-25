@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class tireShootingEnemy : MonoBehaviour
 {
-    public Transform pointA, pointB;
-    public float patrolSpeed = 2f;
+   // public Transform pointA, pointB;
+    //public float patrolSpeed = 2f;
     public float detectionRange = 5f;
     public float attackCooldown = 1f;
     public GameObject projectilePrefab;
@@ -15,7 +15,7 @@ public class tireShootingEnemy : MonoBehaviour
     private float attackTimer = 0f;
     void Start()
     {
-        targetPosition = pointA.position;
+       // targetPosition = pointA.position;
     }
 
     void Update()
