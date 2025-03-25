@@ -15,6 +15,10 @@ public class PendulumSwing : MonoBehaviour
     void Update()
     {
         float angle = swingAngle * Mathf.Sin(Time.time * swingSpeed); // Swing back and forth
+        if(angle < -13.5f)
+        {
+            angle = -13.5f;
+        }
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
