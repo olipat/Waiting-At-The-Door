@@ -342,6 +342,17 @@ public class UIController : MonoBehaviour
         GameManager.instance.currentLevel = saveStats.level; 
         player.transform.position = saveStats.myPos.GetPos();
 
+        for (int i = 0; i < saveStats.momentosCollected.Length; i++)
+        {
+            if (saveStats.momentosCollected[i])
+            {
+                MementoManager.instance.CollectMemento(i);
+            }
+            else
+            {
+                MementoManager.instance.UncollectMemento(i);
+            }
+        }
         
 
         confiner.BoundingShape2D = cameraBounds;
@@ -354,6 +365,8 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
+
+
     }
 
     public void ApplyDamage(int damageAmount = 1)

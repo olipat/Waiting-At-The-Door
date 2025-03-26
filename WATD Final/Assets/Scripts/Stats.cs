@@ -24,5 +24,6 @@ public class Stats
 {
     public int health = 3;
     public int level = 1;
+    public bool[] momentosCollected = new bool[3]; 
     public SerializableVector3 myPos;
 }
