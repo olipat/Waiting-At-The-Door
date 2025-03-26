@@ -384,6 +384,17 @@ public class UIController : MonoBehaviour
             }
         }
         
+        for (int i = 0; i < saveStats.boneKeysCollected.Length; i++)
+        {
+            if (saveStats.boneKeysCollected[i])
+            {
+                BoneKeyManager.Instance.CollectKey(i);
+            }
+            else
+            {
+                BoneKeyManager.Instance.UncollectKey(i);
+            }
+        }
 
         confiner.BoundingShape2D = cameraBounds;
         confiner.InvalidateBoundingShapeCache();

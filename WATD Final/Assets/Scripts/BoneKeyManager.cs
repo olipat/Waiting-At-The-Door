@@ -5,9 +5,8 @@ public class BoneKeyManager : MonoBehaviour
 {
     public static BoneKeyManager Instance;
 
-    public Image[] keySlots;           
-    public Sprite filledKeySprite;     
-    private int collectedKeys = 0;
+    public Image[] keySlots;             
+    public GameObject[] boneKeyObjects;  
 
     void Awake()
     {
@@ -19,17 +18,31 @@ public class BoneKeyManager : MonoBehaviour
 
     public void CollectKey(int index)
     {
-        if (index < keySlots.Length && keySlots[index] != null)
+        if (index < keySlots.Length)
         {
-            keySlots[index].sprite = filledKeySprite;
             keySlots[index].color = Color.white;
-            collectedKeys++;
+            UIController.Instance.saveStats.boneKeysCollected[index] = true;
         }
     }
 
+    public void UncollectKey(int index)
+    {
+        if (index < keySlots.Length)
+        {
+            keySlots[index].color = Color.black;
+            boneKeyObjects[index].SetActive(true);
+        }
+    }
+
+
     public bool HasAllKeys()
     {
-        return collectedKeys >= keySlots.Length;
+        foreach (Image slot in keySlots)
+        {
+            if (slot.color != Color.white)
+                return false;
+        }
+        return true;
     }
 }
 

@@ -8,9 +8,8 @@ public class BoneKey : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player picked up bone key " + keyIndex);
             BoneKeyManager.Instance.CollectKey(keyIndex);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
