@@ -66,10 +66,12 @@ public class UIController : MonoBehaviour
 
     private CinemachineConfiner2D confiner;
     private CinemachineCamera vCam;
-    public float zoomSize;
+    private float zoomSize;
 
     public GameObject bossEntrance;
-    public Vector3 bossEntrancePosition;
+    private Vector3 bossEntrancePosition;
+
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -140,6 +142,11 @@ public class UIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            UnlockAbility(1);
         }
 
         CheckButton();
@@ -273,6 +280,7 @@ public class UIController : MonoBehaviour
 
     public void MainMenu()
     {
+
         SceneManager.LoadScene(mainMenuScene);
 
         Time.timeScale = 1f;
@@ -288,6 +296,7 @@ public class UIController : MonoBehaviour
 
     public void RestartLevel()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         Time.timeScale = 1f;
@@ -347,7 +356,8 @@ public class UIController : MonoBehaviour
     public void loadGame()
     {
         StopAllCoroutines();
-
+        LevelLoader.Instance.transition.SetTrigger("Start");
+        LevelLoader.Instance.transition.SetTrigger("End");
         SaveManager.Instance.load();
         Time.timeScale = 1f;
 
@@ -358,8 +368,21 @@ public class UIController : MonoBehaviour
 
         playerHealth = saveStats.health;
         GameManager.instance.currentLevel = saveStats.level; 
+        GameManager.instance.FightingDenialBoss = false;
         player.transform.position = saveStats.myPos.GetPos();
 
+        
+        for (int i = 0; i < saveStats.momentosCollected.Length; i++)
+        {
+            if (saveStats.momentosCollected[i])
+            {
+                MementoManager.instance.CollectMemento(i);
+            }
+            else
+            {
+                MementoManager.instance.UncollectMemento(i);
+            }
+        }
         
 
         confiner.BoundingShape2D = cameraBounds;
@@ -372,6 +395,8 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
+
+
     }
 
     public void ApplyDamage(int damageAmount = 1)
@@ -495,8 +520,9 @@ public class UIController : MonoBehaviour
             ShowWarning();
             return;
         }
-        else
+        if (abilityIndex != 0 && isUnlocked[abilityIndex])
         {
+            Debug.Log("Entered Sprite Change");
             // Change sprite using the new index logic (2i = available, 2i+1 = not available)
             int spriteIndex = abilityIndex * 2 + 1;
             if (spriteIndex < abilitySprites.Length)
@@ -543,5 +569,15 @@ public class UIController : MonoBehaviour
         abilityOutlines[abilityIndex].enabled = false;
 
         isOnCooldown[abilityIndex] = false;
+    }
+
+    public void UnlockAbility(int abilityIndex)
+    {
+        isUnlocked[abilityIndex] = true;
+        int spriteIndex = abilityIndex * 2;
+        if (spriteIndex < abilitySprites.Length)
+        {
+            abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
     }
 }

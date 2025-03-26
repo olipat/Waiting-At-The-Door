@@ -20,7 +20,7 @@ public class Memento : MonoBehaviour
     void PickupMemento()
     {
         MementoManager.instance.CollectMemento(index); 
-        Destroy(gameObject); 
+        gameObject.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)

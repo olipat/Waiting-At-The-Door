@@ -6,7 +6,7 @@ public class MementoManager : MonoBehaviour
     public static MementoManager instance;
 
     public Image[] mementoSlots; 
-    private int collectedCount = 0;
+    public GameObject[] mementos;
 
     void Awake()
     {
@@ -18,10 +18,20 @@ public class MementoManager : MonoBehaviour
 
     public void CollectMemento(int index)
     {
-        if (collectedCount < mementoSlots.Length && index < mementoSlots.Length)
+        if (index < mementoSlots.Length)
         {
             mementoSlots[index].color = Color.white; 
-            collectedCount++;
+
+            UIController.Instance.saveStats.momentosCollected[index] = true;
+        }
+    }
+
+    public void UncollectMemento(int index)
+    {
+        if (index < mementoSlots.Length)
+        {
+            mementoSlots[index].color = Color.black;
+            mementos[index].SetActive(true);
         }
     }
 }
