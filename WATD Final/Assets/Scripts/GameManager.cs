@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     private void UpdateLevelNumber()
     {
         currentLevel = SceneManager.GetActiveScene().buildIndex; // Get scene index from Build Settings
-        Debug.Log("Current Level: " + currentLevel);
     }
 
     public void LoadLevel(int level)
