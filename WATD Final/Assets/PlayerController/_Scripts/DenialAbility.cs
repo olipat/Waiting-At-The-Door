@@ -43,7 +43,11 @@ public class DenialAbility : MonoBehaviour
             return;
         }
 
-        if (activePlatforms.Count >= maxPlatforms) return;
+        if (activePlatforms.Count >= maxPlatforms)
+        {
+            UIController.Instance.ShowPathWarning();
+            return;
+        }
 
         Vector3 spawnOffset = facingRight ? Vector3.right : Vector3.left;
         Vector3 spawnPosition = transform.position + spawnOffset * 5f + Vector3.up * 0.5f;

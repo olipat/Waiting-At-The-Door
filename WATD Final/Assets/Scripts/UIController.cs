@@ -71,6 +71,9 @@ public class UIController : MonoBehaviour
     public GameObject bossEntrance;
     private Vector3 bossEntrancePosition;
 
+    private GameObject platforms;
+
+    public TMP_Text pathsAvailableText;
     
 
 
@@ -148,6 +151,8 @@ public class UIController : MonoBehaviour
         {
             UnlockAbility(1);
         }
+
+        CheckPlatformCount();
 
         CheckButton();
 
@@ -492,15 +497,7 @@ public class UIController : MonoBehaviour
         if (abilityIndex == 0)
         {
             DenialAbility denial = player.GetComponent<DenialAbility>();
-            if (denial != null)
-            {
-                if (DenialAbility.Instance.GetPlatformCount() == 3)
-                {
-                    ShowPathWarning();
-                    return;
-                }
-            }
-            else
+            if (denial == null)
             {
                 Debug.LogError("DenialAbility script not found on the player GameObject.");
                 return;
@@ -589,6 +586,30 @@ public class UIController : MonoBehaviour
         if (spriteIndex < abilitySprites.Length)
         {
             abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
+    }
+
+    public void CheckPlatformCount(int abilityIndex = 0)
+    {
+        pathsAvailableText.text = (DenialAbility.Instance.maxPlatforms - DenialAbility.Instance.GetPlatformCount()).ToString();
+        
+        if (DenialAbility.Instance.GetPlatformCount() < 3)
+        {
+            int spriteIndex = abilityIndex * 2;
+            if (spriteIndex < abilitySprites.Length)
+            {
+                abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+            }
+            abilityOutlines[abilityIndex].enabled = false;
+        }
+        else
+        {
+            int spriteIndex = abilityIndex * 2 + 1;
+            if (spriteIndex < abilitySprites.Length)
+            {
+                abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+            }
+            abilityOutlines[abilityIndex].enabled = true;
         }
     }
 }
