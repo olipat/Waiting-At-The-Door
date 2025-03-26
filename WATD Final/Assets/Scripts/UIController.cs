@@ -345,8 +345,10 @@ public class UIController : MonoBehaviour
 
         playerHealth = saveStats.health;
         GameManager.instance.currentLevel = saveStats.level; 
+        GameManager.instance.FightingDenialBoss = false;
         player.transform.position = saveStats.myPos.GetPos();
 
+        
         for (int i = 0; i < saveStats.momentosCollected.Length; i++)
         {
             if (saveStats.momentosCollected[i])
