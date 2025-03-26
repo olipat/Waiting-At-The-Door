@@ -66,10 +66,12 @@ public class UIController : MonoBehaviour
 
     private CinemachineConfiner2D confiner;
     private CinemachineCamera vCam;
-    public float zoomSize;
+    private float zoomSize;
 
     public GameObject bossEntrance;
-    public Vector3 bossEntrancePosition;
+    private Vector3 bossEntrancePosition;
+
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -144,7 +146,7 @@ public class UIController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            unlockAbility(1);
+            UnlockAbility(1);
         }
 
         CheckButton();
@@ -255,6 +257,7 @@ public class UIController : MonoBehaviour
 
     public void MainMenu()
     {
+
         SceneManager.LoadScene(mainMenuScene);
 
         Time.timeScale = 1f;
@@ -270,6 +273,7 @@ public class UIController : MonoBehaviour
 
     public void RestartLevel()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         Time.timeScale = 1f;
@@ -329,7 +333,8 @@ public class UIController : MonoBehaviour
     public void loadGame()
     {
         StopAllCoroutines();
-
+        LevelLoader.Instance.transition.SetTrigger("Start");
+        LevelLoader.Instance.transition.SetTrigger("End");
         SaveManager.Instance.load();
         Time.timeScale = 1f;
 
@@ -541,7 +546,7 @@ public class UIController : MonoBehaviour
         isOnCooldown[abilityIndex] = false;
     }
 
-    public void unlockAbility(int abilityIndex)
+    public void UnlockAbility(int abilityIndex)
     {
         isUnlocked[abilityIndex] = true;
         int spriteIndex = abilityIndex * 2;

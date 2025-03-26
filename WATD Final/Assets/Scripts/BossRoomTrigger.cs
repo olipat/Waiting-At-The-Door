@@ -49,7 +49,7 @@ public class BossRoomTrigger : MonoBehaviour
             Debug.Log("Entered Boss Room, stopping player.");
             playerController.enabled = false;
             inBossRoom = true;
-            GameManager.instance.FightingDenialBoss = true;
+            
             playerRB.linearVelocity = Vector2.zero; // Stop all movement
 
             UIController.Instance.saveGame(savePosition);
@@ -61,6 +61,8 @@ public class BossRoomTrigger : MonoBehaviour
 
     private IEnumerator HandleCameraMovement()
     {
+        
+
         Vector3 startPosition = vCam.transform.position;
         Vector3 rightPosition = startPosition + cameraMoveRightOffset; // Move right
         Vector3 finalPosition = rightPosition + cameraMoveUpOffset;   // Move up after right
@@ -114,6 +116,10 @@ public class BossRoomTrigger : MonoBehaviour
         vCam.PreviousStateIsValid = false;
         playerController.enabled = true;
 
+        GameManager.instance.FightingDenialBoss = true;
+
         bossRoomDoor.isTrigger = false;
+
+        
     }
 }
