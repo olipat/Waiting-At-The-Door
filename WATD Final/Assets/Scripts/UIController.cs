@@ -239,6 +239,29 @@ public class UIController : MonoBehaviour
         abilityWarningCounter = abilityWarningTime;
     }
 
+    public void ShowAbilityWarning(string customMessage, float duration)
+    {
+        cooldownWarning.SetActive(false);
+        pathWarning.SetActive(false);
+
+        abilityWarning.SetActive(true);
+
+        TMP_Text warningText = abilityWarning.GetComponentInChildren<TMP_Text>();
+        if (warningText != null)
+        {
+            warningText.text = customMessage;
+        }
+
+        StartCoroutine(ClearWarningAfterDelay(duration));
+    }
+
+    IEnumerator ClearWarningAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        abilityWarning.SetActive(false);
+    }
+
+
     public void ShowPathWarning()
     {
         cooldownWarning.SetActive(false);
