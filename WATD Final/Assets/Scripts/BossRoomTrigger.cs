@@ -116,7 +116,7 @@ public class BossRoomTrigger : MonoBehaviour
         vCam.PreviousStateIsValid = false;
         playerController.enabled = true;
 
-        GameManager.instance.FightingDenialBoss = true;
+        GameManager.instance.FightingBoss = true;
 
         bossRoomDoor.isTrigger = false;
 

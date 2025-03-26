@@ -169,7 +169,7 @@ public class UIController : MonoBehaviour
 
     public void CheckButton()
     {
-        if (GameManager.instance.FightingDenialBoss) 
+        if (GameManager.instance.FightingBoss) 
         {
             saveButton.GetComponent<Image>().sprite = buttonNotAvailable;
 
@@ -373,7 +373,7 @@ public class UIController : MonoBehaviour
 
         playerHealth = saveStats.health;
         GameManager.instance.currentLevel = saveStats.level; 
-        GameManager.instance.FightingDenialBoss = false;
+        GameManager.instance.FightingBoss = false;
         player.transform.position = saveStats.myPos.GetPos();
 
         

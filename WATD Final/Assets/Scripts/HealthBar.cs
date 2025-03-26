@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 
     public void Update()
     {
-        if (GameManager.instance.FightingDenialBoss)
+        if (GameManager.instance.FightingBoss)
         {
             slider.gameObject.SetActive(true);
         }
