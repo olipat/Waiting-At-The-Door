@@ -82,13 +82,13 @@ public class UIController : MonoBehaviour
     {
         saveGame();
 
-        
 
+        Debug.Log("Works here");
         if (AudioManager.instance.playingBGM == false)
         {
             AudioManager.instance.PlayBGM();
         }
-
+        Debug.Log("Doesnt work here");
         vCam = FindFirstObjectByType<CinemachineCamera>(); // Get Cinemachine Camera
         confiner = vCam.GetComponent<CinemachineConfiner2D>(); // Get Camera Confiner
         zoomSize = vCam.Lens.OrthographicSize;
@@ -486,6 +486,8 @@ public class UIController : MonoBehaviour
 
     void ActivateAbility(int abilityIndex)
     {
+        
+
         if (abilityIndex < 0 || abilityIndex >= abilities.Length) return;
 
         if (isUnlocked[abilityIndex] == false)
@@ -513,6 +515,7 @@ public class UIController : MonoBehaviour
             }
 
             AngerBarkAbility anger = player.GetComponent<AngerBarkAbility>();
+            
             if (anger != null)
             {
                 anger.UseAngerBark();  

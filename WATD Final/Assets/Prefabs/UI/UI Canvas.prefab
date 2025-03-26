@@ -2516,7 +2516,7 @@ MonoBehaviour:
   - 3
   - 3
   bossEntrance: {fileID: 0}
-  pathsAvailableText: {fileID: 8974657603111834091}
+  pathsAvailableText: {fileID: 4141873000065331207}
 --- !u!1 &5332655351017860469
 GameObject:
   m_ObjectHideFlags: 0

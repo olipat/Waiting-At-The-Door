@@ -308,6 +308,7 @@ MonoBehaviour:
   playingMenuMusic: 0
   bgm:
   - {fileID: 3639342049316492522}
+  - {fileID: 2112245834209324908}
   currentBGM: 0
   playingBGM: 0
   BGMScene: 0
