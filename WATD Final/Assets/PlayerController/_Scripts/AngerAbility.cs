@@ -8,9 +8,17 @@ public class AngerBarkAbility : MonoBehaviour
     public LayerMask enemyLayer;
     public LayerMask breakableLayer;
 
-    //Add sound here later 
-    public AudioSource barkSound;
+    public AudioClip barkclip;
+    private AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
     public void UseAngerBark()
     {
         StartCoroutine(AngerBark());
@@ -18,12 +26,19 @@ public class AngerBarkAbility : MonoBehaviour
 
     private System.Collections.IEnumerator AngerBark()
     {
-        Debug.Log("Anger Bark activated!");
 
-        // sound for later
-        if (barkSound != null)
+        if (barkclip != null && audioSource != null)
         {
-            barkSound.Play();
+            audioSource.clip = barkclip;
+            audioSource.time = 0.5f;
+            audioSource.pitch = 0.7f;
+            audioSource.Play();
+
+            float adjustedDuration = 1f / audioSource.pitch;
+            yield return new WaitForSeconds(adjustedDuration);
+
+            audioSource.Stop();
+            audioSource.pitch = 1f;
         }
 
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, barkRange, enemyLayer);

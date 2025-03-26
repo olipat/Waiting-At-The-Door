@@ -18,11 +18,23 @@ public class DenialAbility : MonoBehaviour
     public float platformLifetime = 5f;
     public float fallSpeed = 0.5f;
     public int maxPlatforms = 3;
+
+    public AudioClip platformSpawnClip;
+    private AudioSource audioSource;
     
 
     private List<GameObject> activePlatforms = new List<GameObject>();
     private bool facingRight = true; 
 
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -56,6 +68,11 @@ public class DenialAbility : MonoBehaviour
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         activePlatforms.Add(newPlatform);
 
+        if (platformSpawnClip != null)
+        {
+            audioSource.clip = platformSpawnClip;
+            audioSource.Play();
+        }
         StartCoroutine(HandlePlatformLifecycle(newPlatform));
 
     }
