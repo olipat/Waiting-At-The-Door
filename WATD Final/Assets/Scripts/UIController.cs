@@ -142,6 +142,11 @@ public class UIController : MonoBehaviour
             PauseUnpause();
         }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            unlockAbility(1);
+        }
+
         CheckButton();
 
         CheckCooldown();
@@ -472,8 +477,9 @@ public class UIController : MonoBehaviour
             ShowWarning();
             return;
         }
-        else
+        if (abilityIndex != 0 && isUnlocked[abilityIndex])
         {
+            Debug.Log("Entered Sprite Change");
             // Change sprite using the new index logic (2i = available, 2i+1 = not available)
             int spriteIndex = abilityIndex * 2 + 1;
             if (spriteIndex < abilitySprites.Length)
@@ -520,5 +526,15 @@ public class UIController : MonoBehaviour
         abilityOutlines[abilityIndex].enabled = false;
 
         isOnCooldown[abilityIndex] = false;
+    }
+
+    public void unlockAbility(int abilityIndex)
+    {
+        isUnlocked[abilityIndex] = true;
+        int spriteIndex = abilityIndex * 2;
+        if (spriteIndex < abilitySprites.Length)
+        {
+            abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
     }
 }
