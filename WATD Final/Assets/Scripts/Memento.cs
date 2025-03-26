@@ -11,7 +11,7 @@ public class Memento : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange)
         {
             PickupMemento();
         }
