@@ -309,6 +309,10 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1f;
 
         AudioManager.instance.PlaySFX(0);
+
+        GameManager.instance.FightingBoss = false;
+
+
     }
 
 
