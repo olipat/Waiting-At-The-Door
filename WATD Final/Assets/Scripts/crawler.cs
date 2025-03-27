@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class crawler : MonoBehaviour
 {
 
@@ -12,6 +12,8 @@ public class crawler : MonoBehaviour
     public bool facingRight;
     public bool isGrounded;
     public bool isWall;
+    private bool frozen = false;
+    public GameObject UIcontrolReferemce;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,11 +28,11 @@ public class crawler : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, radius, groundLayer);
         isWall = Physics2D.OverlapCircle(wallCheck.transform.position, radius, groundLayer);
-        if ((!isGrounded || isWall) && facingRight)
+        if ((!isGrounded || isWall) && facingRight && !frozen)
         {
             Flip();
         }
-        else if ((!isGrounded || isWall) && !facingRight)
+        else if ((!isGrounded || isWall) && !facingRight && !frozen)
         {
             Flip();
         }
@@ -42,6 +44,17 @@ public class crawler : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         //speed = -speed;
         //print("FLIP");
+        frozen = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player" && !frozen)
+        {
+            frozen = true;
+            UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            StartCoroutine(Freeze());
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -49,5 +62,12 @@ public class crawler : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundCheck.transform.position, radius);
         Gizmos.DrawWireSphere(wallCheck.transform.position, radius);
+    }
+
+    IEnumerator Freeze()
+    {
+        frozen = true;
+        yield return new WaitForSeconds(1f);
+        frozen = false;
     }
 }
