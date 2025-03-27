@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 15
-  attackCooldown: 1
+  attackCooldown: 3
   projectilePrefab: {fileID: 1034817953463008305, guid: af8d5a2e4add8a54095af61d28e114d8, type: 3}
   firePoint: {fileID: 6653385728730205221}
   player: {fileID: 0}

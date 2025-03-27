@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class StopSignEnemy : MonoBehaviour
 {
     public float patrolSpeed;
@@ -74,7 +73,7 @@ public class StopSignEnemy : MonoBehaviour
         }
         else
         {
-            enemyRB.linearVelocity = Vector2.zero; // Stop in front of player
+            //enemyRB.linearVelocity = Vector2.zero; // Stop in front of player
         }
 
         // Ensure the enemy faces the player
@@ -96,6 +95,9 @@ public class StopSignEnemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRange);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, stopDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.transform.position, 0.2f);
+        Gizmos.DrawWireSphere(wallCheck.transform.position, 0.2f);
     }
 
     //functions below added to handle bark ability being applied 
@@ -114,5 +116,4 @@ public class StopSignEnemy : MonoBehaviour
 
         pushedBack = false;
     }
-
 }

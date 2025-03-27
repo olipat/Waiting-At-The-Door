@@ -37,7 +37,7 @@ public class DenialAbility : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("Fire1"))
         {
             SpawnPlatform();
         }

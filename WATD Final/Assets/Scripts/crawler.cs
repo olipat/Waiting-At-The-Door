@@ -19,6 +19,7 @@ public class crawler : MonoBehaviour
     void Start()
     {
         EnemyRB = GetComponent<Rigidbody2D>();
+        UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
     }
 
     // Update is called once per frame
