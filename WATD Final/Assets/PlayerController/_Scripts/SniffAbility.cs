@@ -13,6 +13,7 @@ public class SniffAbility : MonoBehaviour
     {
         if (Input.GetKeyDown(sniffKey))
         {
+            AudioManager.instance.PlaySFX(11);
             SniffForPlatforms();
         }
     }

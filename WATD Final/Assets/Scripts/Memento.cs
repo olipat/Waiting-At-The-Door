@@ -13,6 +13,7 @@ public class Memento : MonoBehaviour
     {
         if (playerInRange)
         {
+            AudioManager.instance.PlaySFX(8);
             PickupMemento();
         }
     }

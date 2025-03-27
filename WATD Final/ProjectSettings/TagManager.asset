@@ -57,14 +57,14 @@ TagManager:
   - name: FallingPlats
     uniqueID: 2258411853
     locked: 0
+  - name: Player
+    uniqueID: 1895511847
+    locked: 0
   - name: Foreground
     uniqueID: 2729897889
     locked: 0
   - name: UI
     uniqueID: 270187461
-    locked: 0
-  - name: Player
-    uniqueID: 1895511847
     locked: 0
   - name: Particles
     uniqueID: 1400053797
