@@ -66,7 +66,7 @@ public class UIController : MonoBehaviour
 
     private CinemachineConfiner2D confiner;
     private CinemachineCamera vCam;
-    private float zoomSize;
+    public float zoomSize;
 
     public GameObject bossEntrance;
     private Vector3 bossEntrancePosition;
@@ -380,7 +380,17 @@ public class UIController : MonoBehaviour
         GameManager.instance.FightingBoss = false;
         player.transform.position = saveStats.myPos.GetPos();
 
-        
+        confiner.BoundingShape2D = cameraBounds;
+        confiner.InvalidateBoundingShapeCache();
+
+        vCam.Follow = player.transform;
+        vCam.Lens.OrthographicSize = zoomSize;
+
+        vCam.PreviousStateIsValid = false;
+
+        bossEntrance.transform.position = bossEntrancePosition;
+        BossRoomTrigger.Instance.inBossRoom = false;
+
         for (int i = 0; i < saveStats.momentosCollected.Length; i++)
         {
             if (saveStats.momentosCollected[i])
@@ -392,29 +402,22 @@ public class UIController : MonoBehaviour
                 MementoManager.instance.UncollectMemento(i);
             }
         }
-        
-        for (int i = 0; i < saveStats.boneKeysCollected.Length; i++)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            if (saveStats.boneKeysCollected[i])
+            for (int i = 0; i < saveStats.boneKeysCollected.Length; i++)
             {
-                BoneKeyManager.Instance.CollectKey(i);
-            }
-            else
-            {
-                BoneKeyManager.Instance.UncollectKey(i);
+                if (saveStats.boneKeysCollected[i])
+                {
+                    BoneKeyManager.Instance.CollectKey(i);
+                }
+                else
+                {
+                    BoneKeyManager.Instance.UncollectKey(i);
+                }
             }
         }
 
-        confiner.BoundingShape2D = cameraBounds;
-        confiner.InvalidateBoundingShapeCache();
-
-        vCam.Follow = player.transform;
-        vCam.Lens.OrthographicSize = zoomSize;
-
-        vCam.PreviousStateIsValid = false;
-
-        bossEntrance.transform.position = bossEntrancePosition;
-        BossRoomTrigger.Instance.inBossRoom = false;
+        
 
         
 

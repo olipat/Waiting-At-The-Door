@@ -64,6 +64,7 @@ public class DenialAbility : MonoBehaviour
         Vector3 spawnOffset = facingRight ? Vector3.right : Vector3.left;
         Vector3 spawnPosition = transform.position + spawnOffset * 5f + Vector3.up * 0.5f;
 
+        AudioManager.instance.PlaySFX(9);
 
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         activePlatforms.Add(newPlatform);

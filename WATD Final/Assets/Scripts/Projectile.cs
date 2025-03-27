@@ -2,39 +2,35 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 5f;
-    public float lifetime = 3f;
-    public int damage = 10;
-
-    private Vector3 targetDirection;
+    public float speed = 3f;
+    public int damageAmount = 20;
+    private Rigidbody2D rb;
+    public int direction = -1; // 1 = right, -1 = left
+    private GameObject UIcontrolReferemce;
+    public float maxLifetime = 10f; // Maximum time before despawning
 
     void Start()
     {
-        targetDirection = (GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).normalized;
-        Destroy(gameObject, lifetime);
+        rb = GetComponent<Rigidbody2D>();
+        UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
+        Destroy(gameObject, maxLifetime);
     }
 
     void Update()
     {
-        transform.position += targetDirection * speed * Time.deltaTime;
+        rb.linearVelocity = new Vector2(speed * direction, rb.linearVelocity.y);
     }
 
-    //void OnTriggerEnter2D(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        print("tire hit player");
-    //        Destroy(gameObject);
-    //    }
-    //}
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        //if (collision.gameObject.CompareTag("Wall"))
+        //{
+        //    direction *= -1;//everse direction when hitting a wall
+        //}
+        if (collision.gameObject.CompareTag("Player"))
         {
-            print("tire hit player");
-            Destroy(gameObject);
+            UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            Destroy(gameObject);//disappears after hitting player
         }
     }
-
 }
