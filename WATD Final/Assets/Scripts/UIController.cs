@@ -390,19 +390,21 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
-
-        for (int i = 0; i < saveStats.momentosCollected.Length; i++)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if (saveStats.momentosCollected[i])
+            for (int i = 0; i < saveStats.momentosCollected.Length; i++)
             {
-                MementoManager.instance.CollectMemento(i);
-            }
-            else
-            {
-                MementoManager.instance.UncollectMemento(i);
+                if (saveStats.momentosCollected[i])
+                {
+                    MementoManager.instance.CollectMemento(i);
+                }
+                else
+                {
+                    MementoManager.instance.UncollectMemento(i);
+                }
             }
         }
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             for (int i = 0; i < saveStats.boneKeysCollected.Length; i++)
             {
