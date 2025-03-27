@@ -41,6 +41,6 @@ public class TennisBallLauncher : MonoBehaviour
 
     void LaunchBall()
     {
-        ballPrefab.transform.position = Vector2.MoveTowards(ballPrefab.transform.position, target.position, 0.4f);
+        ballPrefab.transform.position = Vector2.MoveTowards(ballPrefab.transform.position, target.position, 0.2f);
     }
 }
