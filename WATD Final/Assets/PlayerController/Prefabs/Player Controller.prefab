@@ -172,7 +172,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  barkClip: {fileID: 0}
+  barkClip: {fileID: 8300000, guid: 5d2ce14ea35b4b74f9254743b1a1c10b, type: 3}
 --- !u!114 &6251130689384621886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   breakableLayer:
     serializedVersion: 2
     m_Bits: 1024
-  barkclip: {fileID: 0}
+  barkclip: {fileID: 8300000, guid: 1b05f341a4d69fa4c92e429d78503d85, type: 3}
 --- !u!1 &2969068311587289281
 GameObject:
   m_ObjectHideFlags: 0

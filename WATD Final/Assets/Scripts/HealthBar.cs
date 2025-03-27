@@ -4,17 +4,20 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
+    public GameObject sliderObject;
 
     public void Update()
     {
-        if (GameManager.instance.FightingBoss)
+        if (GameManager.instance.FightingBoss == true)
         {
-            slider.gameObject.SetActive(true);
+            sliderObject.gameObject.SetActive(true);
         }
         else
         {
-            slider.gameObject.SetActive(false);
+            sliderObject.gameObject.SetActive(false);
         }
+
+        
     }
 
     public void setMaxHealth(int health)

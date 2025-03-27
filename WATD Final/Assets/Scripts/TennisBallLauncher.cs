@@ -27,6 +27,8 @@ public class TennisBallLauncher : MonoBehaviour
             target.GetComponent<denialBoss>().flag = true;
             this.gameObject.SetActive(false);
             this.enabled = false;
+
+            
         }
     }
 

@@ -18,6 +18,9 @@ public class denialBoss : MonoBehaviour
     public int health = 3;
     public bool flag = true;
 
+    public GameObject toDestroy;
+    public GameObject slider;
+
     void Start()
     {
         StartCoroutine(ControlBeams());
@@ -43,6 +46,12 @@ public class denialBoss : MonoBehaviour
         else if(health <= 0)
         {
             this.gameObject.SetActive(false);
+            GameManager.instance.FightingBoss = false;
+            UIController.Instance.UnlockAbility(1);
+            Destroy(toDestroy);
+            Destroy(slider);
+
+            AudioManager.instance.PlayBGM();
         }
     }
 

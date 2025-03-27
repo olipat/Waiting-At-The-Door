@@ -9,7 +9,7 @@ public class bossBeam : MonoBehaviour
 
     private bool isPlayerInLight = false;
     private float timeInLight = 0f;
-    private bool isLightOn = true;
+    //private bool isLightOn = true;
 
     public GameObject rollingBallPrefab; // The rolling ball prefab
     public Transform spawnPoint; // Where the ball will spawn
