@@ -296,6 +296,8 @@ public class UIController : MonoBehaviour
         {
             AudioManager.instance.PlayMenuMusic();
         }
+
+        GameManager.instance.FightingBoss = false;
     }
 
 
