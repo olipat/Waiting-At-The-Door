@@ -63,7 +63,7 @@ public class tireShootingEnemy : MonoBehaviour
 
     void ShootProjectile()
     {
-        if (projectilePrefab != null && firePoint != null)
+        if (projectilePrefab != null && firePoint != null && UIController.Instance.playerHealth > 0)
         {
             Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         }

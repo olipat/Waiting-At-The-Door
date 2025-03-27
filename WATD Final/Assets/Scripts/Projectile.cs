@@ -1,3 +1,5 @@
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -13,6 +15,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
+        UIController.Instance.tireList.Add(this);
         Destroy(gameObject, maxLifetime);
     }
 
@@ -30,6 +33,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            AudioManager.instance.PlaySFX(6);
             Destroy(gameObject);//disappears after hitting player
         }
     }

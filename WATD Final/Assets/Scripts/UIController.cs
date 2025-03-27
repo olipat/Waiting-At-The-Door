@@ -74,8 +74,8 @@ public class UIController : MonoBehaviour
     private GameObject platforms;
 
     public TMP_Text pathsAvailableText;
-    
 
+    public List<Projectile> tireList = new List<Projectile>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -417,7 +417,7 @@ public class UIController : MonoBehaviour
             }
         }
 
-        
+        playerDied = false;
 
         
 
@@ -433,6 +433,17 @@ public class UIController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
+           
+            foreach (Projectile tire in tireList)
+            {
+                if (tire != null)
+                {
+                    Destroy(tire.gameObject);
+                }
+                
+            }
+            tireList.Clear();
+
             PlayerDeath();
         }
     }
