@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         AudioManager.instance.PlayMenuMusic();
-        StartCoroutine(FadeLoop());
+        //StartCoroutine(FadeLoop());
     }
 
     // Update is called once per frame
@@ -26,9 +26,9 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         LevelLoader.Instance.LoadNextLevel();
-
-        AudioManager.instance.PlayBGM();
         AudioManager.instance.PlaySFX(0);
+        AudioManager.instance.PlayBGM();
+        
     }
 
     public void QuitGame()
