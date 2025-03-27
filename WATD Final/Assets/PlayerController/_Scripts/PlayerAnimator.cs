@@ -134,6 +134,12 @@ namespace Controller
             main.startColor = _currentGradient;
         }
 
+        public void ForceIdle()
+        {
+            _anim.SetFloat(IdleSpeedKey, 0f); // idle speed
+            _moveParticles.Stop();            // stop VFX
+        }
+
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");

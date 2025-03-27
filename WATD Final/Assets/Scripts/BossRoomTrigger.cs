@@ -49,6 +49,10 @@ public class BossRoomTrigger : MonoBehaviour
             AudioManager.instance.PlayBossMusic();
 
             Debug.Log("Entered Boss Room, stopping player.");
+
+            player.GetComponentInChildren<Controller.PlayerAnimator>().ForceIdle();
+            player.GetComponentInChildren<Controller.PlayerAnimator>().enabled = false;
+
             playerController.enabled = false;
             inBossRoom = true;
 
@@ -102,6 +106,8 @@ public class BossRoomTrigger : MonoBehaviour
             yield return null;
         }
 
+        
+
         // Ensure final values are set
         vCam.transform.position = finalPosition;
         vCam.Lens.OrthographicSize = zoomOutSize;
@@ -119,9 +125,8 @@ public class BossRoomTrigger : MonoBehaviour
         playerController.enabled = true;
 
         GameManager.instance.FightingBoss = true;
+        player.GetComponentInChildren<Controller.PlayerAnimator>().enabled = true;
 
-        bossRoomDoor.isTrigger = false;
-
-        
+        //bossRoomDoor.isTrigger = false;
     }
 }
