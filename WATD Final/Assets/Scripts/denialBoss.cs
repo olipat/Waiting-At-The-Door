@@ -4,52 +4,86 @@ using System.Collections.Generic;
 
 public class denialBoss : MonoBehaviour
 {
-    public Transform[] targetLocations; // Array of light positions
-    private List<int> activeLights = new List<int>(); // Stores currently active lights
-    private bool loopFlag = false;
+    public List<bossBeam> beams = new List<bossBeam>(); // Assign 9 beams in the inspector
+    public float minOnTime = 3f;
+    public float maxOnTime = 6f;
+    public float minOffTime = 2f;
+    public float maxOffTime = 5f;
+    public float flickerDuration = 1f;
+    public int maxActiveBeams = 2;
+
+    private List<bossBeam> activeBeams = new List<bossBeam>();
+    public GameObject[] tennisBalls; // Prefab to spawn
+    public HealthBar hb;
+    public int health = 3;
+    public bool flag = true;
 
     void Start()
     {
-        StartCoroutine(BossCoroutine());
+        StartCoroutine(ControlBeams());
+        hb.setMaxHealth(3);
+        int randomIndex = Random.Range(0,3);
+        tennisBalls[randomIndex].SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
-        if (loopFlag)
+        if(health == 2 && flag)
         {
-            loopFlag = false;
-            StartCoroutine(BossCoroutine());
+            int randomIndex = Random.Range(3, 6);
+            tennisBalls[randomIndex].SetActive(true);
+            flag = false;
+        }
+        else if(health == 1 && flag)
+        {
+            int randomIndex = Random.Range(6, 9);
+            tennisBalls[randomIndex].SetActive(true);
+            flag = false;
+        }
+        else if(health <= 0)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 
-    IEnumerator BossCoroutine()
+    IEnumerator ControlBeams()
     {
-        // Clear previously active lights
-        activeLights.Clear();
-
-        // Determine how many lights to turn on (e.g., 2 to 5 lights)
-        int numLightsToActivate = Random.Range(2, 6);
-
-        // Pick random unique lights
-        while (activeLights.Count < numLightsToActivate)
+        while (true)
         {
-            int randomLight = Random.Range(0, targetLocations.Length);
-            if (!activeLights.Contains(randomLight))
+            // Ensure only 2 beams are on
+            while (activeBeams.Count < maxActiveBeams)
             {
-                activeLights.Add(randomLight);
+                bossBeam newBeam = GetRandomInactiveBeam();
+                if (newBeam != null)
+                {
+                    StartCoroutine(ToggleBeam(newBeam));
+                    activeBeams.Add(newBeam);
+                }
             }
+
+            yield return new WaitForSeconds(Random.Range(minOnTime, maxOnTime));
+
+            // Turn off one of the active beams
+            if (activeBeams.Count > 0)
+            {
+                bossBeam beamToTurnOff = activeBeams[0];
+                beamToTurnOff.TurnOff();
+                activeBeams.RemoveAt(0);
+            }
+
+            yield return new WaitForSeconds(Random.Range(minOffTime, maxOffTime));
         }
+    }
 
-        // Print active lights (replace with actual light activation)
-        foreach (int lightIndex in activeLights)
-        {
-            print("Shine light on point " + lightIndex);
-            // You can replace this with actual light activation logic
-        }
+    IEnumerator ToggleBeam(bossBeam beam)
+    {
+        yield return StartCoroutine(beam.FlickerOn(flickerDuration));
+    }
 
-        // Wait for 5 seconds before changing lights again
-        yield return new WaitForSeconds(5);
-
-        loopFlag = true;
+    bossBeam GetRandomInactiveBeam()
+    {
+        List<bossBeam> inactiveBeams = beams.FindAll(b => !b.IsActive);
+        if (inactiveBeams.Count == 0) return null;
+        return inactiveBeams[Random.Range(0, inactiveBeams.Count)];
     }
 }
