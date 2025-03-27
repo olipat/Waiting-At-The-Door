@@ -361,10 +361,14 @@ public class UIController : MonoBehaviour
     public void loadGame()
     {
         StopAllCoroutines();
+        
         LevelLoader.Instance.transition.SetTrigger("Start");
         LevelLoader.Instance.transition.SetTrigger("End");
+
         SaveManager.Instance.load();
         Time.timeScale = 1f;
+
+        FallingPlatforms.instance.returnPlatforms();
 
         Controller.PlayerController playerController = FindFirstObjectByType<Controller.PlayerController>();
         playerController.enabled = true;
@@ -411,6 +415,8 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
+
+        
 
 
     }

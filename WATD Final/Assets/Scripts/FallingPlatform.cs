@@ -6,7 +6,7 @@ public class FallingPlatform : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public float fallDelay = 1.5f;
-    private bool hasFallen = false;
+    public bool hasFallen = false;
     private SpriteRenderer[] spriteRenderers;
 
     private void Start()
@@ -49,5 +49,19 @@ public class FallingPlatform : MonoBehaviour
 
         foreach (SpriteRenderer sr in spriteRenderers)
             sr.color = originalColor;
+    }
+
+    public void ResetPlatform(Vector3 resetPosition)
+    {
+        StopAllCoroutines();
+
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.gravityScale = 0f;
+
+        hasFallen = false;
+        transform.rotation = Quaternion.identity;
+        transform.position = resetPosition;
     }
 }
