@@ -46,10 +46,12 @@ public class BossRoomTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !inBossRoom)
         {
+            AudioManager.instance.PlayBossMusic();
+
             Debug.Log("Entered Boss Room, stopping player.");
             playerController.enabled = false;
             inBossRoom = true;
-            
+
             playerRB.linearVelocity = Vector2.zero; // Stop all movement
 
             UIController.Instance.saveGame(savePosition);

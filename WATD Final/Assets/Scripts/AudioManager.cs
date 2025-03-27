@@ -27,8 +27,10 @@ public class AudioManager : MonoBehaviour
     public AudioSource menuMusic;
     public bool playingMenuMusic;
     public AudioSource[] bgm;
+    public AudioSource[] bossMusic;
     public int currentBGM;
     public bool playingBGM;
+    public bool playingBossMusic;
 
     public bool BGMScene = false;
 
@@ -39,8 +41,10 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-       
+        //This needs preloading to stop buffering
+        bossMusic[currentBGM].Play();
+        bossMusic[currentBGM].Stop();
+
     }
 
     // Update is called once per frame
@@ -55,14 +59,14 @@ public class AudioManager : MonoBehaviour
         {
             if (bgm[currentBGM].isPlaying == false)
             {
-                currentBGM++;
-                if (currentBGM >= bgm.Length)
-                {
-                    currentBGM = 0;
-                }
-
-
                 bgm[currentBGM].Play();
+            }
+        }
+        else if (playingBossMusic)
+        {
+            if(bossMusic[currentBGM].isPlaying == false)
+            {
+                bossMusic[currentBGM].Play();
             }
         }
     }
@@ -76,7 +80,13 @@ public class AudioManager : MonoBehaviour
             track.Stop();
         }
 
+        foreach (AudioSource track in bossMusic)
+        {
+            track.Stop();
+        }
+
         playingBGM = false;
+        playingBossMusic = false;
     }
 
     public void PlayMenuMusic()
@@ -95,6 +105,17 @@ public class AudioManager : MonoBehaviour
 
         bgm[currentBGM].Play();
         playingBGM = true;
+        playingMenuMusic = false;
+        playingBossMusic = false;
+    }
+
+    public void PlayBossMusic()
+    {
+        StopMusic();
+
+        bossMusic[currentBGM].Play();
+        playingBossMusic = true;
+        playingBGM = false;
         playingMenuMusic = false;
     }
 

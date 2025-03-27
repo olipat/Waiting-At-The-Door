@@ -23,6 +23,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
+            AudioManager.instance.StopMusic();
             LoadNextLevel();
         }
     }

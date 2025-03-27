@@ -390,6 +390,7 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
+
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             for (int i = 0; i < saveStats.momentosCollected.Length; i++)
@@ -421,7 +422,10 @@ public class UIController : MonoBehaviour
 
         playerDied = false;
 
-        
+        if(AudioManager.instance.playingBGM == false)
+        {
+            AudioManager.instance.PlayBGM();
+        }
 
 
     }
