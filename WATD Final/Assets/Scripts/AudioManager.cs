@@ -100,7 +100,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM()
     {
         StopMusic();
-
+        Debug.Log(GameManager.instance.currentLevel);
         currentBGM = GameManager.instance.currentLevel - 1;
 
         bgm[currentBGM].Play();
