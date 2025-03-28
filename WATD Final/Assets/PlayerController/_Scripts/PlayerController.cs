@@ -32,6 +32,12 @@ namespace Controller
 
         private float _time;
 
+        //adding some variables to detect slopes for sliding
+        private Vector2 slopeNormal;
+        private float slopeAngle;
+        private bool onSlope;
+        private float maxSlopeAngle = 45f;
+
         private void Awake()
         {
             Instance = this;
@@ -109,9 +115,22 @@ namespace Controller
             // Ground and Ceiling
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            RaycastHit2D hit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
+
+            //detect slopes 
+            if (hit)
+            {
+                slopeNormal = hit.normal;
+                slopeAngle = Vector2.Angle(slopeNormal, Vector2.up);
+                onSlope = slopeAngle > 1.5f && slopeAngle <= maxSlopeAngle;
+            }
+            else
+            {
+                onSlope = false;
+            }
 
             // Landed on the Ground
             if (!_grounded && groundHit)
@@ -191,10 +210,26 @@ namespace Controller
 
         private void HandleGravity()
         {
-            if (_grounded && _frameVelocity.y <= 0f)
+            if (_grounded && _frameVelocity.y <= 0f )
             {
-                _frameVelocity.y = _stats.GroundingForce;
-            }
+                //if the player is on a slope 
+                if (onSlope)
+                {
+                    //Figure out which direction the slope is 
+                    Vector2 slideDirection = new Vector2(slopeNormal.y, -slopeNormal.x).normalized;
+                    float slideDot = Vector2.Dot(slideDirection, Vector2.down);
+
+                    //If sloped down apply sliding to player
+                    if (slideDot > 0)
+                    {
+                        _frameVelocity += slideDirection * 1.5f * (_stats.FallAcceleration * 5f) * Time.fixedDeltaTime;
+                    }
+                }
+                else
+                {
+                    _frameVelocity.y = _stats.GroundingForce;
+                }
+                    }
             else
             {
                 var inAirGravity = _stats.FallAcceleration;
