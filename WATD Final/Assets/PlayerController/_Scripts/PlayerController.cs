@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 namespace Controller
@@ -37,6 +38,13 @@ namespace Controller
         private float slopeAngle;
         private bool onSlope;
         private float maxSlopeAngle = 45f;
+        public PhysicsMaterial2D NoFriction;
+        public PhysicsMaterial2D RegFriction;
+        private bool wasOnSlope = false;
+        private float slopeStayTimer = 0f;
+        private const float slopeTolerance = 0.3f;
+        private float slopeLDTimer = 0f;
+        private const float slopeLDTime = 0.3f;
 
         private void Awake()
         {
@@ -121,15 +129,38 @@ namespace Controller
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
 
             //detect slopes 
-            if (hit)
+            if (groundHit)
             {
                 slopeNormal = hit.normal;
                 slopeAngle = Vector2.Angle(slopeNormal, Vector2.up);
-                onSlope = slopeAngle > 1.5f && slopeAngle <= maxSlopeAngle;
+                onSlope = slopeAngle > 5f && slopeAngle <= maxSlopeAngle;
             }
             else
             {
                 onSlope = false;
+            }
+
+            if (onSlope)
+            {
+                slopeStayTimer = slopeTolerance;
+                wasOnSlope = true;
+            }
+            else
+            {
+                slopeStayTimer -= Time.fixedDeltaTime;
+                if (slopeStayTimer <= 0)
+                {
+                    wasOnSlope = false;
+                }
+            }
+
+            if (_grounded && wasOnSlope)
+            {
+                _col.sharedMaterial = NoFriction;
+            }
+            else
+            {
+                _col.sharedMaterial = RegFriction;
             }
 
             // Landed on the Ground
@@ -215,6 +246,7 @@ namespace Controller
                 //if the player is on a slope 
                 if (onSlope)
                 {
+                    slopeLDTimer = slopeLDTime;
                     //Figure out which direction the slope is 
                     Vector2 slideDirection = new Vector2(slopeNormal.y, -slopeNormal.x).normalized;
                     float slideDot = Vector2.Dot(slideDirection, Vector2.down);
@@ -222,16 +254,24 @@ namespace Controller
                     //If sloped down apply sliding to player
                     if (slideDot > 0)
                     {
-                        _frameVelocity += slideDirection * 1.5f * (_stats.FallAcceleration * 5f) * Time.fixedDeltaTime;
+                        _rb.linearDamping = 0f;
+                        _rb.AddForce(slideDirection * _stats.FallAcceleration * 5f, ForceMode2D.Force);
+
                     }
+                }
+                else if (slopeLDTimer > 0f){
+                    slopeLDTimer -= Time.fixedDeltaTime;
+                    _rb.linearDamping = 0f;
                 }
                 else
                 {
+                    _rb.linearDamping = 1f;
                     _frameVelocity.y = _stats.GroundingForce;
                 }
                     }
             else
             {
+                _rb.linearDamping = 1f;
                 var inAirGravity = _stats.FallAcceleration;
                 if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
                 _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);

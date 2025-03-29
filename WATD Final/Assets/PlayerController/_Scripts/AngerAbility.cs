@@ -58,12 +58,22 @@ public class AngerBarkAbility : MonoBehaviour
         Collider2D[] breakables = Physics2D.OverlapCircleAll(transform.position, barkRange, breakableLayer);
         foreach (Collider2D obj in breakables)
         {
+            Debug.Log("Bark hit: " + obj.name);
             BreakableObject bo = obj.GetComponent<BreakableObject>();
             if (bo != null)
             {
                 bo.Break();
                 Debug.Log(obj.name + " was broken by Anger Bark");
+                continue;
             }
+            // Handle stalactites
+            Stalactite stalactite = obj.GetComponentInParent<Stalactite>();
+            if (stalactite != null)
+            {
+                stalactite.Shatter();
+                Debug.Log(obj.name + " stalactite was shattered by Anger Bark");
+            }
+
         }
 
         yield return null; 

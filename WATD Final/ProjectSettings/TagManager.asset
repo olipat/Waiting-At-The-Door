@@ -9,6 +9,7 @@ TagManager:
   - Small Enemy
   - Breakable
   - UiControl
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Enemy Layer
   - Breakable Object
   - Tire
-  - 
+  - Lava
   - 
   - 
   - 
