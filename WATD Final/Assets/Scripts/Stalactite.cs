@@ -57,7 +57,7 @@ public class Stalactite : MonoBehaviour
     private System.Collections.IEnumerator SinkIntoLava()
     {
         float sinkSpeed = 0.5f;
-        float sinkDuration = 2f;
+        float sinkDuration = 7.5f;
         float elapsed = 0f;
 
         while (elapsed < sinkDuration)
