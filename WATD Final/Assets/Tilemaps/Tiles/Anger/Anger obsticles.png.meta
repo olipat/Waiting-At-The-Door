@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 23ae9fcf3f8b52b41a73e12e3cf06821
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2163038603103499518
+    second: Anger obsticles_0
+  - first:
+      213: -8563691290843793676
+    second: Anger obsticles_1
+  - first:
+      213: -3755576386637909393
+    second: Anger obsticles_2
+  - first:
+      213: -6307541577220202380
+    second: Anger obsticles_3
+  - first:
+      213: -1936462505476803379
+    second: Anger obsticles_4
+  - first:
+      213: 4760962653720104463
+    second: Anger obsticles_5
+  - first:
+      213: 902941703138708097
+    second: Anger obsticles_6
+  - first:
+      213: 2290470607370432326
+    second: Anger obsticles_7
+  - first:
+      213: 23271566421273889
+    second: Anger obsticles_8
+  - first:
+      213: -2285620488722934525
+    second: Anger obsticles_9
+  - first:
+      213: 8038619296897062099
+    second: Anger obsticles_10
+  - first:
+      213: -169329063047912790
+    second: Anger obsticles_11
+  - first:
+      213: 7101868493394939455
+    second: Anger obsticles_12
+  - first:
+      213: 1500300235191844402
+    second: Anger obsticles_13
+  - first:
+      213: -4103903771604137716
+    second: Anger obsticles_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Anger obsticles_0
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2100
+        width: 86
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b0f8ac9d75bf1e0800000000000000
+      internalID: -2163038603103499518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_1
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 2110
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f63623b428a72980800000000000000
+      internalID: -8563691290843793676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_2
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 2099
+        width: 515
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f623a9b9c2381ebc0800000000000000
+      internalID: -3755576386637909393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_3
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 2100
+        width: 507
+        height: 508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47068c3ba5c1778a0800000000000000
+      internalID: -6307541577220202380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1499
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc431307c9d4025e0800000000000000
+      internalID: -1936462505476803379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_5
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 1500
+        width: 491
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e43e31f46521240800000000000000
+      internalID: 4760962653720104463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_6
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 1886
+        width: 453
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a087ce1b4e78c00800000000000000
+      internalID: 902941703138708097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_7
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 1499
+        width: 514
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64fa9c8c1e269cf10800000000000000
+      internalID: 2290470607370432326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_8
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 887
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d28e9cd5da25000800000000000000
+      internalID: 23271566421273889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_9
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1112
+        width: 186
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30590567648d740e0800000000000000
+      internalID: -2285620488722934525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_10
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 781
+        width: 372
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4562cf8a9ee8f60800000000000000
+      internalID: 8038619296897062099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_11
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 963
+        width: 349
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa221e24d1c66adf0800000000000000
+      internalID: -169329063047912790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_12
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 300
+        width: 514
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e085674c7ee8260800000000000000
+      internalID: 7101868493394939455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_13
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 466
+        width: 271
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e7b0f6d1322d410800000000000000
+      internalID: 1500300235191844402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger obsticles_14
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 344
+        width: 263
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c09462d53410c07c0800000000000000
+      internalID: -4103903771604137716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 93205b008addcdd4eb09d8711886f6b3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Anger obsticles_0: -2163038603103499518
+      Anger obsticles_1: -8563691290843793676
+      Anger obsticles_10: 8038619296897062099
+      Anger obsticles_11: -169329063047912790
+      Anger obsticles_12: 7101868493394939455
+      Anger obsticles_13: 1500300235191844402
+      Anger obsticles_14: -4103903771604137716
+      Anger obsticles_2: -3755576386637909393
+      Anger obsticles_3: -6307541577220202380
+      Anger obsticles_4: -1936462505476803379
+      Anger obsticles_5: 4760962653720104463
+      Anger obsticles_6: 902941703138708097
+      Anger obsticles_7: 2290470607370432326
+      Anger obsticles_8: 23271566421273889
+      Anger obsticles_9: -2285620488722934525
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
