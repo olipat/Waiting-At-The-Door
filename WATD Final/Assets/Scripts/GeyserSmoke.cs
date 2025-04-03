@@ -20,10 +20,8 @@ public class SmokePuff : MonoBehaviour
 
     private void Update()
     {
-        // Float upward
         transform.position += Vector3.up * floatSpeed * Time.deltaTime;
 
-        // Fade out over time
         if (sr != null)
         {
             timer += Time.deltaTime;
@@ -31,7 +29,6 @@ public class SmokePuff : MonoBehaviour
             sr.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
         }
 
-        // Destroy after fade
         if (timer >= fadeDuration)
         {
             Destroy(gameObject);

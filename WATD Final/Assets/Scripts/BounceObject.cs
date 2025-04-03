@@ -23,7 +23,7 @@ public class BounceObj : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && canBounce)
+        if (other.CompareTag("Player") && (!isGeyser || canBounce))
         {
             PlayerController pc = other.GetComponent<PlayerController>();
             if (pc != null)

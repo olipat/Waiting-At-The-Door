@@ -14,6 +14,8 @@ namespace Controller
         private bool isBouncing = false;
         private float bounceDuration = 0.5f; 
         private float bounceTimer = 0f;
+        private float _bounceVelocity = 0f;
+
 
        
         [SerializeField] private ScriptableStats _stats;
@@ -85,29 +87,29 @@ namespace Controller
 
         public void TriggerBounce(float velocity)
         {
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, velocity);
+            _bounceVelocity = velocity;
             isBouncing = true;
             bounceTimer = bounceDuration;
-            Debug.Log("Bounce triggered in PlayerController! Velocity: " + velocity);
         }
 
         private void FixedUpdate()
         {
+            CheckCollisions();
+            HandleJump();
+            HandleDirection();
             if (isBouncing)
             {
                 bounceTimer -= Time.fixedDeltaTime;
+                _frameVelocity.y = _bounceVelocity;
+
                 if (bounceTimer <= 0f)
                 {
                     isBouncing = false;
                 }
-                return; 
             }
-            CheckCollisions();
-
-            HandleJump();
-            HandleDirection();
-            HandleGravity();
-            
+            else {
+                HandleGravity();
+            }
             ApplyMovement();
         }
 
