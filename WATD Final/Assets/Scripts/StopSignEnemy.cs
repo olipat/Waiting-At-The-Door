@@ -35,10 +35,11 @@ public class StopSignEnemy : MonoBehaviour
 
         if (distanceToPlayer < detectionRange)
         {
-            MoveToBlockPlayer(distanceToPlayer);
+            MoveToBlockPlayer();
         }
         else
         {
+            isBlocking = false;
             Patrol();
         }
     }
@@ -60,21 +61,20 @@ public class StopSignEnemy : MonoBehaviour
         }
     }
 
-    void MoveToBlockPlayer(float distanceToPlayer)
+    void MoveToBlockPlayer()
     {
         isBlocking = true;
 
         float direction = player.position.x > transform.position.x ? 1 : -1;
 
-        // Move towards the player at a faster speed
-        if (distanceToPlayer > stopDistance)
-        {
-            enemyRB.linearVelocity = new Vector2(direction * chaseSpeed, enemyRB.linearVelocity.y);
-        }
-        else
-        {
-            //enemyRB.linearVelocity = Vector2.zero; // Stop in front of player
-        }
+        //enemyRB.linearVelocity = new Vector2(direction * chaseSpeed, enemyRB.linearVelocity.y);
+
+        float Direction = Mathf.Sign(player.position.x - transform.position.x);
+        Vector2 MovePos = new Vector2(
+            transform.position.x + Direction * chaseSpeed,
+            transform.position.y
+        );
+        transform.position = MovePos;
 
         // Ensure the enemy faces the player
         if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
