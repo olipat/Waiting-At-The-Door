@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
@@ -6,6 +7,7 @@ public class FallingPlatform : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public float fallDelay = 1.5f;
+    public float fallDuration = 3f;
     public bool hasFallen = false;
     private SpriteRenderer[] spriteRenderers;
 
@@ -30,6 +32,9 @@ public class FallingPlatform : MonoBehaviour
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1f; 
+
+        yield return new WaitForSeconds(fallDuration);
+        gameObject.SetActive(false);
     }
 
     //Use this later for sniff ability 

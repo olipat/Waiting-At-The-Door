@@ -15,7 +15,7 @@ public class DenialAbility : MonoBehaviour
     }
 
     public GameObject platformPrefab; 
-    public float platformLifetime = 5f;
+    public float platformLifetime = 2f;
     public float fallSpeed = 0.5f;
     public int maxPlatforms = 3;
 
@@ -89,7 +89,7 @@ public class DenialAbility : MonoBehaviour
             rb.gravityScale = fallSpeed;
         }
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         activePlatforms.Remove(platform);
         Destroy(platform);
     }
