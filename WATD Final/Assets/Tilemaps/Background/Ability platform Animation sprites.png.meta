@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ability platform Animation sprites_0: -592507264849238994
+      Ability platform Animation sprites_1: -8257149778155362661
+      Ability platform Animation sprites_2: 2782244852226019443
+      Ability platform Animation sprites_3: 2057629875141261380
+      Ability platform Animation sprites_4: 8339662740967450896
+      Ability platform Animation sprites_5: 6733592019274691874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
