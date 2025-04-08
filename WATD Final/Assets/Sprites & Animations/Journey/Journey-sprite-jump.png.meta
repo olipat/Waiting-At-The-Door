@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Journey-sprite-jump_0: -4131176072548670829
+      Journey-sprite-jump_1: 2613556716572765592
+      Journey-sprite-jump_2: -5627603279177611290
+      Journey-sprite-jump_3: -7565715694332082849
+      Journey-sprite-jump_4: 3294879591382188157
+      Journey-sprite-jump_5: -3361032086549706513
+      Journey-sprite-jump_6: 7354502229313686339
+      Journey-sprite-jump_7: 66244662664720440
+      Journey-sprite-jump_8: -2023273263482410363
+      Journey-sprite-jump_9: 6432594786009024298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
