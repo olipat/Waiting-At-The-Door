@@ -5,6 +5,7 @@ public class RisingLava : MonoBehaviour
 {
     public float riseSpeed = 3f;
     private bool isRising = false;
+    public float lavaHeight = 100f;
     public Collider2D lavaDeathZone;
 
     private TilemapRenderer re;
@@ -33,7 +34,14 @@ public class RisingLava : MonoBehaviour
     {
         if (isRising)
         {
-            transform.position += Vector3.up * riseSpeed * Time.deltaTime;
+            if (transform.position.y < lavaHeight)  
+            {
+                transform.position += Vector3.up * riseSpeed * Time.deltaTime;
+            }
+            else
+            {
+                isRising = false;  
+            }
         }
     }
 }
