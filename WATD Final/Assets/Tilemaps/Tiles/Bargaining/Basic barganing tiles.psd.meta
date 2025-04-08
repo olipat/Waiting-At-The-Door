@@ -1,0 +1,1080 @@
+fileFormatVersion: 2
+guid: 155d401d69fa2e8458f81fa733230fd0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1970303225373391985
+    second: Basic barganing tiles_0
+  - first:
+      213: 3294691629431427013
+    second: Basic barganing tiles_1
+  - first:
+      213: 6556887067220664946
+    second: Basic barganing tiles_2
+  - first:
+      213: 9199619278556660735
+    second: Basic barganing tiles_3
+  - first:
+      213: -3456802618635448167
+    second: Basic barganing tiles_4
+  - first:
+      213: -5329147975610795456
+    second: Basic barganing tiles_5
+  - first:
+      213: 4899254328455104563
+    second: Basic barganing tiles_6
+  - first:
+      213: -8782435002739660718
+    second: Basic barganing tiles_7
+  - first:
+      213: -2031073252259013392
+    second: Basic barganing tiles_8
+  - first:
+      213: 1043077823230329073
+    second: Basic barganing tiles_9
+  - first:
+      213: 1744854948565258103
+    second: Basic barganing tiles_10
+  - first:
+      213: -8114829440045945306
+    second: Basic barganing tiles_11
+  - first:
+      213: -2618369145916618497
+    second: Basic barganing tiles_12
+  - first:
+      213: 5589706796127551678
+    second: Basic barganing tiles_13
+  - first:
+      213: 6860899619677739132
+    second: Basic barganing tiles_14
+  - first:
+      213: 7312658133932038048
+    second: Basic barganing tiles_15
+  - first:
+      213: -810818613006528411
+    second: Basic barganing tiles_16
+  - first:
+      213: -7819135426759673487
+    second: Basic barganing tiles_17
+  - first:
+      213: -1838394072372160750
+    second: Basic barganing tiles_18
+  - first:
+      213: -2385418977542064731
+    second: Basic barganing tiles_19
+  - first:
+      213: -6539091843295000048
+    second: Basic barganing tiles_20
+  - first:
+      213: -2958470822221935091
+    second: Basic barganing tiles_21
+  - first:
+      213: 6555979727868839886
+    second: Basic barganing tiles_22
+  - first:
+      213: -5895053082784298081
+    second: Basic barganing tiles_23
+  - first:
+      213: 5374427965779040217
+    second: Basic barganing tiles_24
+  - first:
+      213: 784897220362116446
+    second: Basic barganing tiles_25
+  - first:
+      213: -7098051195884494722
+    second: Basic barganing tiles_26
+  - first:
+      213: -8261141544128886988
+    second: Basic barganing tiles_27
+  - first:
+      213: -5916104969744304074
+    second: Basic barganing tiles_28
+  - first:
+      213: 1784402290437317186
+    second: Basic barganing tiles_29
+  - first:
+      213: -1230624251577075394
+    second: Basic barganing tiles_30
+  - first:
+      213: -5709664824686668171
+    second: Basic barganing tiles_31
+  - first:
+      213: 451856172121331450
+    second: Basic barganing tiles_32
+  - first:
+      213: 392111267406703208
+    second: Basic barganing tiles_33
+  - first:
+      213: -5461754239713508263
+    second: Basic barganing tiles_34
+  - first:
+      213: 3354464032453944374
+    second: Basic barganing tiles_35
+  - first:
+      213: -6306464337047695449
+    second: Basic barganing tiles_36
+  - first:
+      213: -7700559658313534584
+    second: Basic barganing tiles_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic barganing tiles_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 2003
+        width: 482
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8300d7d7a318a4e0800000000000000
+      internalID: -1970303225373391985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 2049
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf86b8b49819bd20800000000000000
+      internalID: 3294691629431427013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2003
+        width: 514
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2726a0a3c0ebefa50800000000000000
+      internalID: 6556887067220664946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_3
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 2003
+        width: 514
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3843ffdfc9baf70800000000000000
+      internalID: 9199619278556660735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_4
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 2003
+        width: 514
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99018915558f600d0800000000000000
+      internalID: -3456802618635448167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_5
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 2049
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04af936b6201b06b0800000000000000
+      internalID: -5329147975610795456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_6
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 2003
+        width: 514
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3388cd7bad5adf340800000000000000
+      internalID: 4899254328455104563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_7
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 2049
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258eeb675e58e1680800000000000000
+      internalID: -8782435002739660718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_8
+      rect:
+        serializedVersion: 2
+        x: 3241
+        y: 2003
+        width: 462
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcdd4e53ad20d3e0800000000000000
+      internalID: -2031073252259013392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_9
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 2049
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f04bb6f0c1c97e00800000000000000
+      internalID: 1043077823230329073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1413
+        width: 514
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f80d1c458f63810800000000000000
+      internalID: 1744854948565258103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1413
+        width: 514
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62eed255e95526f80800000000000000
+      internalID: -8114829440045945306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_12
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1415
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff80cce622fa9abd0800000000000000
+      internalID: -2618369145916618497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_13
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1415
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb005cd27b0a29d40800000000000000
+      internalID: 5589706796127551678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_14
+      rect:
+        serializedVersion: 2
+        x: 2629
+        y: 1413
+        width: 515
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c78118e7adfc63f50800000000000000
+      internalID: 6860899619677739132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_15
+      rect:
+        serializedVersion: 2
+        x: 3241
+        y: 1413
+        width: 477
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7d3e424d7cb7560800000000000000
+      internalID: 7312658133932038048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_16
+      rect:
+        serializedVersion: 2
+        x: 3715
+        y: 1895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560987274c46fb4f0800000000000000
+      internalID: -810818613006528411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_17
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 1869
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1793155c1c9dc7390800000000000000
+      internalID: -7819135426759673487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_18
+      rect:
+        serializedVersion: 2
+        x: 3718
+        y: 1866
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217d217d456bc76e0800000000000000
+      internalID: -1838394072372160750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_19
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 762
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a53123141a45eed0800000000000000
+      internalID: -2385418977542064731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_20
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 762
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a4fb63d9a7045a0800000000000000
+      internalID: -6539091843295000048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_21
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 762
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e8a1b367661f6d0800000000000000
+      internalID: -2958470822221935091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_22
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 762
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7c842d3d48bfa50800000000000000
+      internalID: 6555979727868839886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_23
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 762
+        width: 514
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b029c5470903ea0800000000000000
+      internalID: -5895053082784298081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_24
+      rect:
+        serializedVersion: 2
+        x: 3242
+        y: 762
+        width: 492
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d75f2b82cdc59a40800000000000000
+      internalID: 5374427965779040217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_25
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 1242
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d10e40dd384ea00800000000000000
+      internalID: 784897220362116446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_26
+      rect:
+        serializedVersion: 2
+        x: 3729
+        y: 1216
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70a4cf5b08ae7d90800000000000000
+      internalID: -7098051195884494722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_27
+      rect:
+        serializedVersion: 2
+        x: 3734
+        y: 1213
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437c9f6f8878a5d80800000000000000
+      internalID: -8261141544128886988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_28
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 107
+        width: 514
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638b778ffd5c5eda0800000000000000
+      internalID: -5916104969744304074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_29
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 107
+        width: 514
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242e8e1dd6873c810800000000000000
+      internalID: 1784402290437317186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_30
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 107
+        width: 514
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3974c863c1fbeee0800000000000000
+      internalID: -1230624251577075394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_31
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 107
+        width: 514
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5761202d71233c0b0800000000000000
+      internalID: -5709664824686668171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_32
+      rect:
+        serializedVersion: 2
+        x: 2629
+        y: 107
+        width: 514
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af61cd46bc0554600800000000000000
+      internalID: 451856172121331450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_33
+      rect:
+        serializedVersion: 2
+        x: 3234
+        y: 107
+        width: 492
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a6436ce1f017500800000000000000
+      internalID: 392111267406703208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_34
+      rect:
+        serializedVersion: 2
+        x: 3723
+        y: 591
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9548463e473f334b0800000000000000
+      internalID: -5461754239713508263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_35
+      rect:
+        serializedVersion: 2
+        x: 3721
+        y: 565
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634ed3ac3437d8e20800000000000000
+      internalID: 3354464032453944374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_36
+      rect:
+        serializedVersion: 2
+        x: 3726
+        y: 562
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af4a993910fa78a0800000000000000
+      internalID: -6306464337047695449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic barganing tiles_37
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 232
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883b4824acd122590800000000000000
+      internalID: -7700559658313534584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

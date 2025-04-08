@@ -771,10 +771,10 @@ TextureImporter:
       name: Decorated Anger_31
       rect:
         serializedVersion: 2
-        x: 741
-        y: 158
+        x: 742
+        y: 157
         width: 507
-        height: 429
+        height: 427
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,10 +793,10 @@ TextureImporter:
       name: Decorated Anger_33
       rect:
         serializedVersion: 2
-        x: 1386
-        y: 165
+        x: 1387
+        y: 248
         width: 507
-        height: 422
+        height: 287
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -815,10 +815,10 @@ TextureImporter:
       name: Decorated Anger_35
       rect:
         serializedVersion: 2
-        x: 2003
-        y: 227
+        x: 2005
+        y: 228
         width: 507
-        height: 360
+        height: 269
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
