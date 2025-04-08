@@ -149,7 +149,8 @@ public class UIController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            UnlockAbility(1);
+            Debug.Log("Unlocking ability: " +(SceneManager.GetActiveScene().buildIndex + 1));
+            UnlockAbility(SceneManager.GetActiveScene().buildIndex);
         }
 
         CheckPlatformCount();
