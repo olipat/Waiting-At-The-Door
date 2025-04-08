@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7013676276897224544}
   - component: {fileID: 8129459645638688636}
   - component: {fileID: 2110528796386527463}
+  - component: {fileID: 4565371024260854420}
   m_Layer: 0
   m_Name: PhantomPath
   m_TagString: PhantomPlat
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -477642649
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2387152901153186869, guid: 42bc678382ec69e45afa6c2be4cfd8bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,3 +163,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4565371024260854420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630352624785788107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c94d163431b83e4ab84a63d843b4b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 7013676276897224544}
+  one: {fileID: -592507264849238994, guid: 8002870e3541833469dadc4413861d63, type: 3}
+  two: {fileID: -8257149778155362661, guid: 8002870e3541833469dadc4413861d63, type: 3}
+  three: {fileID: 2782244852226019443, guid: 8002870e3541833469dadc4413861d63, type: 3}
+  four: {fileID: 2057629875141261380, guid: 8002870e3541833469dadc4413861d63, type: 3}
+  five: {fileID: 6733592019274691874, guid: 8002870e3541833469dadc4413861d63, type: 3}
+  platformLifetime: 3
+  fallSpeed: 0.5

@@ -558,6 +558,27 @@ public class UIController : MonoBehaviour
                 return;
             }
         }
+        //bargaining ability 
+        else if (abilityIndex == 2) 
+        {
+            if (isOnCooldown[abilityIndex])
+            {
+                ShowWarning();
+                return;
+            }
+
+            BargainingAbility bargain = player.GetComponent<BargainingAbility>();
+            //rebuild platform
+            if (bargain != null)
+            {
+                bargain.TryRebuildPlatform(); 
+            }
+            else
+            {
+                return;
+            }
+        }
+
         else if (isOnCooldown[abilityIndex] == true)
         {
             ShowWarning();

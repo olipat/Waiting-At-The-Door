@@ -15,7 +15,7 @@ public class DenialAbility : MonoBehaviour
     }
 
     public GameObject platformPrefab; 
-    public float platformLifetime = 2f;
+    public float platformLifetime = 3f;
     public float fallSpeed = 0.5f;
     public int maxPlatforms = 3;
 
@@ -68,13 +68,14 @@ public class DenialAbility : MonoBehaviour
 
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         activePlatforms.Add(newPlatform);
+        activePlatforms.RemoveAll(platform => platform == null);
 
         if (platformSpawnClip != null)
         {
             audioSource.clip = platformSpawnClip;
             audioSource.Play();
         }
-        StartCoroutine(HandlePlatformLifecycle(newPlatform));
+        //StartCoroutine(HandlePlatformLifecycle(newPlatform));
 
     }
 
@@ -98,4 +99,11 @@ public class DenialAbility : MonoBehaviour
     {
         return activePlatforms.Count;
     }
+    public void RemovePlatform(GameObject platform)
+    {
+        if (activePlatforms.Contains(platform)){
+            activePlatforms.Remove(platform);
+        }
+    }
 }
+
