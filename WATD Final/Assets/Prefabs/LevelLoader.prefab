@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 3048046018634942919}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85ca0bfec78bc7c46b25c1adac444b8c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3a5d79acea2338e4e928f6e6f41d0e52, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1169742888667981653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -360,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4656758870629132085}
   - component: {fileID: 938701042485390668}
+  - component: {fileID: 9086423165508352029}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -396,4 +397,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1017529409445532913}
-  transitionTime: 1
+  transitionTime: 2
+--- !u!95 &9086423165508352029
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3950064445267659441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b661b4915ea507a4ca41ecdaf1e9393f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

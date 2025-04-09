@@ -456,33 +456,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1047371250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3950064445267659441, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
-  m_PrefabInstance: {fileID: 1610058267}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1047371253
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047371250}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b661b4915ea507a4ca41ecdaf1e9393f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1079679735
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +540,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 79.6
+  m_fontSize: 82.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -627,14 +600,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 938701042485390668, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
-      propertyPath: transitionTime
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1017529409445532913, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 3a5d79acea2338e4e928f6e6f41d0e52, type: 2}
+      objectReference: {fileID: 9100000, guid: 85ca0bfec78bc7c46b25c1adac444b8c, type: 2}
+    - target: {fileID: 1616389870061534489, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Name
+      value: Level_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408378885676992862, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427798552426005539, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 9006058441422148256, guid: 3061f092871a7f44cbc3953e88d37d5f, type: 3}
+    - target: {fileID: 2427798552426005539, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427798552426005539, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427798552426005539, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3950064445267659441, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -682,10 +675,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3950064445267659441, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1047371253}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f511359ea1df4746843787b4ac27c76, type: 3}
 --- !u!1 &1696149275
 GameObject:
