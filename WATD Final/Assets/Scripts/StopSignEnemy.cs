@@ -17,7 +17,7 @@ public class StopSignEnemy : MonoBehaviour
     private bool isBlocking;
     //adding vars to handle basic bark ability
     private bool pushedBack = false;
-    public float pushDuration = 1f;
+    public float pushDuration = 1.5f;
 
     void Start()
     {
