@@ -103,16 +103,21 @@ public class StopSignEnemy : MonoBehaviour
     //functions below added to handle bark ability being applied 
     public void ApplyKnockback(Vector2 direction, float force)
     {
-        enemyRB.AddForce(direction * force, ForceMode2D.Impulse);
-        StartCoroutine(KnockbackCoroutine());
+        StartCoroutine(StunCoroutine());
+
+        // now with the reduced bark force it'll stun stop sign guy no matter force
+        if (force > 0.1f) 
+        {
+            enemyRB.AddForce(direction * force, ForceMode2D.Impulse);
+        }
     }
 
-    private System.Collections.IEnumerator KnockbackCoroutine()
+    private System.Collections.IEnumerator StunCoroutine()
     {
         pushedBack = true;
-        enemyRB.linearVelocity = Vector2.zero;
+        enemyRB.linearVelocity = Vector2.zero; 
 
-        yield return new WaitForSeconds(pushDuration);
+        yield return new WaitForSeconds(1.5f); 
 
         pushedBack = false;
     }

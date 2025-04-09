@@ -9,6 +9,10 @@ public class Memento : MonoBehaviour
     private SpriteRenderer sr;
     private SpriteRenderer[] spriteRenderers;
 
+    [Header("Glow Settings")]
+    public GameObject glowPrefab;
+    private GameObject activeGlow;
+
     void Update()
     {
         if (playerInRange)
@@ -21,6 +25,11 @@ public class Memento : MonoBehaviour
     void PickupMemento()
     {
         MementoManager.instance.CollectMemento(index); 
+        if (activeGlow != null)
+        {
+            activeGlow.SetActive(false); 
+        }
+
         gameObject.SetActive(false);
     }
 
@@ -52,14 +61,24 @@ public class Memento : MonoBehaviour
 
     private IEnumerator GlowGoldTemporarily(float duration)
     {
-        Color originalColor = spriteRenderers[0].color;
-
-        foreach (SpriteRenderer sr in spriteRenderers)
-            sr.color = new Color(1f, 0.84f, 0f);
+        if (glowPrefab != null)
+        {
+            if (activeGlow == null)
+            {
+                activeGlow = Instantiate(glowPrefab, transform.position, Quaternion.identity, transform);
+                activeGlow.transform.localPosition = new Vector3(0f, 0f, 1f); 
+            }
+            else
+            {
+                activeGlow.SetActive(true); 
+            }
+        }
 
         yield return new WaitForSeconds(duration);
 
-        foreach (SpriteRenderer sr in spriteRenderers)
-            sr.color = originalColor;
+        if (activeGlow != null)
+        {
+            activeGlow.SetActive(false); 
+        }
     }
 }
