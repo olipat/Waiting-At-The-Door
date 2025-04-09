@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4941811927287259171}
   - component: {fileID: 6069061050253740448}
   - component: {fileID: 6251130689384621886}
+  - component: {fileID: 6520497885560568140}
   m_Layer: 3
   m_Name: Player Controller
   m_TagString: Player
@@ -52,6 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
+  NoFriction: {fileID: 0}
+  RegFriction: {fileID: 0}
 --- !u!50 &1544650614272011793
 Rigidbody2D:
   serializedVersion: 5
@@ -167,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barkRange: 10
-  pushForce: 15
+  pushForce: 10
   barkKey: 101
   enemyLayer:
     serializedVersion: 2
@@ -195,6 +198,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   barkclip: {fileID: 8300000, guid: 1b05f341a4d69fa4c92e429d78503d85, type: 3}
+--- !u!114 &6520497885560568140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544650614272011804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e1c98cdb49a1646a93ce423edf72d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkDistance: 2
+  lastGroundedPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2969068311587289281
 GameObject:
   m_ObjectHideFlags: 0
