@@ -304,8 +304,10 @@ public class UIController : MonoBehaviour
 
     public void RestartLevel()
     {
+        AudioManager.instance.StopMusic();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
         Time.timeScale = 1f;
 
@@ -369,8 +371,8 @@ public class UIController : MonoBehaviour
     {
         StopAllCoroutines();
         
-        LevelLoader.Instance.transition.SetTrigger("Start");
-        LevelLoader.Instance.transition.SetTrigger("End");
+        //LevelLoader.Instance.transition.SetTrigger("Start");
+        //LevelLoader.Instance.transition.SetTrigger("End");
 
         SaveManager.Instance.load();
         Time.timeScale = 1f;
