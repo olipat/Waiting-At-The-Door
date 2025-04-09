@@ -39,6 +39,7 @@ public class FallingPlatforms : MonoBehaviour
         {
             if (platforms[i] != null)
             {
+                platforms[i].gameObject.SetActive(true);
                 platforms[i].ResetPlatform(initialPositions[i]);
             }
         }
