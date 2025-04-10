@@ -9,9 +9,10 @@ public class boomer : MonoBehaviour
     private Rigidbody2D EnemyRB;
     public LayerMask groundLayer;
     public bool facingRight;
-    private Vector3 home;
-    public float rightDist;
-    public float leftDist;
+
+    public GameObject groundCheck;
+    public GameObject wallCheck;
+
     public Transform player;
 
     public bool playerClose = false;
@@ -19,17 +20,19 @@ public class boomer : MonoBehaviour
     public float explosionRadius = 2f;
     public float explosionDelay = 2f;
     public LayerMask playerLayer;
+    public bool isWall;
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public GameObject UIcontrolReferemce;
+
+    public bool isGrounded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
         EnemyRB = GetComponent<Rigidbody2D>();
-        home = transform.position;
     }
 
     void FixedUpdate()
@@ -37,21 +40,16 @@ public class boomer : MonoBehaviour
 
         if(playerClose == false)
         {
-            if (facingRight)
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, radius, groundLayer);
+            isWall = Physics2D.OverlapCircle(wallCheck.transform.position, radius, groundLayer);
+            if ((!isGrounded || isWall) && facingRight)
             {
-                EnemyRB.MovePosition(transform.position + Vector3.right * speed * Time.deltaTime);
-                if ((transform.position.x - home.x) > rightDist)
-                {
-                    Flip();
-                }
+                Flip();
             }
-            else
+            else if ((!isGrounded || isWall) && !facingRight)
             {
-                EnemyRB.MovePosition(transform.position + Vector3.left * speed * Time.deltaTime);
-                if ((home.x - transform.position.x) > leftDist)
-                {
-                    Flip();
-                }
+                Flip();
             }
         }
         else
@@ -66,7 +64,7 @@ public class boomer : MonoBehaviour
             transform.position = MovePos;
 
             // Ensure the enemy faces the player
-            if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
+            if ((direction < 0 && !facingRight) || (direction > 0 && facingRight))
             {
                 Flip();
             }
@@ -77,14 +75,6 @@ public class boomer : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(new Vector3(0, 180, 0));
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3.right * rightDist));
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3.left * leftDist));
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -98,6 +88,7 @@ public class boomer : MonoBehaviour
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
+        print("starting wait and explode");
         float flashSpeed = 0.2f;
         for (float t = 0; t < waitTime; t += flashSpeed)
         {
@@ -120,8 +111,16 @@ public class boomer : MonoBehaviour
                 UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
             }
         }
+        print("should destroy");
 
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.transform.position, radius);
+        Gizmos.DrawWireSphere(wallCheck.transform.position, radius);
     }
 
 }
