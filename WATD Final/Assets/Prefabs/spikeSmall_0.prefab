@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce23f984a9f69ff4a8c9b93692efdeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIcontrolReferemce: {fileID: 0}
 --- !u!61 &4288443296173994566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -248,5 +249,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.03, y: 14.48}
+  m_Size: {x: 1.7, y: 14.48}
   m_EdgeRadius: 0
