@@ -82,7 +82,10 @@ public class TeleportingBoss : MonoBehaviour
         else
         {
             //Instantiate(attack2Prefab, transform.position, Quaternion.identity);
-            print("falling rocks");
+            foreach (Transform child in fallingBlocks.transform)
+            {
+                child.GetComponent<thwompBoss>().fall();
+            }
         }
     }
 
