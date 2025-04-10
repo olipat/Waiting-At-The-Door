@@ -13,7 +13,7 @@ public class spike : MonoBehaviour
 
     public void attack()
     {
-        print("spike attack called");
+       // print("spike attack called");
         m_SpriteRenderer.enabled = true;
         StartCoroutine(spikeAttack());
     }

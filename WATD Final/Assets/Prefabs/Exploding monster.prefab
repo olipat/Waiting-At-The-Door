@@ -208,7 +208,7 @@ MonoBehaviour:
   wallCheck: {fileID: 7456291361551514134}
   player: {fileID: 0}
   playerClose: 0
-  explosionRadius: 2
+  explosionRadius: 5
   explosionDelay: 2
   playerLayer:
     serializedVersion: 2

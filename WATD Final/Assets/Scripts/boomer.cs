@@ -28,6 +28,8 @@ public class boomer : MonoBehaviour
 
     public bool isGrounded;
 
+    bool flag = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -79,24 +81,18 @@ public class boomer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Player")
+        if(col.tag == "Player" && flag == false)
         {
             playerClose = true;
+            StartCoroutine(WaitAndExplode(5f));
+            flag = true;
         }
-        StartCoroutine(WaitAndExplode(5f));
     }
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
         print("starting wait and explode");
-        float flashSpeed = 0.2f;
-        for (float t = 0; t < waitTime; t += flashSpeed)
-        {
-            spriteRenderer.color = (spriteRenderer.color == originalColor) ? Color.red : originalColor;
-            yield return new WaitForSeconds(flashSpeed);
-        }
-
-        spriteRenderer.color = originalColor;
+        yield return new WaitForSeconds(4f);
         Explode();
     }
 
@@ -107,7 +103,7 @@ public class boomer : MonoBehaviour
         {
             if (hit.CompareTag("Player"))
             {
-                print("hit player");
+                print("bomber did hit the player with their explosion");
                 UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
             }
         }

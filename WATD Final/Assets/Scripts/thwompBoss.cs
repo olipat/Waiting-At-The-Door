@@ -59,7 +59,7 @@ public class thwompBoss : MonoBehaviour
 
     IEnumerator ResetPosition()
     {
-        print("ground");
+        //print("ground");
         rb.linearVelocity = Vector2.zero;
         rb.isKinematic = true;
         yield return new WaitForSeconds(resetDelay);
