@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      frisbee-mem_0: 6322339429132880653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class spike : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class spike : MonoBehaviour
 
     public void attack()
     {
+        print("spike attack called");
+        m_SpriteRenderer.enabled = true;
         StartCoroutine(spikeAttack());
     }
 
@@ -20,10 +23,9 @@ public class spike : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bigSpike.SetActive(true);
-        m_SpriteRenderer.SetActive(false);
+        m_SpriteRenderer.enabled = false;
         yield return new WaitForSeconds(1.5f);
 
         bigSpike.SetActive(false);
-        m_SpriteRenderer.SetActive(true);
     }
 }

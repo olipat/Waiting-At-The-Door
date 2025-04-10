@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd424dcb6af25c94faae21602137c56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigSpike: {fileID: 5462236313477634277}
+  m_SpriteRenderer: {fileID: 7609929233700334543}
 --- !u!1 &5462236313477634277
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2201427718760498453
 Transform:
   m_ObjectHideFlags: 0

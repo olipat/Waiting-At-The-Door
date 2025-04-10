@@ -4,9 +4,10 @@ using UnityEngine;
 public class TeleportingBoss : MonoBehaviour
 {
     public Transform[] teleportPoints; // Set these in the inspector
-    public float timeBetweenPhases = 2f;
-    public GameObject attack1Prefab;
-    public GameObject attack2Prefab;
+    //public float timeBetweenPhases = 2f;
+    public GameObject spikeSet1;
+    public GameObject spikeSet2;
+    public GameObject fallingBlocks;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D bossCollider;
@@ -23,7 +24,9 @@ public class TeleportingBoss : MonoBehaviour
     {
         while (true) // Loop until defeated
         {
-            yield return new WaitForSeconds(timeBetweenPhases); // Stay visible
+            //print("fi");
+            yield return new WaitForSeconds(5f); // Stay visible
+            //print("bitch");
             isVulnerable = false;
             spriteRenderer.enabled = false;
             bossCollider.enabled = false;
@@ -52,12 +55,29 @@ public class TeleportingBoss : MonoBehaviour
 
     void PerformAttack()
     {
+        //print("PA");
         int attackType = Random.Range(0, 2); // Choose between attack 1 or 2
 
         if (attackType == 0)
         {
             //Instantiate(attack1Prefab, transform.position, Quaternion.identity);
             print("spike attack");
+            int spikeSet = Random.Range(0, 2);
+            if(spikeSet == 0)
+            {
+                //use spike set 1
+                foreach (Transform child in spikeSet1.transform)
+                {
+                    child.GetComponent<spike>().attack();
+                }
+            }
+            else
+            {
+                foreach (Transform child in spikeSet2.transform)
+                {
+                    child.GetComponent<spike>().attack();
+                }
+            }
         }
         else
         {
