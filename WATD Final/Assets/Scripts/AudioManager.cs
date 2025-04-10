@@ -42,8 +42,12 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         //This needs preloading to stop buffering
-        bossMusic[currentBGM].Play();
-        bossMusic[currentBGM].Stop();
+        for(int i = 0; i < bossMusic.Length; i++)
+        {
+            bossMusic[i].Play();
+            bossMusic[i].Stop();
+        }
+        
 
     }
 
