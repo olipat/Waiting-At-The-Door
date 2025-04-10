@@ -205,3 +205,9 @@ MonoBehaviour:
   leftDist: 22
   player: {fileID: 0}
   playerClose: 0
+  explosionRadius: 2
+  explosionDelay: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  UIcontrolReferemce: {fileID: 0}
