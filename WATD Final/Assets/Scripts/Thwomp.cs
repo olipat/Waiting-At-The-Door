@@ -11,11 +11,14 @@ public class Thwomp : MonoBehaviour
     private bool isFalling = false;
     private Rigidbody2D rb;
 
+    public GameObject UIcontrolReferemce;
+
     void Start()
     {
         originalPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;  // Start as kinematic to prevent falling
+        UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +52,11 @@ public class Thwomp : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             StartCoroutine(ResetPosition());
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            print("thwomp hit player");
+            UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
         }
     }
 

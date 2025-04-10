@@ -16,9 +16,18 @@ public class boomer : MonoBehaviour
 
     public bool playerClose = false;
 
+    public float explosionRadius = 2f;
+    public float explosionDelay = 2f;
+    public LayerMask playerLayer;
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    public GameObject UIcontrolReferemce;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
         EnemyRB = GetComponent<Rigidbody2D>();
         home = transform.position;
     }
@@ -84,14 +93,35 @@ public class boomer : MonoBehaviour
         {
             playerClose = true;
         }
-        StartCoroutine(WaitAndExplode(10f));
+        StartCoroutine(WaitAndExplode(5f));
     }
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime);
-        print("enemy exploded!");
+        float flashSpeed = 0.2f;
+        for (float t = 0; t < waitTime; t += flashSpeed)
+        {
+            spriteRenderer.color = (spriteRenderer.color == originalColor) ? Color.red : originalColor;
+            yield return new WaitForSeconds(flashSpeed);
+        }
 
+        spriteRenderer.color = originalColor;
+        Explode();
+    }
+
+    void Explode()
+    {
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerLayer);
+        foreach (Collider2D hit in hitObjects)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                print("hit player");
+                UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            }
+        }
+
+        Destroy(gameObject);
     }
 
 }
