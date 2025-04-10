@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Stalactite : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Stalactite : MonoBehaviour
     private SpriteRenderer topRenderer;
     private Rigidbody2D bottomRb;
     private bool hasFallen = false;
+    public event Action OnBroken;
 
     private void Start()
     {
@@ -22,6 +24,9 @@ public class Stalactite : MonoBehaviour
     {
         if (hasFallen) return;
         hasFallen = true;
+
+        if (OnBroken != null)
+        OnBroken.Invoke();
 
         // Change top piece to broken sprite
         if (brokenTopSprite != null && bottomBrokenSprite != null)
