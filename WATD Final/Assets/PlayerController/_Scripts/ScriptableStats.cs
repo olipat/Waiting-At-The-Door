@@ -16,9 +16,12 @@ namespace Controller
 
         [Tooltip("Minimum input required before a left or right is recognized. Avoids drifting with sticky controllers"), Range(0.01f, 0.99f)]
         public float HorizontalDeadZoneThreshold = 0.1f;
-
+        
         [Header("MOVEMENT")] [Tooltip("The top horizontal movement speed")]
         public float MaxSpeed = 14;
+
+        [Tooltip("Speed when walking (not holding shift)")]
+        public float WalkSpeed = 7;
 
         [Tooltip("The player's capacity to gain horizontal speed")]
         public float Acceleration = 120;
