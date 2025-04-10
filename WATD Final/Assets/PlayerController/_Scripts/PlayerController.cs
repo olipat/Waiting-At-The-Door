@@ -19,6 +19,7 @@ namespace Controller
 
        
         [SerializeField] private ScriptableStats _stats;
+        private bool _isRunning;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
@@ -65,6 +66,8 @@ namespace Controller
 
         private void GatherInput()
         {
+            _isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
             _frameInput = new FrameInput
             {
                 JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
@@ -226,6 +229,8 @@ namespace Controller
 
         private void HandleDirection()
         {
+            float targetSpeed = _isRunning ? _stats.MaxSpeed : _stats.WalkSpeed;
+
             if (_frameInput.Move.x == 0)
             {
                 var deceleration = _grounded ? _stats.GroundDeceleration : _stats.AirDeceleration;
@@ -233,7 +238,7 @@ namespace Controller
             }
             else
             {
-                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * targetSpeed, _stats.Acceleration * Time.fixedDeltaTime);
             }
         }
 
