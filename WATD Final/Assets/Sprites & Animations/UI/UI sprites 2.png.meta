@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: da9db0e7d5261a440b4fd8741f58afcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1865964747275036019
+    second: UI sprites 2_0
+  - first:
+      213: 1253514488422463388
+    second: UI sprites 2_1
+  - first:
+      213: -2326967781935213666
+    second: UI sprites 2_2
+  - first:
+      213: 1019367860641489937
+    second: UI sprites 2_3
+  - first:
+      213: -4339360864230106302
+    second: UI sprites 2_4
+  - first:
+      213: 4181592058455633469
+    second: UI sprites 2_5
+  - first:
+      213: 3041682044413858682
+    second: UI sprites 2_6
+  - first:
+      213: -5188597657749889489
+    second: UI sprites 2_7
+  - first:
+      213: -1051025425710967777
+    second: UI sprites 2_8
+  - first:
+      213: -3710828241248104356
+    second: UI sprites 2_9
+  - first:
+      213: -3925686101095536783
+    second: UI sprites 2_10
+  - first:
+      213: 613480737798412617
+    second: UI sprites 2_11
+  - first:
+      213: -4542238197058431771
+    second: UI sprites 2_12
+  - first:
+      213: 8312509425397040733
+    second: UI sprites 2_13
+  - first:
+      213: 3841141481456467672
+    second: UI sprites 2_14
+  - first:
+      213: -5514604459527016764
+    second: UI sprites 2_15
+  - first:
+      213: -2408183663261532618
+    second: UI sprites 2_16
+  - first:
+      213: 5454529716212740934
+    second: UI sprites 2_17
+  - first:
+      213: -1130384552776160134
+    second: UI sprites 2_18
+  - first:
+      213: 7370619285493705824
+    second: UI sprites 2_19
+  - first:
+      213: 748937463617022126
+    second: UI sprites 2_20
+  - first:
+      213: 5034378526314067984
+    second: UI sprites 2_21
+  - first:
+      213: -6003140034798573025
+    second: UI sprites 2_22
+  - first:
+      213: -8998897865638491792
+    second: UI sprites 2_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sniff_Avaliable
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 786
+        width: 354
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891ad2335f12458429f5716487a446d9
+      internalID: 526083655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sniff_Unavailable
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 797
+        width: 345
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6588a05fe206e40a507490131c6f43
+      internalID: 315023841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: key_Q
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 440
+        width: 128
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7419ee7936c4a2428b8c029436f572e
+      internalID: 1950854120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key_E
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 441
+        width: 133
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6ef8b9d274c3f4eac9c0b7994a74d7
+      internalID: -11836540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bark_Available
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 108
+        width: 522
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eacd039a4992a47926b039c8c27e16
+      internalID: -1130004662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bark_Unavailable
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 111
+        width: 523
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8efae6078a97e4cbf77ec04e6d7f67
+      internalID: 1339942952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5d942c221df38544db2f9042209a1ee7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bark_Available: -1130004662
+      Bark_Unavailable: 1339942952
+      Key_E: -11836540
+      Sniff_Avaliable: 526083655
+      Sniff_Unavailable: 315023841
+      UI sprites 2_8: 208369137
+      key_Q: 1950854120
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
