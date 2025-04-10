@@ -4,7 +4,6 @@ using UnityEngine;
 public class TeleportingBoss : MonoBehaviour
 {
     public Transform[] teleportPoints; // Set these in the inspector
-    //public float timeBetweenPhases = 2f;
     public GameObject spikeSet1;
     public GameObject spikeSet2;
     public GameObject fallingBlocks;
@@ -12,6 +11,8 @@ public class TeleportingBoss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D bossCollider;
     private bool isVulnerable = true;
+
+    public int health = 5;
 
     void Start()
     {
@@ -94,6 +95,11 @@ public class TeleportingBoss : MonoBehaviour
         if (isVulnerable)
         {
             Debug.Log("Boss takes damage!");
+            health -= 1;
+            if (health < 0)
+            {
+                Destroy(gameObject);
+            }
             // Add health reduction or death logic here
         }
     }
