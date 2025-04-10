@@ -26,6 +26,7 @@ namespace Controller
 
         private AudioSource _source;
         private IPlayerController _player;
+        
         private bool _grounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
 
@@ -58,8 +59,10 @@ namespace Controller
             DetectGroundColor();
 
             HandleSpriteFlip();
+            
 
             HandleIdleSpeed();
+            _anim.SetBool("isRunning", _player.FrameInput.x != 0 && _player is PlayerController pc && pc.IsRunning());
 
             HandleCharacterTilt();
         }
