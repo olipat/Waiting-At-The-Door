@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sniff Effects_0: 5519917557831584327
+      Sniff Effects_1: -8717255746066910501
+      Sniff Effects_2: -7535906272643012816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -27,7 +27,7 @@ public class DeathZone : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 UIController.Instance.ApplyDamage(1);
                 AudioManager.instance.PlaySFX(6);
                 PlayerGroundTracker.instance.RespawnAtLastGround();
