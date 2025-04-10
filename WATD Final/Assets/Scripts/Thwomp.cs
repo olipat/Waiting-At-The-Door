@@ -49,9 +49,9 @@ public class Thwomp : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.layer == 6)
         {
-            StartCoroutine(ResetPosition());
+           StartCoroutine(ResetPosition());
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
@@ -62,6 +62,7 @@ public class Thwomp : MonoBehaviour
 
     IEnumerator ResetPosition()
     {
+        print("ground");
         rb.linearVelocity = Vector2.zero;
         rb.isKinematic = true;
         yield return new WaitForSeconds(resetDelay);
@@ -70,12 +71,13 @@ public class Thwomp : MonoBehaviour
         Vector3 startPos = transform.position;
         while (elapsed < 1f)
         {
-            transform.position = Vector3.Lerp(startPos, originalPosition, elapsed);
+            //transform.Move Vector3.Lerp(startPos, originalPosition, elapsed);
+            rb.MovePosition(Vector3.Lerp(startPos, originalPosition, elapsed));
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = originalPosition;
+        rb.MovePosition(originalPosition);
         isFalling = false;
     }
 }

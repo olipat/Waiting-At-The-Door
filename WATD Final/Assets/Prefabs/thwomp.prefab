@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &5665876024168649343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,3 +225,4 @@ MonoBehaviour:
   shakeDuration: 0.5
   fallSpeed: 10
   resetDelay: 2
+  UIcontrolReferemce: {fileID: 0}

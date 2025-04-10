@@ -59,7 +59,7 @@ public class BossRoomTrigger : MonoBehaviour
             playerRB.linearVelocity = Vector2.zero; // Stop all movement
 
             UIController.Instance.saveGame(savePosition);
-            BossEntranceTrigger.Instance.TriggerBlockade();
+            //BossEntranceTrigger.Instance.TriggerBlockade();
 
             StartCoroutine(HandleCameraMovement());
         }
