@@ -10622,7 +10622,7 @@ PrefabInstance:
     - target: {fileID: 3307885275604758705, guid: e9c76514fc9e1584ab0fbb00a6489606, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7306621766092190134, guid: 2e0f535ec26c94f4faccf8c243c7130e, type: 3}
+      objectReference: {fileID: -790683867075676049, guid: a427d1b766a29b548a19f1c04f282ee8, type: 3}
     - target: {fileID: 4217567608782831139, guid: e9c76514fc9e1584ab0fbb00a6489606, type: 3}
       propertyPath: m_Name
       value: LevelLoader Variant
@@ -10670,7 +10670,7 @@ PrefabInstance:
     - target: {fileID: 7398797665961380520, guid: e9c76514fc9e1584ab0fbb00a6489606, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -790683867075676049, guid: a427d1b766a29b548a19f1c04f282ee8, type: 3}
+      objectReference: {fileID: -5167209990826701046, guid: 09e8eaea54e09bc45bd22aa2bb8f306e, type: 3}
     - target: {fileID: 9067747128578041062, guid: e9c76514fc9e1584ab0fbb00a6489606, type: 3}
       propertyPath: m_SortingOrder
       value: 10
