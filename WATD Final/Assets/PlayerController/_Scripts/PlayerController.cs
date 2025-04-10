@@ -95,6 +95,13 @@ namespace Controller
             bounceTimer = bounceDuration;
         }
 
+        public void TriggerBounceLong(float velocity)
+        {
+            _bounceVelocity = velocity;
+            isBouncing = true;
+            bounceTimer = bounceDuration + 0.5f;
+        }
+
         private void FixedUpdate()
         {
             CheckCollisions();

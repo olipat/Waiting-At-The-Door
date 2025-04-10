@@ -6,6 +6,7 @@ public class BounceObj : MonoBehaviour
 {
     public float bounceForce = 25f;
     public bool isGeyser = false;
+    public bool isEnd = false;
 
     [Header("Geyser Settings")]
     public GameObject smokePrefab;
@@ -28,8 +29,17 @@ public class BounceObj : MonoBehaviour
             PlayerController pc = other.GetComponent<PlayerController>();
             if (pc != null)
             {
-                pc.TriggerBounce(bounceForce);
-                Debug.Log("Bounce triggered!");
+                if (isEnd)
+                {
+                    LevelLoader.Instance.LoadNextLevel();
+                    pc.TriggerBounceLong(bounceForce);
+                    Debug.Log("Long Bounce triggered!");
+                }
+                else
+                {
+                    pc.TriggerBounce(bounceForce);
+                    Debug.Log("Bounce triggered!");
+                }
             }
         }
     }
