@@ -3,35 +3,57 @@ using UnityEngine;
 
 public class BargainingAbility : MonoBehaviour
 {
+    public static BargainingAbility Instance;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     public float interactRange = 10f;
     public LayerMask platformLayer;
     public int maxStableRebuilt = 3;
     public int maxTemporaryRebuilt = 3;
     public float holdTimeToBreak = 0.5f; 
     private float holdTimer = 0f;
+    public bool unlocked = false;
 
     private List<BargainingPlatform> stablePlatforms = new List<BargainingPlatform>();
     private List<BargainingPlatform> temporaryPlatforms = new List<BargainingPlatform>();
 
     void Update()
     {
+     if (unlocked)
+        {
+            UseBargainingAbility();
+        }   
+    }
+
+    public void UseBargainingAbility()
+    {
+        Debug.Log("Using bargaining Ability");
         if (Input.GetKey(KeyCode.Alpha3))
         {
+            Debug.Log("Using bargaining break Ability");
             holdTimer += Time.deltaTime;
 
             if (holdTimer > holdTimeToBreak)
             {
                 TryBreakPlatform();
-                holdTimer = 0f; 
+                holdTimer = 0f;
             }
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
+            Debug.Log("Using bargaining build Ability");
             if (holdTimer <= holdTimeToBreak && holdTimer > 0f)
             {
                 TryRebuildPlatform();
             }
-            holdTimer = 0f; 
+            holdTimer = 0f;
         }
     }
 

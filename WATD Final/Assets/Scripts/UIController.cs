@@ -574,7 +574,7 @@ public class UIController : MonoBehaviour
             //rebuild platform
             if (bargain != null)
             {
-                bargain.TryRebuildPlatform(); 
+                //bargain.UseBargainingAbility();
             }
             else
             {
@@ -645,6 +645,11 @@ public class UIController : MonoBehaviour
         if (spriteIndex < abilitySprites.Length)
         {
             abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
+        }
+
+        if (abilityIndex == 2)
+        {
+            BargainingAbility.Instance.unlocked = true;
         }
     }
 
