@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AngerBossManager : MonoBehaviour
 {
-    //Boss will have 6 armor spots (both arms, chest, 2 hits to head)
+    //Boss will have 6 armor spots (3 hits to head, 1 hit each to chest pieces)
     [Header("Boss Settings")]
     public int bossArmor = 5;
     //Use below for after water hits boss

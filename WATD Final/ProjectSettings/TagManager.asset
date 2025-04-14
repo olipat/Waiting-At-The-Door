@@ -10,6 +10,7 @@ TagManager:
   - Breakable
   - UiControl
   - Lava
+  - Boss
   layers:
   - Default
   - TransparentFX

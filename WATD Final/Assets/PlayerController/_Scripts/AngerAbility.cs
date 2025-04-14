@@ -53,6 +53,15 @@ public class AngerBarkAbility : MonoBehaviour
                     Debug.Log(enemy.name + " took " + damage + " damage from Anger Bark");
                 }
             }
+            else if (enemy.CompareTag("Boss"))
+            {
+                TeleportingBoss boss = enemy.GetComponent<TeleportingBoss>();
+                if (boss != null)
+                {
+                    boss.ShatterBarkHit();
+                    Debug.Log(enemy.name + " hit by Shatter Bark!");
+                }
+            }
         }
 
         Collider2D[] breakables = Physics2D.OverlapCircleAll(transform.position, barkRange, breakableLayer);

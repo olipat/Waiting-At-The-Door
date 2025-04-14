@@ -103,4 +103,17 @@ public class TeleportingBoss : MonoBehaviour
             // Add health reduction or death logic here
         }
     }
+    //If the boss isVulnerable and shatter bark hits, damage the boss
+    //take it down 1 armor
+    public void ShatterBarkHit()
+    {
+        if (isVulnerable)
+        {
+            AngerBossManager manager = GetComponent<AngerBossManager>();
+            if (manager != null)
+            {
+                manager.DamageBossArmor(1);
+            }
+        }
+    }
 }
