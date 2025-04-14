@@ -53,6 +53,9 @@ TagManager:
   - name: BG no parallax
     uniqueID: 550698225
     locked: 0
+  - name: MemSniffLayer
+    uniqueID: 3329990073
+    locked: 0
   - name: Level
     uniqueID: 3817324647
     locked: 0

@@ -26,9 +26,9 @@ public class BossEntranceTrigger : MonoBehaviour
         if (!triggered && other.CompareTag(playerTag))
         {
             triggered = true;
-            //StartCoroutine(TriggerBlockadeAfterDelay());
 
             GetComponent<Collider2D>().enabled = false;
+            TriggerBlockade();
         }
     }
 
