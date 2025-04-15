@@ -21,6 +21,8 @@ public class Stalactite : MonoBehaviour
         topRenderer = topPiece.GetComponent<SpriteRenderer>();
         bottomRb = bottomPiece.GetComponent<Rigidbody2D>();
         bottomRb.bodyType = RigidbodyType2D.Kinematic;
+
+
     }
 
     public void Shatter()
@@ -39,6 +41,19 @@ public class Stalactite : MonoBehaviour
         // Make the bottom fall
         bottomRb.bodyType = RigidbodyType2D.Dynamic;
         bottomRb.gravityScale = 1.5f;
+
+        // Ignore collisions with PhantomPlat
+        Collider2D bottomCol = bottomPiece.GetComponent<Collider2D>();
+        Collider2D[] allCols = FindObjectsByType<Collider2D>(FindObjectsSortMode.None);
+
+        foreach (var col in allCols)
+        {
+            if (col.CompareTag("PhantomPlat"))
+            {
+                Physics2D.IgnoreCollision(bottomCol, col, true);
+                Debug.Log("Ignoring collision with: " + col.name);
+            }
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

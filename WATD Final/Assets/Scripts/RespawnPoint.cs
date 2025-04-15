@@ -10,8 +10,8 @@ public class RespawnPoint : MonoBehaviour
             UIController.Instance.saveGame(this.transform.position);
             Debug.Log("Saving at position: " + this.transform.position);
 
-            FallingPlatforms.instance.returnPlatforms();
-            StalactiteManager.instance.ResetAllStalactites();
+            FallingPlatforms.instance?.returnPlatforms();
+            StalactiteManager.instance?.ResetAllStalactites();
         }
     }
 }

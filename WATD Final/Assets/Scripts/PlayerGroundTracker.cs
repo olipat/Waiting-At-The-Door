@@ -59,8 +59,6 @@ public class PlayerGroundTracker : MonoBehaviour
     // Call this method when the player falls in a death zone
     public void RespawnAtLastGround()
     {
-        
-
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0;
 
@@ -68,14 +66,10 @@ public class PlayerGroundTracker : MonoBehaviour
 
         playerController = FindFirstObjectByType<Controller.PlayerController>();
 
-        Input.ResetInputAxes(); // flushes all input keys/buttons
+        playerController.canMove = false;
         playerController.enabled = false;
-        
-
 
         StartCoroutine(ReenableAfterDelay());
-
-        
         
     }
 
@@ -84,18 +78,21 @@ public class PlayerGroundTracker : MonoBehaviour
         
         yield return new WaitForSecondsRealtime(1f); // unaffected by timescale
 
+        playerController.enabled = true;
+
         // Briefly freeze to reset horizontal motion
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSeconds(0.1f);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         rb.gravityScale = 1;
-        playerController.enabled = true;
+        
         rb.linearVelocity = Vector2.zero; // double ensure it doesn't slide
 
         Time.timeScale = 1f;
 
-        Input.ResetInputAxes(); // flushes all input keys/buttons
+        
+        playerController.canMove = true;
 
     }
 }

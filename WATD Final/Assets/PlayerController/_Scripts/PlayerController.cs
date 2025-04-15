@@ -9,6 +9,10 @@ namespace Controller
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         public static PlayerController Instance;
+
+        public bool canMove = true;
+
+
         //I think the player controller is canceling my bounce mechanic
         //Adding variables to allow for bounce on trampoline
         private bool isBouncing = false;
@@ -51,7 +55,11 @@ namespace Controller
 
         private void Awake()
         {
-            Instance = this;
+            if(Instance == null)
+            {
+                Instance = this;
+            }
+            
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
 
@@ -66,6 +74,17 @@ namespace Controller
 
         private void GatherInput()
         {
+            if (!canMove)
+            {
+                _frameInput = new FrameInput
+                {
+                    JumpDown = false,
+                    JumpHeld = false,
+                    Move = Vector2.zero
+                };
+                return;
+            }
+
             _isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
             _frameInput = new FrameInput
