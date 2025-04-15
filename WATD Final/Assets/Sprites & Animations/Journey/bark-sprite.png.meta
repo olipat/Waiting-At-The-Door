@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bark-sprite_0: 5717433571390639017
+      bark-sprite_1: 851812951026558067
+      bark-sprite_10: -6118913373322181276
+      bark-sprite_11: 2695634622753751207
+      bark-sprite_12: -4457702113889066612
+      bark-sprite_13: -3403392232184007617
+      bark-sprite_14: -8372103105360188745
+      bark-sprite_15: -6573814713185417432
+      bark-sprite_16: 1740679629624535655
+      bark-sprite_17: 1319109800124396312
+      bark-sprite_2: -232916569024656835
+      bark-sprite_3: 5470809635817140776
+      bark-sprite_4: 3154824590574736431
+      bark-sprite_5: -1498926947157056860
+      bark-sprite_6: 2441849389246883370
+      bark-sprite_7: 3987227704846948116
+      bark-sprite_8: 7100538684871441918
+      bark-sprite_9: -3600386627707757754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shatter-bark-sprite_0: -7059139844749437067
+      shatter-bark-sprite_1: 4701627382104771965
+      shatter-bark-sprite_10: 1338254643086809631
+      shatter-bark-sprite_11: 8982835689902718629
+      shatter-bark-sprite_12: 6267144725910166358
+      shatter-bark-sprite_13: -5285453597646138397
+      shatter-bark-sprite_14: 1966760537106303755
+      shatter-bark-sprite_15: -6615815634778985940
+      shatter-bark-sprite_16: 3792623067693770636
+      shatter-bark-sprite_17: 5914862614445922855
+      shatter-bark-sprite_2: -814301074314967153
+      shatter-bark-sprite_3: -291992867108299588
+      shatter-bark-sprite_4: -4322292347778757294
+      shatter-bark-sprite_5: -5496437303462407675
+      shatter-bark-sprite_6: -7879293077130943428
+      shatter-bark-sprite_7: -5896956717475283014
+      shatter-bark-sprite_8: -6800343463688406200
+      shatter-bark-sprite_9: 7830353843534972789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
