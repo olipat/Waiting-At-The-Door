@@ -77,6 +77,8 @@ public class UIController : MonoBehaviour
 
     public List<Projectile> tireList = new List<Projectile>();
 
+    private Coroutine endScreenRoutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -369,8 +371,13 @@ public class UIController : MonoBehaviour
 
     public void loadGame()
     {
-        StopAllCoroutines();
-        
+        if (endScreenRoutine != null)
+        {
+            StopCoroutine(endScreenRoutine);
+            endScreenRoutine = null;
+        }
+
+
         //LevelLoader.Instance.transition.SetTrigger("Start");
         //LevelLoader.Instance.transition.SetTrigger("End");
 
@@ -378,6 +385,7 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1f;
 
         FallingPlatforms.instance.returnPlatforms();
+        //StalactiteManager.instance.ResetAllStalactites();
 
         Controller.PlayerController playerController = FindFirstObjectByType<Controller.PlayerController>();
         playerController.enabled = true;
@@ -400,7 +408,7 @@ public class UIController : MonoBehaviour
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
 
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
             for (int i = 0; i < saveStats.momentosCollected.Length; i++)
             {
@@ -496,7 +504,7 @@ public class UIController : MonoBehaviour
     public void PlayerDeath()
     {
         playerDied = true;
-        StartCoroutine(ShowEndScreenCo());
+        endScreenRoutine = StartCoroutine(ShowEndScreenCo());
     }
 
     IEnumerator ShowEndScreenCo()
@@ -505,6 +513,12 @@ public class UIController : MonoBehaviour
 
         CanvasGroup canvasGroup = endScreen.GetComponent<CanvasGroup>();
         endScreen.SetActive(true);
+
+        Button[] buttons = endScreen.GetComponentsInChildren<Button>(true);
+        foreach (var btn in buttons)
+        {
+            btn.enabled = false;
+        }
 
         float fadeDuration = 1f; 
         float elapsedTime = 0f;
@@ -517,6 +531,11 @@ public class UIController : MonoBehaviour
         }
         Time.timeScale = 0f;
         canvasGroup.alpha = 1f; // Ensure it's fully visible
+
+        foreach (var btn in buttons)
+        {
+            btn.enabled = true;
+        }
     }
 
     void ActivateAbility(int abilityIndex)

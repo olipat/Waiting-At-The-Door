@@ -128,6 +128,7 @@ public class AudioManager : MonoBehaviour
         sfx[sfxToPlay].Stop();
         sfx[sfxToPlay].Play();
     }
+
    /*
     void OnApplicationFocus(bool hasFocus)
     {

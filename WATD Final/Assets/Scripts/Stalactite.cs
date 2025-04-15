@@ -13,6 +13,9 @@ public class Stalactite : MonoBehaviour
     private bool hasFallen = false;
     public event Action OnBroken;
 
+    private Coroutine sinkRoutine;
+
+
     private void Start()
     {
         topRenderer = topPiece.GetComponent<SpriteRenderer>();
@@ -49,7 +52,7 @@ public class Stalactite : MonoBehaviour
         if (collision.gameObject.CompareTag("Lava"))
         {
             Debug.Log("Stalactite hit lava!");
-            StartCoroutine(SinkIntoLava());
+            sinkRoutine = StartCoroutine(SinkIntoLava());
         }
         else
         {
@@ -74,4 +77,29 @@ public class Stalactite : MonoBehaviour
 
         bottomPiece.SetActive(false);
     }
+
+    public void ResetStalactite(Vector3 topPos, Vector3 bottomPos, Sprite originalTopSprite, Sprite originalBottomSprite)
+    {
+        if (sinkRoutine != null)
+        {
+            StopCoroutine(sinkRoutine);
+            sinkRoutine = null;
+        }
+        hasFallen = false;
+
+        topPiece.transform.position = topPos;
+        bottomPiece.transform.position = bottomPos;
+
+        topRenderer.sprite = originalTopSprite;
+        bottomPiece.GetComponent<SpriteRenderer>().sprite = originalBottomSprite;
+
+        bottomRb.linearVelocity = Vector2.zero;
+        bottomRb.angularVelocity = 0f;
+        bottomRb.bodyType = RigidbodyType2D.Kinematic;
+        bottomRb.gravityScale = 0f;
+        bottomRb.constraints = RigidbodyConstraints2D.None;
+
+        bottomPiece.SetActive(true);
+    }
+
 }
