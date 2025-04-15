@@ -19,7 +19,7 @@ public class BossEntranceTrigger : MonoBehaviour
     public float moveDistance = 5f;      
     public float moveDuration = 1f;
 
-    private bool triggered = false;
+    public bool triggered = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {

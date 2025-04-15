@@ -393,7 +393,7 @@ public class UIController : MonoBehaviour
         endScreen.SetActive(false);
 
         playerHealth = saveStats.health;
-        GameManager.instance.currentLevel = saveStats.level; 
+        GameManager.instance.currentLevel = saveStats.level;
         GameManager.instance.FightingBoss = false;
         player.transform.position = saveStats.myPos.GetPos();
 
@@ -407,6 +407,13 @@ public class UIController : MonoBehaviour
 
         bossEntrance.transform.position = bossEntrancePosition;
         BossRoomTrigger.Instance.inBossRoom = false;
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            BossEntranceTrigger.Instance.GetComponent<BoxCollider2D>().enabled = true;
+            BossEntranceTrigger.Instance.triggered = false;
+        }
+    
 
         if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
