@@ -20,7 +20,7 @@ public class BarkAbility : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(barkKey))
+        if (Input.GetKeyDown(barkKey) || Input.GetButtonDown("Fire3"))
         {
             Bark();
         }

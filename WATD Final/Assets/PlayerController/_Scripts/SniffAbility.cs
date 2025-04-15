@@ -11,7 +11,7 @@ public class SniffAbility : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(sniffKey))
+        if (Input.GetKeyDown(sniffKey) || Input.GetButtonDown("Fire2"))
         {
             AudioManager.instance.PlaySFX(11);
             SniffForPlatforms();
