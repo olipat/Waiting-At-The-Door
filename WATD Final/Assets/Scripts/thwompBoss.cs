@@ -13,6 +13,8 @@ public class thwompBoss : MonoBehaviour
 
     public GameObject UIcontrolReferemce;
 
+    public SpriteRenderer m_SpriteRenderer;
+    public GameObject explosionPreFab;
     void Start()
     {
         originalPosition = transform.position;
@@ -48,6 +50,8 @@ public class thwompBoss : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
+            m_SpriteRenderer.enabled = false;
+            Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
             StartCoroutine(ResetPosition());
         }
         else if (collision.gameObject.CompareTag("Player"))
@@ -77,5 +81,6 @@ public class thwompBoss : MonoBehaviour
 
         rb.MovePosition(originalPosition);
         isFalling = false;
+        m_SpriteRenderer.enabled = true;
     }
 }
