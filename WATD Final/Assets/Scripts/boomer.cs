@@ -28,7 +28,10 @@ public class boomer : MonoBehaviour
 
     public bool isGrounded;
 
-    bool flag = false;
+    private bool flag = false;
+
+    public SpriteRenderer m_SpriteRenderer;
+    public GameObject explosion;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -93,11 +96,15 @@ public class boomer : MonoBehaviour
     {
         print("starting wait and explode");
         yield return new WaitForSeconds(4f);
+        print("about to");
         Explode();
     }
 
     void Explode()
     {
+        print("fuck");
+        m_SpriteRenderer.enabled = false;
+        explosion.SetActive(true);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerLayer);
         foreach (Collider2D hit in hitObjects)
         {
