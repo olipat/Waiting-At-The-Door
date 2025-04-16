@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6b12d78e2dc50f945a8c4aac1aa7051d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278006
+  packageName: Toast Notification Message
+  packageVersion: 1.1
+  assetPath: Assets/ToastNotificationMessage/Tutorial/readme.md
+  uploadId: 656756

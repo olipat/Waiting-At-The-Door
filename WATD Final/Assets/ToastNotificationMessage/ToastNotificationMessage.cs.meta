@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0cacbc714c5f3254aad452fcb52b16d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278006
+  packageName: Toast Notification Message
+  packageVersion: 1.1
+  assetPath: Assets/ToastNotificationMessage/ToastNotificationMessage.cs
+  uploadId: 656756

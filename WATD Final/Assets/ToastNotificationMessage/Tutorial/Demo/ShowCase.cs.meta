@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0c3d66ef612617b40a7027569f50c1b4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278006
+  packageName: Toast Notification Message
+  packageVersion: 1.1
+  assetPath: Assets/ToastNotificationMessage/Tutorial/Demo/ShowCase.cs
+  uploadId: 656756
