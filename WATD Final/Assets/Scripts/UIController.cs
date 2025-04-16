@@ -155,6 +155,11 @@ public class UIController : MonoBehaviour
             UnlockAbility(SceneManager.GetActiveScene().buildIndex);
         }
 
+        if (Input.GetButtonDown("AB"))
+        {
+            ActivateAbility(1);
+        }
+
         CheckPlatformCount();
 
         CheckButton();
