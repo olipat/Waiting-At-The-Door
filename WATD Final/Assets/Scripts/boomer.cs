@@ -36,6 +36,7 @@ public class boomer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
         EnemyRB = GetComponent<Rigidbody2D>();
     }
@@ -96,13 +97,11 @@ public class boomer : MonoBehaviour
     {
         print("starting wait and explode");
         yield return new WaitForSeconds(4f);
-        print("about to");
         Explode();
     }
 
     void Explode()
     {
-        print("fuck");
         m_SpriteRenderer.enabled = false;
         Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerLayer);
