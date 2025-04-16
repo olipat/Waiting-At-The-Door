@@ -31,7 +31,7 @@ public class boomer : MonoBehaviour
     private bool flag = false;
 
     public SpriteRenderer m_SpriteRenderer;
-    public GameObject explosion;
+    public GameObject explosionPreFab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -104,7 +104,7 @@ public class boomer : MonoBehaviour
     {
         print("fuck");
         m_SpriteRenderer.enabled = false;
-        explosion.SetActive(true);
+        Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerLayer);
         foreach (Collider2D hit in hitObjects)
         {
