@@ -84,7 +84,7 @@ namespace Controller
                 return;
             }
 
-            _isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            _isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetButton("run");
 
             _frameInput = new FrameInput
             {
