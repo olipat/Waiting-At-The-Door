@@ -54,6 +54,7 @@ public class thwompBoss : MonoBehaviour
         {
             print("thwomp hit player");
             UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            AudioManager.instance.PlaySFX(6);
         }
     }
 

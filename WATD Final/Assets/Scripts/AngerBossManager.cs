@@ -1,8 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class AngerBossManager : MonoBehaviour
 {
+    public static AngerBossManager Instance;
+
+    public void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     //Boss will have 6 armor spots (3 hits to head, 1 hit each to chest pieces)
     [Header("Boss Settings")]
     public int bossArmor = 5;
@@ -37,6 +48,8 @@ public class AngerBossManager : MonoBehaviour
     private bool stalactiteSpawned = false;
     private bool waterTriggered = false;
 
+    public GameObject slider;
+
     private void Start()
     {
         bossSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,6 +63,11 @@ public class AngerBossManager : MonoBehaviour
     //spawn the stalactite once armor reaches 0 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.M))
+        {
+            DamageBossArmor(6);
+        }
+
         if (bossArmor <= 0 && !stalactiteSpawned)
         {
             Debug.Log("armor broken, triggering stalactites");
@@ -149,5 +167,25 @@ public class AngerBossManager : MonoBehaviour
         bossArmor -= amount;
         bossArmor = Mathf.Max(bossArmor, 0);
         Debug.Log("Boss damaged");
+
+        GetComponent<HealthBar>().SetHealth(bossArmor);
+
+        if (bossArmor <= 0)
+        {
+            this.gameObject.SetActive(false);
+
+            RisingLavaManager.instance.ResetAllLava();
+
+            AudioManager.instance.PlayBGM();
+
+            UIController.Instance.UnlockAbility(2);
+
+            UIController.Instance.StartCoroutine(UIController.Instance.PostAngerSequence());
+
+            GameManager.instance.FightingBoss = false;
+            
+            Destroy(slider);
+
+        }
     }
 }

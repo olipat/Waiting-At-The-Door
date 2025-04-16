@@ -112,6 +112,7 @@ public class boomer : MonoBehaviour
             {
                 print("bomber did hit the player with their explosion");
                 UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+                AudioManager.instance.PlaySFX(6);
             }
         }
         print("should destroy");

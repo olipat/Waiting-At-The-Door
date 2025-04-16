@@ -516,6 +516,8 @@ public class UIController : MonoBehaviour
     public void PlayerDeath()
     {
         playerDied = true;
+
+        if(endScreenRoutine == null)
         endScreenRoutine = StartCoroutine(ShowEndScreenCo());
     }
 
@@ -714,5 +716,15 @@ public class UIController : MonoBehaviour
 
         ToastNotification.Hide();
         ToastNotification.Show("New ability unlocked: Shatter Bark! Press 2 to break weak walls.", 6f, "info");
+    }
+
+    public IEnumerator PostAngerSequence()
+    {
+        ToastNotification.Show("You've conquered Anger. The path forward is clear.", 4f, "success");
+
+        yield return new WaitForSecondsRealtime(5f);
+
+        ToastNotification.Hide(); // Optional: clear the stack first
+        ToastNotification.Show("New ability unlocked: Hold 3 to unleash brickbreaker Bark.", 6f, "info");
     }
 }

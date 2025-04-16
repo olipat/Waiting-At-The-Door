@@ -14,6 +14,7 @@ public class spikeHitbox : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
+            AudioManager.instance.PlaySFX(6);
         }
     }
 }

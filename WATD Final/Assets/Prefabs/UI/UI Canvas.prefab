@@ -1741,7 +1741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 490, y: -240}
+  m_AnchoredPosition: {x: 490, y: -180}
   m_SizeDelta: {x: -1475.0146, y: -691.1196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6007513283886190141
@@ -2083,7 +2083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 352.99976}
+  m_AnchoredPosition: {x: 0, y: 320}
   m_SizeDelta: {x: -100.926025, y: -705.9995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1122223682294875556
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU DIED!
+  m_text: GAME OVER!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5139d5673cb927143ad0529938fd9f61, type: 2}
   m_sharedMaterial: {fileID: 6500143958868941107, guid: 5139d5673cb927143ad0529938fd9f61, type: 2}
@@ -2423,7 +2423,7 @@ GameObject:
   - component: {fileID: 5693385374951078502}
   m_Layer: 5
   m_Name: UI Canvas
-  m_TagString: Untagged
+  m_TagString: UiControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2631,7 +2631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -40, y: -240}
+  m_AnchoredPosition: {x: -40, y: -180}
   m_SizeDelta: {x: -1475.0146, y: -691.1196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3850317872350735017
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 63039878, guid: f09a7a8cf7f7ad047b44bed9be7b1cc9, type: 3}
+  m_Sprite: {fileID: -883093828, guid: f09a7a8cf7f7ad047b44bed9be7b1cc9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3387,7 +3387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You will never see your owners again :'(
+  m_text: 'Tip: Bark with E to push alarmos away'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5139d5673cb927143ad0529938fd9f61, type: 2}
   m_sharedMaterial: {fileID: 6500143958868941107, guid: 5139d5673cb927143ad0529938fd9f61, type: 2}
@@ -3659,7 +3659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -570, y: -240}
+  m_AnchoredPosition: {x: -570, y: -180}
   m_SizeDelta: {x: -1475.0146, y: -691.1196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4322637015095611025
@@ -3791,7 +3791,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1469.1, y: 468.8}
+  m_AnchoredPosition: {x: -1454, y: 470}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6368518541674151947
@@ -4538,11 +4538,11 @@ MonoBehaviour:
   _showTimerRender: 1
   _darkTheme: 1
   _minimumMessageTime: 3
-  _margin: {x: 20, y: 20}
-  _stopOnOver: 1
+  _margin: {x: 0, y: 10}
+  _stopOnOver: 0
   _hideOnClick: 1
-  _messageScreenPosition: 2
-  _timerDirection: 0
+  _messageScreenPosition: 1
+  _timerDirection: 1
 --- !u!1 &8341951464553419564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,7 +4620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1467, y: 600}
+  m_AnchoredPosition: {x: -1453, y: 590}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7340521485846149986
@@ -4773,7 +4773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 25}
+  m_AnchoredPosition: {x: -1, y: 18.9}
   m_SizeDelta: {x: 34.625, y: 33.7174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &719277628370831852
