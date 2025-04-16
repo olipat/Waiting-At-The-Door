@@ -25,6 +25,7 @@ public class LevelLoader : MonoBehaviour
         {
             AudioManager.instance.StopMusic();
             LoadNextLevel();
+            
         }
     }
 
