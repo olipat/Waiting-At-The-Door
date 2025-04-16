@@ -31,6 +31,10 @@ public class denialBoss : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.M))
+        {
+            health = 0;
+        }
         if(health == 2 && flag)
         {
             int randomIndex = Random.Range(3, 6);
@@ -51,7 +55,13 @@ public class denialBoss : MonoBehaviour
             Destroy(toDestroy);
             Destroy(slider);
 
+            ToastNotification.Show("You've overcome Denial. Anger now lies ahead.", 4f, "success");
+            UIController.Instance.StartCoroutine(UIController.Instance.PostDenialSequence());
+
+
             AudioManager.instance.PlayBGM();
+
+            
         }
     }
 
@@ -95,4 +105,6 @@ public class denialBoss : MonoBehaviour
         if (inactiveBeams.Count == 0) return null;
         return inactiveBeams[Random.Range(0, inactiveBeams.Count)];
     }
+
+    
 }

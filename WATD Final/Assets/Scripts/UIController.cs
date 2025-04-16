@@ -79,12 +79,12 @@ public class UIController : MonoBehaviour
 
     private Coroutine endScreenRoutine;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         saveGame();
-
-
 
         if (AudioManager.instance.playingBGM == false)
         {
@@ -706,5 +706,13 @@ public class UIController : MonoBehaviour
             }
             abilityOutlines[abilityIndex].enabled = true;
         }
+    }
+
+    public IEnumerator PostDenialSequence()
+    {
+        yield return new WaitForSecondsRealtime(5f); // wait for first toast to finish
+
+        ToastNotification.Hide();
+        ToastNotification.Show("New ability unlocked: Shatter Bark! Press 2 to break weak walls.", 6f, "info");
     }
 }

@@ -58,5 +58,6 @@ public class DenialPlatform : MonoBehaviour
         // Destroy after time limit is up 
         DenialAbility.Instance.RemovePlatform(this.gameObject);
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
