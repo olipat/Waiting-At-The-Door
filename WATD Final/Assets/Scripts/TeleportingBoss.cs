@@ -11,7 +11,8 @@ public class TeleportingBoss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D bossCollider;
     private bool isVulnerable = true;
-    [HideInInspector] public bool attacksEnabled = true;
+    [HideInInspector] public bool attacksEnabled = false;
+    private Coroutine bossRoutine;
 
     public int health = 5;
 
@@ -19,8 +20,16 @@ public class TeleportingBoss : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         bossCollider = GetComponent<Collider2D>();
-        StartCoroutine(BossLoop());
     }
+    public void BeginBossFight()
+    {
+        if (bossRoutine == null)
+        {
+            attacksEnabled = true;
+            bossRoutine = StartCoroutine(BossLoop());
+        }
+    }
+
 
     IEnumerator BossLoop()
     {

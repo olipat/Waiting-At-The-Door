@@ -126,7 +126,7 @@ public class AngerBossManager : MonoBehaviour
         {
             Debug.Log("boss sprite being changed");
             bossSpriteRenderer.sprite = solidifiedBossSprite;
-            bossSpriteRenderer.color = new Color(40f, 0f, 0f, 255f);
+            bossSpriteRenderer.color = new Color(40f / 255f, 0f, 0f, 1f);
         }
         if (lavaTilemap != null)
         {
