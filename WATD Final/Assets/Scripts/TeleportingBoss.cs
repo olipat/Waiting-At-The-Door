@@ -11,6 +11,7 @@ public class TeleportingBoss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D bossCollider;
     private bool isVulnerable = true;
+    [HideInInspector] public bool attacksEnabled = true;
 
     public int health = 5;
 
@@ -56,6 +57,7 @@ public class TeleportingBoss : MonoBehaviour
 
     void PerformAttack()
     {
+        if (!attacksEnabled) return;
         //print("PA");
         int attackType = Random.Range(0, 2); // Choose between attack 1 or 2
 
@@ -109,10 +111,14 @@ public class TeleportingBoss : MonoBehaviour
     {
         if (isVulnerable)
         {
-            AngerBossManager manager = GetComponent<AngerBossManager>();
+            AngerBossManager manager = GetComponentInParent<AngerBossManager>();
             if (manager != null)
             {
                 manager.DamageBossArmor(1);
+            }
+            else
+            {
+                Debug.LogWarning("AngerBossManager not found on boss!");
             }
         }
     }

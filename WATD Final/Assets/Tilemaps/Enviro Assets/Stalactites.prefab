@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenTopSprite: {fileID: -2925049604490604961, guid: 82bbdeb8a94044d76ae5bcb030303663, type: 3}
-  bottomBrokenSprite: {fileID: 6985807242155677607, guid: 82bbdeb8a94044d76ae5bcb030303663, type: 3}
+  bottomBrokenSprite: {fileID: 8038619296897062099, guid: 23ae9fcf3f8b52b41a73e12e3cf06821, type: 3}
   topPiece: {fileID: 7229529886201703732}
   bottomPiece: {fileID: 8171258797419806594}
 --- !u!1 &7229529886201703732
@@ -123,8 +123,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -477642649
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 2483985513741694718, guid: 82bbdeb8a94044d76ae5bcb030303663, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,8 +212,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -477642649
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1766623314740982396, guid: 82bbdeb8a94044d76ae5bcb030303663, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -288,7 +288,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a081f785d315a2b43966f129ce852878, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

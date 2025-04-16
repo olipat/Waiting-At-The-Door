@@ -58,6 +58,7 @@ public class AngerBarkAbility : MonoBehaviour
                 TeleportingBoss boss = enemy.GetComponent<TeleportingBoss>();
                 if (boss != null)
                 {
+                    Debug.Log("Calling ShatterBarkHit on boss...");
                     boss.ShatterBarkHit();
                     Debug.Log(enemy.name + " hit by Shatter Bark!");
                 }
