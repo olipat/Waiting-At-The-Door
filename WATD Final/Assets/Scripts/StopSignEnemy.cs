@@ -1,10 +1,11 @@
 using UnityEngine;
 public class StopSignEnemy : MonoBehaviour
 {
+    public Sprite someSprite;
     public float patrolSpeed;
     public float chaseSpeed;
     public float detectionRange;
-    public float stopDistance;
+   // public float stopDistance;
     public Transform player;
     private Rigidbody2D enemyRB;
     public GameObject groundCheck;
@@ -15,13 +16,18 @@ public class StopSignEnemy : MonoBehaviour
     public bool isWall;
 
     private bool isBlocking;
+
+    Animator animator;
     //adding vars to handle basic bark ability
     private bool pushedBack = false;
     public float pushDuration = 1.5f;
 
+    private bool stop = false;
+
     void Start()
     {
         enemyRB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,11 +39,11 @@ public class StopSignEnemy : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer < detectionRange)
+        if ((distanceToPlayer < detectionRange) && stop == false)
         {
             MoveToBlockPlayer();
         }
-        else
+        else if(stop == false)
         {
             isBlocking = false;
             Patrol();
@@ -94,7 +100,7 @@ public class StopSignEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, stopDistance);
+       // Gizmos.DrawWireSphere(transform.position, stopDistance);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundCheck.transform.position, 0.2f);
         Gizmos.DrawWireSphere(wallCheck.transform.position, 0.2f);
@@ -120,5 +126,24 @@ public class StopSignEnemy : MonoBehaviour
         yield return new WaitForSeconds(1.5f); 
 
         pushedBack = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            stop = true;
+            animator.SetBool("shouldStop", true);
+            //this.GetComponent<SpriteRenderer>().sprite = someSprite;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            stop = false;
+            animator.SetBool("shouldStop", false);
+        }
     }
 }
