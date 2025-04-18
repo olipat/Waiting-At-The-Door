@@ -4538,10 +4538,10 @@ MonoBehaviour:
   _showTimerRender: 1
   _darkTheme: 1
   _minimumMessageTime: 3
-  _margin: {x: 0, y: 10}
+  _margin: {x: 0, y: 0}
   _stopOnOver: 0
   _hideOnClick: 1
-  _messageScreenPosition: 1
+  _messageScreenPosition: 3
   _timerDirection: 1
 --- !u!1 &8341951464553419564
 GameObject:

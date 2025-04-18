@@ -4,6 +4,7 @@ public class LavaTrigger : MonoBehaviour
 {
     public RisingLava risingLava;
     public TeleportingBoss boss;
+    public bool isBossLavaTrigger = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +20,9 @@ public class LavaTrigger : MonoBehaviour
             boss.BeginBossFight();
         }
 
-        gameObject.SetActive(false);
+        if (isBossLavaTrigger)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
