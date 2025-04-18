@@ -4484,6 +4484,7 @@ GameObject:
   - component: {fileID: 2580018516096722067}
   - component: {fileID: 6859497682980074854}
   - component: {fileID: 8696572308921780553}
+  - component: {fileID: 883051467898226857}
   m_Layer: 5
   m_Name: ToastNotificationMessage
   m_TagString: Untagged
@@ -4538,11 +4539,26 @@ MonoBehaviour:
   _showTimerRender: 1
   _darkTheme: 1
   _minimumMessageTime: 3
-  _margin: {x: 0, y: 0}
-  _stopOnOver: 0
+  _margin: {x: 0, y: -20}
+  _stopOnOver: 1
   _hideOnClick: 1
-  _messageScreenPosition: 3
+  _messageScreenPosition: 1
   _timerDirection: 1
+--- !u!114 &883051467898226857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165708058324759431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01370afdac0d56b47beaeee7b6eaa1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  toastNotification: {fileID: 8696572308921780553}
+  yOffset: -300
 --- !u!1 &8341951464553419564
 GameObject:
   m_ObjectHideFlags: 0
