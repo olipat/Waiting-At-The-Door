@@ -8,6 +8,7 @@ public class BoneKey : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySFX(8);
             BoneKeyManager.Instance.CollectKey(keyIndex);
             gameObject.SetActive(false);
         }

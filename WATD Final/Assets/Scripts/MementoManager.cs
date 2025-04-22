@@ -7,6 +7,7 @@ public class MementoManager : MonoBehaviour
 
     public Image[] mementoSlots; 
     public GameObject[] mementos;
+    public string[] textArr;
 
     void Awake()
     {
@@ -23,6 +24,9 @@ public class MementoManager : MonoBehaviour
             mementoSlots[index].color = Color.white; 
 
             UIController.Instance.saveStats.momentosCollected[index] = true;
+
+            if(index < textArr.Length)
+            ToastNotification.Show(textArr[index], 4f);
         }
     }
 

@@ -33,7 +33,7 @@ public class ProximityHintManager : MonoBehaviour
 
             if (dist > triggerDistance && lastHintIndex == i)
             {
-                ToastNotification.Hide();
+                //ToastNotification.Hide();
                 lastHintIndex = -1;
             }
         }

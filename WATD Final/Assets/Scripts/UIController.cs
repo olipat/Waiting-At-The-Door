@@ -160,6 +160,11 @@ public class UIController : MonoBehaviour
             ActivateAbility(1);
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ActivateAbility(1);
+        }
+
         CheckPlatformCount();
 
         CheckButton();
@@ -434,7 +439,7 @@ public class UIController : MonoBehaviour
                 }
             }
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             for (int i = 0; i < saveStats.boneKeysCollected.Length; i++)
             {

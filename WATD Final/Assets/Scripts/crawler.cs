@@ -53,6 +53,8 @@ public class crawler : MonoBehaviour
         if (col.gameObject.tag == "Player" && !frozen)
         {
             frozen = true;
+
+            AudioManager.instance.PlaySFX(6);
             UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
             StartCoroutine(Freeze());
         }
