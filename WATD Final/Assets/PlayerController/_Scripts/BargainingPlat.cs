@@ -16,36 +16,36 @@ public class BargainingPlatform : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        if (platformType == PlatformType.Stable)
-        {
-            Rebuild();
-        }
-        else
-        {
-            BreakPlatform(); 
-        }
+        BreakPlatform();
     }
 
     public void Rebuild()
     {
-        if (isBreaking) return;
+        Debug.Log("Rebuild called on: " + gameObject.name);
+        
 
         isRebuilt = true;
         sr.sprite = rebuiltSprite;
-        gameObject.layer = LayerMask.NameToLayer("Ground");
+        Debug.Log("Setting sprite to: " + rebuiltSprite.name);
 
-        if (rb != null)
+        gameObject.layer = LayerMask.NameToLayer("ground");
+
+        if (rb != null){
             rb.simulated = true;
+        }
+            
 
         BoxCollider2D col = GetComponent<BoxCollider2D>();
-        if (col != null)
+        if (col != null){
             col.enabled = true;
-
+            Debug.Log("Collider enabled on: " + gameObject.name);
+        }
         isBreaking = false;
 
         if (platformType == PlatformType.Temporary)
         {
             Invoke(nameof(BreakPlatform), 3f); 
+            Debug.Log("Set to break again in 3s");
         }
     }
 
@@ -57,11 +57,11 @@ public class BargainingPlatform : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("IgnorePlayer");
 
         if (rb != null)
-            rb.simulated = false;
+            rb.simulated = true;
 
         BoxCollider2D col = GetComponent<BoxCollider2D>();
         if (col != null)
-            col.enabled = false;
+            col.enabled = true;
     }
 
     public bool IsRebuilt()

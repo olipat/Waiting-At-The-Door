@@ -59,7 +59,9 @@ public class BargainingAbility : MonoBehaviour
 
     public void TryRebuildPlatform()
     {
+        Debug.Log("trying to rebuild");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
+        Debug.Log("Found " + hits.Length + " colliders in range");
 
         foreach (var hit in hits)
         {
@@ -99,7 +101,7 @@ public class BargainingAbility : MonoBehaviour
                 oldest.BreakPlatform();
                 stablePlatforms.RemoveAt(0);
             }
-
+            Debug.Log("calling platform rebuild next");
             platform.Rebuild();
             stablePlatforms.Add(platform);
         }

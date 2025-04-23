@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.29, y: 30.550001}
+    oldSize: {x: 1.529, y: 3.055}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -176,5 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformType: 0
-  brokenSprite: {fileID: 7482667652216324306, guid: cf31043daa8f469448880bffc14613f7, type: 3}
-  rebuiltSprite: {fileID: 7482667652216324306, guid: cf31043daa8f469448880bffc14613f7, type: 3}
+  brokenSprite: {fileID: 8159180038140297874, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  rebuiltSprite: {fileID: -3518945094560601158, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
