@@ -239,7 +239,7 @@ public class UIController : MonoBehaviour
     {
         for (int i = 0; i < abilities.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i) && Time.timeScale == 1)
             {
                 ActivateAbility(i);
             }
@@ -353,6 +353,13 @@ public class UIController : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         Time.timeScale = 1f;
+        AudioManager.instance.PlaySFX(0);
+    }
+
+    public void Pause()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;
         AudioManager.instance.PlaySFX(0);
     }
 
@@ -569,7 +576,7 @@ public class UIController : MonoBehaviour
     {
         
 
-        if (abilityIndex < 0 || abilityIndex >= abilities.Length) return;
+        if (abilityIndex < 0 || abilityIndex >= abilities.Length || Time.timeScale == 0) return;
 
         if (isUnlocked[abilityIndex] == false)
         {
@@ -624,6 +631,7 @@ public class UIController : MonoBehaviour
             }
             else
             {
+                Debug.LogError("BargainingAbility script not found on the player GameObject.");
                 return;
             }
         }

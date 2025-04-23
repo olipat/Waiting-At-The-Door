@@ -73,7 +73,7 @@ namespace Controller
 
         private void GatherInput()
         {
-            if (!canMove)
+            if (!canMove || Time.deltaTime == 0)
             {
                 _frameInput = new FrameInput
                 {

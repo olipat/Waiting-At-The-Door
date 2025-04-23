@@ -26,7 +26,7 @@ public class BargainingAbility : MonoBehaviour
 
     void Update()
     {
-     if (unlocked)
+     if (unlocked && Time.timeScale != 0)
         {
             UseBargainingAbility();
         }   
@@ -34,10 +34,10 @@ public class BargainingAbility : MonoBehaviour
 
     public void UseBargainingAbility()
     {
-        Debug.Log("Using bargaining Ability");
+        
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            Debug.Log("Using bargaining break Ability");
+            
             holdTimer += Time.deltaTime;
 
             if (holdTimer > holdTimeToBreak)

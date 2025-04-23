@@ -50,7 +50,7 @@ public class DenialAbility : MonoBehaviour
 
     public void SpawnPlatform()
     {
-        if (platformPrefab == null)
+        if (platformPrefab == null || Time.timeScale == 0)
         {
             return;
         }

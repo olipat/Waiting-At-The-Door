@@ -129,31 +129,36 @@ public class AudioManager : MonoBehaviour
         sfx[sfxToPlay].Play();
     }
 
-   /*
+    /*
+     void OnApplicationFocus(bool hasFocus)
+     {
+         if (hasFocus)
+         {
+             //StopAllCoroutines(); // Cancel any ongoing coroutine to avoid conflicts
+
+             if (BGMScene == true)
+             {
+                 StartCoroutine(WaitBeforeResumingBGM(3f)); // Wait 3 seconds before setting playingBGM to true
+             }
+
+         }
+         else
+         {
+             playingBGM = false;
+         }
+
+     }
+
+     IEnumerator WaitBeforeResumingBGM(float delay)
+     {
+         yield return new WaitForSeconds(delay);
+         playingBGM = true;
+     }
+     */
+
     void OnApplicationFocus(bool hasFocus)
     {
-        if (hasFocus)
-        {
-            //StopAllCoroutines(); // Cancel any ongoing coroutine to avoid conflicts
-
-            if (BGMScene == true)
-            {
-                StartCoroutine(WaitBeforeResumingBGM(3f)); // Wait 3 seconds before setting playingBGM to true
-            }
-
-        }
-        else
-        {
-            playingBGM = false;
-        }
-
+        UIController.Instance.Pause();
     }
-
-    IEnumerator WaitBeforeResumingBGM(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        playingBGM = true;
-    }
-    */
 }
    

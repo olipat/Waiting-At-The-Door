@@ -56,15 +56,18 @@ namespace Controller
         {
             if (_player == null) return;
 
-            DetectGroundColor();
+            if (Time.timeScale == 1)
+            {
+                DetectGroundColor();
 
-            HandleSpriteFlip();
-            
+                HandleSpriteFlip();
 
-            HandleIdleSpeed();
-            _anim.SetBool("isRunning", _player.FrameInput.x != 0 && _player is PlayerController pc && pc.IsRunning());
 
-            HandleCharacterTilt();
+                HandleIdleSpeed();
+                _anim.SetBool("isRunning", _player.FrameInput.x != 0 && _player is PlayerController pc && pc.IsRunning());
+
+                HandleCharacterTilt();
+            }
         }
 
         private void HandleSpriteFlip()
