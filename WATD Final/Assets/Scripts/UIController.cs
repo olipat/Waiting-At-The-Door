@@ -539,7 +539,10 @@ public class UIController : MonoBehaviour
             btn.enabled = false;
         }
 
-        float fadeDuration = 1f; 
+        float fadeDuration = 1f;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
@@ -551,9 +554,14 @@ public class UIController : MonoBehaviour
         Time.timeScale = 0f;
         canvasGroup.alpha = 1f; // Ensure it's fully visible
 
+        Debug.Log("It reacheddvdv jhere");
+        int i = 0;
         foreach (var btn in buttons)
         {
+            Debug.Log("enabled "+i + " " + btn.name);
             btn.enabled = true;
+            i++;
+            
         }
     }
 
