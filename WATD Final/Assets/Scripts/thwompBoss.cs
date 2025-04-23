@@ -69,6 +69,8 @@ public class thwompBoss : MonoBehaviour
         rb.isKinematic = true;
         yield return new WaitForSeconds(resetDelay);
 
+        m_SpriteRenderer.enabled = true;
+
         float elapsed = 0f;
         Vector3 startPos = transform.position;
         while (elapsed < 1f)
@@ -81,6 +83,6 @@ public class thwompBoss : MonoBehaviour
 
         rb.MovePosition(originalPosition);
         isFalling = false;
-        m_SpriteRenderer.enabled = true;
+       
     }
 }

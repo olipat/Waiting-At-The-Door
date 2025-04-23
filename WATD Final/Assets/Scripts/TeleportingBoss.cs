@@ -123,7 +123,14 @@ public class TeleportingBoss : MonoBehaviour
             AngerBossManager manager = GetComponentInParent<AngerBossManager>();
             if (manager != null)
             {
-                manager.DamageBossArmor(1);
+                if (manager.bossArmor > 0)
+                {
+                    manager.DamageBossArmor(1);
+                }
+                else if(manager.bossArmor == 0)
+                {
+                    ToastNotification.Show("He's too strong to finish head-on... but something’s shifted.", 4f, "error");
+                }
             }
             else
             {

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -49,6 +50,7 @@ public class AngerBossManager : MonoBehaviour
     private bool waterTriggered = false;
 
     public GameObject slider;
+    public BoxCollider2D BossTrigger;
 
     private void Start()
     {
@@ -65,7 +67,7 @@ public class AngerBossManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.M))
         {
-            DamageBossArmor(6);
+            DamageBossArmor(5);
         }
 
         if (bossArmor <= 0 && !stalactiteSpawned)
@@ -98,6 +100,9 @@ public class AngerBossManager : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
+
+        ToastNotification.Show("He’s cracked... but not broken. Maybe something else can end this.", 6f, "alert");
+
         SpawnStalactite();
     }
 
@@ -157,11 +162,27 @@ public class AngerBossManager : MonoBehaviour
             Debug.Log("lava collider enabled");
             solidGroundCollider.enabled = true;
         }
+
+        StartCoroutine(EndBoss());
+
+        AudioManager.instance.PlayBGM();
+
+        UIController.Instance.UnlockAbility(2);
+
+        UIController.Instance.StartCoroutine(UIController.Instance.PostAngerSequence());
+
+        GameManager.instance.FightingBoss = false;
+
+        Destroy(slider);
+        //Destroy(BossTrigger);
+
     }
 
     //Call this function when the player uses shatter bark on the boss armor
     //shatter bark might need to be modified for the boss so it doesn't destory 
     //all armor in one shot, but one at a time (olivia can handle this)
+
+    //I Just took over and adjusted this cause I was bored (Adith)
     public void DamageBossArmor(int amount)
     {
         bossArmor -= amount;
@@ -169,23 +190,12 @@ public class AngerBossManager : MonoBehaviour
         Debug.Log("Boss damaged");
 
         GetComponent<HealthBar>().SetHealth(bossArmor);
+    }
 
-        if (bossArmor <= 0)
-        {
-            this.gameObject.SetActive(false);
+    IEnumerator EndBoss()
+    {
+        yield return new WaitForSeconds(2f);
+        this.gameObject.SetActive(false);
 
-            RisingLavaManager.instance.ResetAllLava();
-
-            AudioManager.instance.PlayBGM();
-
-            UIController.Instance.UnlockAbility(2);
-
-            UIController.Instance.StartCoroutine(UIController.Instance.PostAngerSequence());
-
-            GameManager.instance.FightingBoss = false;
-            
-            Destroy(slider);
-
-        }
     }
 }
