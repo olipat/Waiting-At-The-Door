@@ -4,6 +4,7 @@ public class BargainingPlatform : MonoBehaviour
 {
     public enum PlatformType { Stable, Temporary }
     public PlatformType platformType = PlatformType.Stable;
+    public event System.Action<BargainingPlatform> OnRebuilt;
 
     public Sprite brokenSprite;
     public Sprite rebuiltSprite;
@@ -21,19 +22,14 @@ public class BargainingPlatform : MonoBehaviour
 
     public void Rebuild()
     {
-        Debug.Log("Rebuild called on: " + gameObject.name);
-        
-
         isRebuilt = true;
         sr.sprite = rebuiltSprite;
-        Debug.Log("Setting sprite to: " + rebuiltSprite.name);
 
         gameObject.layer = LayerMask.NameToLayer("ground");
 
         if (rb != null){
             rb.simulated = true;
         }
-            
 
         BoxCollider2D col = GetComponent<BoxCollider2D>();
         if (col != null){
@@ -41,6 +37,8 @@ public class BargainingPlatform : MonoBehaviour
             Debug.Log("Collider enabled on: " + gameObject.name);
         }
         isBreaking = false;
+
+        OnRebuilt?.Invoke(this);
 
         if (platformType == PlatformType.Temporary)
         {
@@ -73,4 +71,5 @@ public class BargainingPlatform : MonoBehaviour
     {
         return platformType == PlatformType.Stable;
     }
+    
 }

@@ -12,6 +12,7 @@ TagManager:
   - Lava
   - Boss
   - LavaTrigger
+  - Boulder
   layers:
   - Default
   - TransparentFX

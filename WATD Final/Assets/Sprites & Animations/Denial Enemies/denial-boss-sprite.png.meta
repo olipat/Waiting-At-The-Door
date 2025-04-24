@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: 67c1aabaf3c673c499205396583cbe5e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4945315891023059890
+    second: denial-boss-sprite_0
+  - first:
+      213: 2148480762473994441
+    second: denial-boss-sprite_1
+  - first:
+      213: 4513058880021914227
+    second: denial-boss-sprite_2
+  - first:
+      213: -2920943811185168802
+    second: denial-boss-sprite_3
+  - first:
+      213: 8337998064316534804
+    second: denial-boss-sprite_4
+  - first:
+      213: -1837903314335814246
+    second: denial-boss-sprite_5
+  - first:
+      213: 6395329363485521813
+    second: denial-boss-sprite_6
+  - first:
+      213: 2022492274221405935
+    second: denial-boss-sprite_7
+  - first:
+      213: -5858310539581324494
+    second: denial-boss-sprite_8
+  - first:
+      213: -2554297549429469287
+    second: denial-boss-sprite_9
+  - first:
+      213: 1482126675812234013
+    second: denial-boss-sprite_10
+  - first:
+      213: -5242299649853352676
+    second: denial-boss-sprite_11
+  - first:
+      213: -5381028005805536942
+    second: denial-boss-sprite_12
+  - first:
+      213: 4119309672033238579
+    second: denial-boss-sprite_13
+  - first:
+      213: 5974792712289246189
+    second: denial-boss-sprite_14
+  - first:
+      213: 3589983208462102605
+    second: denial-boss-sprite_15
+  - first:
+      213: -3260313433043707169
+    second: denial-boss-sprite_16
+  - first:
+      213: -4174721771267937614
+    second: denial-boss-sprite_17
+  - first:
+      213: -2098458621516073712
+    second: denial-boss-sprite_18
+  - first:
+      213: -3610257853496238980
+    second: denial-boss-sprite_19
+  - first:
+      213: 2203498305740911787
+    second: denial-boss-sprite_20
+  - first:
+      213: 4062538295401091157
+    second: denial-boss-sprite_21
+  - first:
+      213: 3599063830097527455
+    second: denial-boss-sprite_22
+  - first:
+      213: -278747173503725648
+    second: denial-boss-sprite_23
+  - first:
+      213: 6596967336168213464
+    second: denial-boss-sprite_24
+  - first:
+      213: -4015562703389150063
+    second: denial-boss-sprite_25
+  - first:
+      213: -6905909762167876092
+    second: denial-boss-sprite_26
+  - first:
+      213: 6976067780304098419
+    second: denial-boss-sprite_27
+  - first:
+      213: -8551301487372095276
+    second: denial-boss-sprite_28
+  - first:
+      213: 8520287660407178049
+    second: denial-boss-sprite_29
+  - first:
+      213: 4690827562751509095
+    second: denial-boss-sprite_30
+  - first:
+      213: -7898964612392264630
+    second: denial-boss-sprite_31
+  - first:
+      213: 6669952633897124613
+    second: denial-boss-sprite_32
+  - first:
+      213: 4808979120708290441
+    second: denial-boss-sprite_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: denial-boss-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 9935
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44e9750665be5bb0800000000000000
+      internalID: -4945315891023059890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 9935
+        width: 1393
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8d50ecedfe0dd10800000000000000
+      internalID: 2148480762473994441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 9935
+        width: 1391
+        height: 1924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372e022e32b91ae30800000000000000
+      internalID: 4513058880021914227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 9935
+        width: 1390
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5eae6d5419b677d0800000000000000
+      internalID: -2920943811185168802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 5801
+        y: 9927
+        width: 1388
+        height: 1924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4105b79101586b370800000000000000
+      internalID: 8337998064316534804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 7227
+        y: 9919
+        width: 1388
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d20895ca47e76e0800000000000000
+      internalID: -1837903314335814246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 7954
+        width: 1390
+        height: 1924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597fd241c26c0c850800000000000000
+      internalID: 6395329363485521813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 7935
+        width: 1391
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe650fdf106511c10800000000000000
+      internalID: 2022492274221405935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 2997
+        y: 7946
+        width: 1393
+        height: 1914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23304585a9913bea0800000000000000
+      internalID: -5858310539581324494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 4436
+        y: 7948
+        width: 1395
+        height: 1908
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f0b9b79ef4d8cd0800000000000000
+      internalID: -2554297549429469287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_10
+      rect:
+        serializedVersion: 2
+        x: 5876
+        y: 7938
+        width: 1395
+        height: 1914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d133be7eb52919410800000000000000
+      internalID: 1482126675812234013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 7306
+        y: 7928
+        width: 1395
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15165c4e3c9f37b0800000000000000
+      internalID: -5242299649853352676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 5976
+        width: 1395
+        height: 1924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2594883e98fb255b0800000000000000
+      internalID: -5381028005805536942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_13
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 5959
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e3f59525aba2930800000000000000
+      internalID: 4119309672033238579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_14
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 5942
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debd796e05abae250800000000000000
+      internalID: 5974792712289246189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_15
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 5965
+        width: 1393
+        height: 1926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40300225be22d130800000000000000
+      internalID: 3589983208462102605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_16
+      rect:
+        serializedVersion: 2
+        x: 6001
+        y: 5976
+        width: 1391
+        height: 1923
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdadefed43a01c2d0800000000000000
+      internalID: -3260313433043707169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_17
+      rect:
+        serializedVersion: 2
+        x: 7468
+        y: 5954
+        width: 1390
+        height: 1926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba2c7beaa86016c0800000000000000
+      internalID: -4174721771267937614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_18
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 3974
+        width: 1388
+        height: 1923
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015bda87007c0e2e0800000000000000
+      internalID: -2098458621516073712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_19
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 3974
+        width: 1388
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7cdac63c99c5edc0800000000000000
+      internalID: -3610257853496238980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_20
+      rect:
+        serializedVersion: 2
+        x: 3123
+        y: 3962
+        width: 1390
+        height: 1917
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4bcd0d806649e10800000000000000
+      internalID: 2203498305740911787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_21
+      rect:
+        serializedVersion: 2
+        x: 4624
+        y: 3997
+        width: 1391
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5509dcf2e09016830800000000000000
+      internalID: 4062538295401091157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_22
+      rect:
+        serializedVersion: 2
+        x: 6115
+        y: 3985
+        width: 1393
+        height: 1917
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f928bec1c7172f130800000000000000
+      internalID: 3599063830097527455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_23
+      rect:
+        serializedVersion: 2
+        x: 7559
+        y: 3951
+        width: 1395
+        height: 1917
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf8a2d2ce0b12cf0800000000000000
+      internalID: -278747173503725648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_24
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 2034
+        width: 1395
+        height: 1917
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db492b07d22d8b50800000000000000
+      internalID: 6596967336168213464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_25
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 2031
+        width: 1395
+        height: 1919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194be232ffad548c0800000000000000
+      internalID: -4015562703389150063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_26
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 2031
+        width: 1395
+        height: 1923
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406d41f09a74920a0800000000000000
+      internalID: -6905909762167876092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_27
+      rect:
+        serializedVersion: 2
+        x: 4568
+        y: 2031
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374d2167fa8ffc060800000000000000
+      internalID: 6976067780304098419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_28
+      rect:
+        serializedVersion: 2
+        x: 6040
+        y: 2031
+        width: 1399
+        height: 1931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0baed9a9ca35980800000000000000
+      internalID: -8551301487372095276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_29
+      rect:
+        serializedVersion: 2
+        x: 7496
+        y: 2047
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143c6b61c742e3670800000000000000
+      internalID: 8520287660407178049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_30
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 79
+        width: 1399
+        height: 1931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7624a64b0da291140800000000000000
+      internalID: 4690827562751509095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_31
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 95
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c5af8198d316290800000000000000
+      internalID: -7898964612392264630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_32
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 79
+        width: 1399
+        height: 1931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5038e14e49e609c50800000000000000
+      internalID: 6669952633897124613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: denial-boss-sprite_33
+      rect:
+        serializedVersion: 2
+        x: 4632
+        y: 63
+        width: 1395
+        height: 1927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 987861ef70decb240800000000000000
+      internalID: 4808979120708290441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
