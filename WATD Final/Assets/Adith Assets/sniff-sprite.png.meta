@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sniff-sprite_0: 2926137768612019254
+      sniff-sprite_1: -5225327326326264850
+      sniff-sprite_10: 1055927446009804600
+      sniff-sprite_2: -4306282222590813778
+      sniff-sprite_3: 3836668242257220572
+      sniff-sprite_4: -9022997448402939561
+      sniff-sprite_5: -6652515412316690065
+      sniff-sprite_6: 3737051783369170880
+      sniff-sprite_7: -9093953532110946201
+      sniff-sprite_8: -8725793678737085531
+      sniff-sprite_9: 634622422404402447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

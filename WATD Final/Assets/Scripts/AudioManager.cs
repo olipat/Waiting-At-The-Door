@@ -28,14 +28,17 @@ public class AudioManager : MonoBehaviour
     public bool playingMenuMusic;
     public AudioSource[] bgm;
     public AudioSource[] bossMusic;
+    public AudioSource[] cutSceneMusic;
     public int currentBGM;
     public bool playingBGM;
     public bool playingBossMusic;
+    public bool playingCutsceneMusic;
 
     public bool BGMScene = false;
 
     public AudioSource[] sfx;
 
+    private int cutSceneNum = 0;
 
 
     // Start is called before the first frame update
@@ -73,6 +76,13 @@ public class AudioManager : MonoBehaviour
                 bossMusic[currentBGM].Play();
             }
         }
+        else if (playingCutsceneMusic)
+        {
+            if (cutSceneMusic[cutSceneNum].isPlaying == false)
+            {
+                //cutSceneMusic[cutSceneNum].Play();
+            }
+        }
     }
 
     public void StopMusic()
@@ -88,9 +98,14 @@ public class AudioManager : MonoBehaviour
         {
             track.Stop();
         }
+        foreach (AudioSource track in cutSceneMusic)
+        {
+            track.Stop();
+        }
 
         playingBGM = false;
         playingBossMusic = false;
+        playingCutsceneMusic = false;
     }
 
     public void PlayMenuMusic()
@@ -104,13 +119,13 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM()
     {
         StopMusic();
-        Debug.Log(GameManager.instance.currentLevel);
         currentBGM = GameManager.instance.currentLevel - 1;
 
         bgm[currentBGM].Play();
         playingBGM = true;
         playingMenuMusic = false;
         playingBossMusic = false;
+        playingCutsceneMusic = false;
     }
 
     public void PlayBossMusic()
@@ -121,6 +136,19 @@ public class AudioManager : MonoBehaviour
         playingBossMusic = true;
         playingBGM = false;
         playingMenuMusic = false;
+        playingCutsceneMusic = false;
+    }
+
+    public void PlayCutsceneMusic()
+    {
+        StopMusic();
+
+        cutSceneMusic[cutSceneNum].Play();
+        playingBossMusic = false;
+        playingBGM = false;
+        playingMenuMusic = false;
+        playingCutsceneMusic = true;
+        cutSceneNum++;
     }
 
     public void PlaySFX(int sfxToPlay)

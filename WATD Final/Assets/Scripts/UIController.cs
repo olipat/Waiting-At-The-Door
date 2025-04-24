@@ -370,6 +370,7 @@ public class UIController : MonoBehaviour
         saveStats.level = GameManager.instance.currentLevel;
         saveStats.myPos.SetPos(player.transform.position);
 
+        Debug.Log("Transform: "+player.transform.position);
         SaveManager.Instance.Save();
         Unpause();
     }
@@ -393,14 +394,15 @@ public class UIController : MonoBehaviour
             endScreenRoutine = null;
         }
 
+        
 
         //LevelLoader.Instance.transition.SetTrigger("Start");
         //LevelLoader.Instance.transition.SetTrigger("End");
 
         SaveManager.Instance.load();
         Time.timeScale = 1f;
-
-        FallingPlatforms.instance.returnPlatforms();
+        
+        FallingPlatforms.instance?.returnPlatforms();
         //StalactiteManager.instance.ResetAllStalactites();
 
         Controller.PlayerController playerController = FindFirstObjectByType<Controller.PlayerController>();
@@ -560,14 +562,11 @@ public class UIController : MonoBehaviour
         Time.timeScale = 0f;
         canvasGroup.alpha = 1f; // Ensure it's fully visible
 
-        Debug.Log("It reacheddvdv jhere");
-        int i = 0;
+       
         foreach (var btn in buttons)
         {
-            Debug.Log("enabled "+i + " " + btn.name);
             btn.enabled = true;
-            i++;
-            
+         
         }
     }
 

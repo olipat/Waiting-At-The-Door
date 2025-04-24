@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainMenu : MonoBehaviour
 {
     public string playScene;
     public TMP_Text title;
     public float fadeDuration = 1f;
+
+    public RawImage cutsceneImage;         
+    public CanvasGroup cutsceneGroup;     
+    public VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +31,44 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        LevelLoader.Instance.LoadNextLevel();
-        AudioManager.instance.PlaySFX(0);
-        //AudioManager.instance.PlayBGM();
         
+        AudioManager.instance.PlaySFX(0);
+        StartCoroutine(PlayCutsceneThenLoad());
+
     }
+
+    IEnumerator PlayCutsceneThenLoad()
+    {
+        // Show the cutscene screen
+        cutsceneImage.gameObject.SetActive(true);
+        cutsceneGroup.alpha = 0;
+
+        Debug.Log("Reached routine");
+        float elapsed = 0f;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            cutsceneGroup.alpha = Mathf.Clamp01(elapsed / fadeDuration);
+            yield return null;
+        }
+
+
+        // Start the video and wait for it to finish
+        videoPlayer.Play();
+        AudioManager.instance.PlayCutsceneMusic(); 
+
+        yield return new WaitForSeconds(0.3f);
+
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        AudioManager.instance.StopMusic();
+        // Cutscene is done — now load the next level
+        LevelLoader.Instance.LoadNextLevel();
+    }
+
 
     public void QuitGame()
     {
