@@ -21,12 +21,14 @@ public class denialBoss : MonoBehaviour
     public GameObject toDestroy;
     public GameObject slider;
 
+    Animator animator;
     void Start()
     {
         StartCoroutine(ControlBeams());
         hb.setMaxHealth(3);
         int randomIndex = Random.Range(0,3);
         tennisBalls[randomIndex].SetActive(true);
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -49,6 +51,7 @@ public class denialBoss : MonoBehaviour
         }
         else if(health <= 0)
         {
+            StartCoroutine(deathExplosion());
             this.gameObject.SetActive(false);
             GameManager.instance.FightingBoss = false;
             UIController.Instance.UnlockAbility(1);
@@ -92,6 +95,12 @@ public class denialBoss : MonoBehaviour
 
             yield return new WaitForSeconds(Random.Range(minOffTime, maxOffTime));
         }
+    }
+
+    IEnumerator deathExplosion()
+    {
+        animator.SetTrigger("death");
+        yield return new WaitForSeconds(1f);
     }
 
     IEnumerator ToggleBeam(bossBeam beam)
