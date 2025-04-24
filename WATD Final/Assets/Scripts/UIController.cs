@@ -80,7 +80,6 @@ public class UIController : MonoBehaviour
     private Coroutine endScreenRoutine;
 
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -468,7 +467,7 @@ public class UIController : MonoBehaviour
             AudioManager.instance.PlayBGM();
         }
 
-
+        
     }
 
     public void ApplyDamage(int damageAmount = 1)

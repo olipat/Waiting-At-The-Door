@@ -83,4 +83,13 @@ public class bossBeam : MonoBehaviour
             yield return new WaitForSeconds(damageInterval);
         }
     }
+
+    public void ForceOff()
+    {
+        StopAllCoroutines(); // Cancel flickering or damage routines
+        SetBeamActive(false); // Disables visuals and collider
+        isPlayerInLight = false;
+        timeInLight = 0f;
+    }
+
 }
