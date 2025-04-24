@@ -25,7 +25,7 @@ public class BargainingPlatform : MonoBehaviour
         isRebuilt = true;
         sr.sprite = rebuiltSprite;
 
-        gameObject.layer = LayerMask.NameToLayer("ground");
+        gameObject.layer = LayerMask.NameToLayer("platformLayer");
 
         if (rb != null){
             rb.simulated = true;
