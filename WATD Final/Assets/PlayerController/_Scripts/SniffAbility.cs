@@ -9,11 +9,20 @@ public class SniffAbility : MonoBehaviour
     public LayerMask platformLayer;
     public LayerMask mementoLayer;
 
+    [SerializeField] private Animator _animator; // Drag PlayerAnimator's Animator here in Inspector
+
+    private static readonly int SniffTrigger = Animator.StringToHash("TriggerSniff");
+
+
     void Update()
     {
         if (Input.GetKeyDown(sniffKey) || Input.GetButtonDown("Fire2"))
         {
             AudioManager.instance.PlaySFX(11);
+            if (_animator != null)
+            {
+                _animator.SetTrigger(SniffTrigger);
+            }
             SniffForPlatforms();
         }
     }

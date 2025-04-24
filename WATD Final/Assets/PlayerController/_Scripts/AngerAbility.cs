@@ -10,6 +10,9 @@ public class AngerBarkAbility : MonoBehaviour
 
     public AudioClip barkclip;
     private AudioSource audioSource;
+    [SerializeField] private Animator _animator; // Assign in Inspector
+    private static readonly int AngerBarkTrigger = Animator.StringToHash("TriggerAngerBark");
+
 
     private void Start()
     {
@@ -21,6 +24,10 @@ public class AngerBarkAbility : MonoBehaviour
     }
     public void UseAngerBark()
     {
+        if (_animator != null)
+        {
+            _animator.SetTrigger(AngerBarkTrigger);
+        }
         StartCoroutine(AngerBark());
     }
 

@@ -8,6 +8,8 @@ public class BarkAbility : MonoBehaviour
     public LayerMask enemyLayer;
     public AudioClip barkClip;
     private AudioSource audioSource;
+    [SerializeField] private Animator _animator; // Drag in Player's Animator in Inspector
+    private static readonly int BarkTrigger = Animator.StringToHash("TriggerBark");
 
     void Start()
     {
@@ -28,6 +30,12 @@ public class BarkAbility : MonoBehaviour
 
     void Bark()
     {
+    
+        if (_animator != null)
+        {
+            _animator.SetTrigger(BarkTrigger);
+        }
+
          if (barkClip != null && audioSource != null)
         {
             StartCoroutine(PlayBarkForOneSecond());
