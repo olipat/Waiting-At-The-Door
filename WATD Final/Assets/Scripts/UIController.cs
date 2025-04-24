@@ -164,7 +164,15 @@ public class UIController : MonoBehaviour
             ActivateAbility(1);
         }
 
-        CheckPlatformCount();
+        if (Input.GetKeyDown(KeyCode.P) && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                BoneKeyManager.Instance.CollectKey(i);
+            }
+        }
+
+            CheckPlatformCount();
 
         CheckButton();
 

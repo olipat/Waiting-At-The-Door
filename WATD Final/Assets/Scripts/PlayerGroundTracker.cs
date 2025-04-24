@@ -40,6 +40,7 @@ public class PlayerGroundTracker : MonoBehaviour
 
         if (hit.collider != null)
         {
+        
             Vector3 hitPoint = hit.point;
 
             // Optionally round the X to the nearest whole number to center on a tile (assuming tile size of 1)
