@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: divider_0
+      name: divider
       rect:
         serializedVersion: 2
-        x: 10
+        x: 4
         y: 4
-        width: 14
-        height: 14
+        width: 858
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,55 +140,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: divider_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 8
-        width: 807
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8464e5f23aff3a730800000000000000
-      internalID: 4009329169629333064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: divider_2
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 7
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87b73d395059cf9d0800000000000000
-      internalID: -2739150622160618632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 89bc18f08736bd84b8134e0a250b3f36
     internalID: 0
     vertices: []
     indices: 
@@ -198,7 +154,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      divider_0: -2603600634579841175
+      divider: -2603600634579841175
       divider_1: 4009329169629333064
       divider_2: -2739150622160618632
   mipmapLimitGroupName: 

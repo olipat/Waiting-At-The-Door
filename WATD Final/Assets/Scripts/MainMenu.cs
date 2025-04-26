@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        videoPlayer.Play();
+        videoPlayer.Pause();
         AudioManager.instance.PlayMenuMusic();
         //StartCoroutine(FadeLoop());
     }

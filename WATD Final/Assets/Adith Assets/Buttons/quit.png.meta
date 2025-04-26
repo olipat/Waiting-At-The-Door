@@ -125,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quit_0
+      name: quit
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 37
-        height: 42
+        x: 4
+        y: 3
+        width: 94
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,99 +146,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: quit_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 11
-        width: 27
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f49dcdc6ce9d8210800000000000000
-      internalID: 1336899241092420851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quit_2
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 38
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e60e2ec30da7ae4b0800000000000000
-      internalID: -5410376967538941842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quit_3
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 11
-        width: 11
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59c70bb3bf4f4ca20800000000000000
-      internalID: 3081857404903652501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quit_4
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 11
-        width: 18
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb42b18632530bc20800000000000000
-      internalID: 3220132159756641470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7c85d09ce63351d41a27aad6709bbc74
     internalID: 0
     vertices: []
     indices: 
@@ -248,7 +160,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      quit_0: 5398283193359031274
+      quit: 5398283193359031274
       quit_1: 1336899241092420851
       quit_2: -5410376967538941842
       quit_3: 3081857404903652501
