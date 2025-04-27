@@ -15,18 +15,24 @@ public class Thwomp : MonoBehaviour
 
     public SpriteRenderer m_SpriteRenderer;
     public GameObject explosionPreFab;
+
+    Animator animator;
+
+    bool groundCollisionExplosionFlag = false;
     void Start()
     {
         originalPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;  // Start as kinematic to prevent falling
         UIcontrolReferemce = GameObject.FindGameObjectWithTag("UiControl");
+        animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!isFalling && other.CompareTag("Player"))
         {
+            animator.SetTrigger("sleep");
             StartCoroutine(ShakeAndFall());
         }
     }
@@ -51,8 +57,9 @@ public class Thwomp : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6 && groundCollisionExplosionFlag == false)
         {
+            groundCollisionExplosionFlag = true;
             m_SpriteRenderer.enabled = false;
             Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
             StartCoroutine(ResetPosition());
@@ -67,6 +74,7 @@ public class Thwomp : MonoBehaviour
 
     IEnumerator ResetPosition()
     {
+        groundCollisionExplosionFlag = false;
         print("ground");
         rb.linearVelocity = Vector2.zero;
         rb.isKinematic = true;
