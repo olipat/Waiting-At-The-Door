@@ -14,7 +14,7 @@ public class AngerBarkAbility : MonoBehaviour
     [SerializeField] private Animator _animator; // Assign in Inspector
     private static readonly int AngerBarkTrigger = Animator.StringToHash("TriggerAngerBark");
 
-
+    public GameObject barkFXobject;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -37,7 +37,7 @@ public class AngerBarkAbility : MonoBehaviour
 
     private System.Collections.IEnumerator AngerBark()
     {
-
+        barkFXobject.GetComponent<abilityFX>().angerBark();
         if (barkclip != null && audioSource != null)
         {
             audioSource.clip = barkclip;

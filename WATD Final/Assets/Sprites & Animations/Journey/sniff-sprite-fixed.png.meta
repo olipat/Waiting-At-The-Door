@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 7b8d51143cf71a146ac3b06d9bfef74c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4089766523479063450
+    second: sniff-sprite-fixed_0
+  - first:
+      213: 2114477295837716386
+    second: sniff-sprite-fixed_1
+  - first:
+      213: -168397115353497491
+    second: sniff-sprite-fixed_2
+  - first:
+      213: 3551066221626471201
+    second: sniff-sprite-fixed_3
+  - first:
+      213: 6212061839586220568
+    second: sniff-sprite-fixed_4
+  - first:
+      213: -7448885101212807684
+    second: sniff-sprite-fixed_5
+  - first:
+      213: -3064222849537169895
+    second: sniff-sprite-fixed_6
+  - first:
+      213: -877547802125848191
+    second: sniff-sprite-fixed_7
+  - first:
+      213: 7833622008676813341
+    second: sniff-sprite-fixed_8
+  - first:
+      213: 8137434698079293496
+    second: sniff-sprite-fixed_9
+  - first:
+      213: 4132445937166950039
+    second: sniff-sprite-fixed_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_0
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 19
+        width: 147
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bf04e0cf4c1c830800000000000000
+      internalID: 4089766523479063450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_1
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 25
+        width: 183
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af1908c5e1285d10800000000000000
+      internalID: 2114477295837716386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 45
+        width: 168
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60872e37bbb9adf0800000000000000
+      internalID: -168397115353497491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_3
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 65
+        width: 140
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1233fe90aebe74130800000000000000
+      internalID: 3551066221626471201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_6
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 88
+        width: 95
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916a3b4ad81b975d0800000000000000
+      internalID: -3064222849537169895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_7
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 119
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1813dd46ce252d3f0800000000000000
+      internalID: -877547802125848191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a0ddb66bd96bc60800000000000000
+      internalID: 7833622008676813341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 14
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83054f17eb9fde070800000000000000
+      internalID: 8137434698079293496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniff-sprite-fixed_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 17
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e975a6fa5695930800000000000000
+      internalID: 4132445937166950039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9e70231067a999842afd17f425515b4c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sniff-sprite-fixed_0: 4089766523479063450
+      sniff-sprite-fixed_1: 2114477295837716386
+      sniff-sprite-fixed_10: 4132445937166950039
+      sniff-sprite-fixed_2: -168397115353497491
+      sniff-sprite-fixed_3: 3551066221626471201
+      sniff-sprite-fixed_6: -3064222849537169895
+      sniff-sprite-fixed_7: -877547802125848191
+      sniff-sprite-fixed_8: 7833622008676813341
+      sniff-sprite-fixed_9: 8137434698079293496
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

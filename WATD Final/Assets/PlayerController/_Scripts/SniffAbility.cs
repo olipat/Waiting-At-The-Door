@@ -14,7 +14,7 @@ public class SniffAbility : MonoBehaviour
 
     private static readonly int SniffTrigger = Animator.StringToHash("TriggerSniff");
 
-    
+    public GameObject barkFXobject;
     void Update()
     {
         if (Input.GetKeyDown(sniffKey) || Input.GetButtonDown("Fire2"))
@@ -33,6 +33,7 @@ public class SniffAbility : MonoBehaviour
 
     void SniffForPlatforms()
     {
+        barkFXobject.GetComponent<abilityFX>().sniff();
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, sniffRange, platformLayer);
         foreach (Collider2D hit in hits)
         {

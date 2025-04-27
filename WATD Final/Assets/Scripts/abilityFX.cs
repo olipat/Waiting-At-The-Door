@@ -41,6 +41,46 @@ public class abilityFX : MonoBehaviour
         animator.SetTrigger("normalBark");
     }
 
+    public void sniff()
+    {
+        print("SNIFF");
+        m_SpriteRenderer.enabled = true;
+        StartCoroutine(waitOneSecond());
+        if (dog_SR.flipX == true)
+        {
+            m_SpriteRenderer.flipX = true;
+            this.transform.position = new Vector2(target.position.x - 2.4f,
+            transform.position.y);
+        }
+        else
+        {
+            m_SpriteRenderer.flipX = false;
+            this.transform.position = new Vector2(target.position.x + 2.4f,
+            transform.position.y);
+        }
+        animator.SetTrigger("sniff");
+    }
+
+    public void angerBark()
+    {
+        print("ANGER BARK");
+        m_SpriteRenderer.enabled = true;
+        StartCoroutine(waitOneSecond());
+        if (dog_SR.flipX == true)
+        {
+            m_SpriteRenderer.flipX = true;
+            this.transform.position = new Vector2(target.position.x - 2.4f,
+            transform.position.y);
+        }
+        else
+        {
+            m_SpriteRenderer.flipX = false;
+            this.transform.position = new Vector2(target.position.x + 2.4f,
+            transform.position.y);
+        }
+        animator.SetTrigger("angerBark");
+    }
+
     IEnumerator waitOneSecond()
     {
         yield return new WaitForSeconds(0.5f);
