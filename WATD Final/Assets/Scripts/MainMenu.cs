@@ -33,19 +33,20 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        
         AudioManager.instance.PlaySFX(0);
+        AudioManager.instance.StopMusic();
         StartCoroutine(PlayCutsceneThenLoad());
 
     }
 
     IEnumerator PlayCutsceneThenLoad()
     {
+        yield return new WaitForSeconds(1f);
+
         // Show the cutscene screen
         cutsceneImage.gameObject.SetActive(true);
         cutsceneGroup.alpha = 0;
 
-        Debug.Log("Reached routine");
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {
@@ -67,6 +68,7 @@ public class MainMenu : MonoBehaviour
         }
 
         AudioManager.instance.StopMusic();
+
         // Cutscene is done — now load the next level
         LevelLoader.Instance.LoadNextLevel();
     }
