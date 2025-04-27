@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
@@ -19,7 +20,12 @@ public class BreakableObject : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            // Shrink and fade out before destroying
+            Sequence breakSequence = DOTween.Sequence();
+
+            breakSequence.Append(transform.DOScale(Vector3.zero, 0.3f).SetEase(Ease.InBack));
+            breakSequence.Join(GetComponent<SpriteRenderer>().DOFade(0f, 0.3f));
+            breakSequence.OnComplete(() => Destroy(gameObject));
         }
     }
 }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -54,31 +55,64 @@ public class Memento : MonoBehaviour
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
-    public void GlowGold(float duration)
-    {
-        StartCoroutine(GlowGoldTemporarily(duration));
-    }
+    //public void GlowGold(float duration)
+    //{
+    //    StartCoroutine(GlowGoldTemporarily(duration));
+    //}
 
-    private IEnumerator GlowGoldTemporarily(float duration)
+
+    //private IEnumerator GlowGoldTemporarily(float duration)
+    //{
+    //    if (glowPrefab != null)
+    //    {
+    //        if (activeGlow == null)
+    //        {
+    //            activeGlow = Instantiate(glowPrefab, transform.position, Quaternion.identity, transform);
+    //            activeGlow.transform.localPosition = new Vector3(0f, 0f, 1f); 
+    //        }
+    //        else
+    //        {
+    //            activeGlow.SetActive(true); 
+    //        }
+    //    }
+
+    //    yield return new WaitForSeconds(duration);
+
+    //    if (activeGlow != null)
+    //    {
+    //        activeGlow.SetActive(false); 
+    //    }
+    //}
+
+    public void GlowGold(float duration)
     {
         if (glowPrefab != null)
         {
             if (activeGlow == null)
             {
                 activeGlow = Instantiate(glowPrefab, transform.position, Quaternion.identity, transform);
-                activeGlow.transform.localPosition = new Vector3(0f, 0f, 1f); 
+                activeGlow.transform.localPosition = new Vector3(0f, 0f, 1f);
             }
             else
             {
-                activeGlow.SetActive(true); 
+                activeGlow.SetActive(true);
             }
-        }
 
-        yield return new WaitForSeconds(duration);
+            SpriteRenderer glowSprite = activeGlow.GetComponent<SpriteRenderer>();
+            if (glowSprite != null)
+            {
+                // Start from transparent
+                glowSprite.color = new Color(glowSprite.color.r, glowSprite.color.g, glowSprite.color.b, 0f);
 
-        if (activeGlow != null)
-        {
-            activeGlow.SetActive(false); 
+                Sequence glowSequence = DOTween.Sequence();
+                glowSequence.Append(glowSprite.DOFade(1f, 0.5f)) // Fade in
+                            .AppendInterval(duration)             // Stay visible
+                            .Append(glowSprite.DOFade(0f, 0.5f))  // Fade out
+                            .OnComplete(() =>
+                            {
+                                activeGlow.SetActive(false);
+                            });
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class BarkAbility : MonoBehaviour
@@ -46,6 +47,8 @@ public class BarkAbility : MonoBehaviour
         {
             if (hit.CompareTag("Small Enemy"))
             {
+                //hit.transform.DOShakePosition(0.2f, strength: 0.2f, vibrato: 10, randomness: 90);
+
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
                 Vector2 pushDir = (hit.transform.position - transform.position).normalized;
 
@@ -58,7 +61,9 @@ public class BarkAbility : MonoBehaviour
                 {
                     rb.AddForce(pushDir * pushForce, ForceMode2D.Impulse);
                 }
-                
+
+               
+
             }
         }
     }

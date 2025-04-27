@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class BossEntranceTrigger : MonoBehaviour
 {
@@ -36,35 +37,21 @@ public class BossEntranceTrigger : MonoBehaviour
 
     public void TriggerBlockade()
     {
-        StartCoroutine(TriggerBlockadeAfterDelay());
-    }
-
-    IEnumerator TriggerBlockadeAfterDelay()
-    {
-        yield return new WaitForSeconds(delayBeforeBlockade);
-
         if (blockadeWall != null)
         {
             blockadeWall.SetActive(true);
 
-            // Start drop animation
             Vector3 startPos = blockadeWall.transform.position;
             Vector3 endPos = startPos;
             endPos.y = 0.56f;
 
-            float elapsed = 0f;
-            while (elapsed < moveDuration)
+            // Delay before dropping
+            DOVirtual.DelayedCall(delayBeforeBlockade, () =>
             {
-                elapsed += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsed / moveDuration);
-                blockadeWall.transform.position = Vector3.Lerp(startPos, endPos, t);
-                yield return null;
-            }
-
-            blockadeWall.transform.position = endPos;
+                blockadeWall.transform.DOMoveY(endPos.y, moveDuration)
+                    .SetEase(Ease.OutBounce); // You can pick other eases too
+            });
         }
-
-        //Destroy(gameObject);
     }
 }
 

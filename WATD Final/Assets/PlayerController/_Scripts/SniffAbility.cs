@@ -1,5 +1,6 @@
 using UnityEngine;
 using Controller;
+using DG.Tweening;
 
 public class SniffAbility : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class SniffAbility : MonoBehaviour
             {
                 _animator.SetTrigger(SniffTrigger);
             }
+
+            transform.DOPunchScale(Vector3.one * 0.1f, 0.3f, 8, 1);
+
             SniffForPlatforms();
         }
     }

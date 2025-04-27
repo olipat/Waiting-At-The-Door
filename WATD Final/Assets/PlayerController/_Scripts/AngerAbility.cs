@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class AngerBarkAbility : MonoBehaviour
@@ -24,6 +25,9 @@ public class AngerBarkAbility : MonoBehaviour
     }
     public void UseAngerBark()
     {
+        Camera.main.transform.DOShakePosition(0.3f, strength: 0.5f, vibrato: 10, randomness: 90, snapping: false, fadeOut: true);
+        transform.DOPunchScale(Vector3.one * 0.1f, 0.3f, 10, 1);
+
         if (_animator != null)
         {
             _animator.SetTrigger(AngerBarkTrigger);
@@ -59,6 +63,13 @@ public class AngerBarkAbility : MonoBehaviour
                     eh.TakeDamage(damage);
                     Debug.Log(enemy.name + " took " + damage + " damage from Anger Bark");
                 }
+                
+                SpriteRenderer sr = enemy.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.DOColor(Color.red, 0.1f).OnComplete(() => sr.DOColor(Color.white, 0.1f));
+                }
+
             }
             else if (enemy.CompareTag("Boss"))
             {
@@ -69,6 +80,15 @@ public class AngerBarkAbility : MonoBehaviour
                     boss.ShatterBarkHit();
                     Debug.Log(enemy.name + " hit by Shatter Bark!");
                 }
+                if (GameManager.instance.FightingBoss == true)
+                {
+                    SpriteRenderer sr = enemy.GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        sr.DOColor(Color.red, 0.1f).OnComplete(() => sr.DOColor(Color.white, 0.1f));
+                    }
+                }
+
             }
         }
 
@@ -79,6 +99,9 @@ public class AngerBarkAbility : MonoBehaviour
             BreakableObject bo = obj.GetComponent<BreakableObject>();
             if (bo != null)
             {
+                obj.transform.DOPunchScale(Vector3.one * 0.2f, 0.2f, 10, 1)
+                    .OnComplete(() => bo.Break());
+
                 bo.Break();
                 Debug.Log(obj.name + " was broken by Anger Bark");
                 continue;

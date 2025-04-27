@@ -109,6 +109,8 @@ public class AngerBossManager : MonoBehaviour
     //spawns in the stalactite after armor is borken and triggers paarticle sys when stalac borken
     private void SpawnStalactite()
     {
+        GameManager.instance.FightingBoss = false;
+
         Debug.Log("trying to spawn the boss room stalactite");
         if (stalactitePrefab != null && stalactiteSpawnPoint != null)
         {
@@ -134,6 +136,8 @@ public class AngerBossManager : MonoBehaviour
     //The particle system is triggered here and the boss sprite and lava sprite are swapped
     private void TriggerWaterSplash()
     {
+        
+
         Debug.Log("in the splash funtionc");
         if (waterTriggered) return; 
 
@@ -171,7 +175,7 @@ public class AngerBossManager : MonoBehaviour
 
         UIController.Instance.StartCoroutine(UIController.Instance.PostAngerSequence());
 
-        GameManager.instance.FightingBoss = false;
+        
 
         Destroy(slider);
         //Destroy(BossTrigger);

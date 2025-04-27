@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -37,23 +38,40 @@ public class FallingPlatform : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    //Use this later for sniff ability 
+    ////Use this later for sniff ability 
+    //public void WarnPlatform(float warningDuration)
+    //{
+    //    StartCoroutine(GlowRedTemporarily(warningDuration));
+    //}
+
+
+    //private IEnumerator GlowRedTemporarily(float duration)
+    //{
+    //    Color originalColor = spriteRenderers[0].color;
+
+    //    foreach (SpriteRenderer sr in spriteRenderers)
+    //        sr.color = Color.red;
+
+    //    yield return new WaitForSeconds(duration);
+
+    //    foreach (SpriteRenderer sr in spriteRenderers)
+    //        sr.color = originalColor;
+    //}
+
     public void WarnPlatform(float warningDuration)
     {
-        StartCoroutine(GlowRedTemporarily(warningDuration));
-    }
-
-    private IEnumerator GlowRedTemporarily(float duration)
-    {
-        Color originalColor = spriteRenderers[0].color;
-
         foreach (SpriteRenderer sr in spriteRenderers)
-            sr.color = Color.red;
+        {
+            if (sr == null) continue;
 
-        yield return new WaitForSeconds(duration);
+            Color originalColor = sr.color;
 
-        foreach (SpriteRenderer sr in spriteRenderers)
-            sr.color = originalColor;
+            DG.Tweening.Sequence warnSequence = DOTween.Sequence();
+
+            warnSequence.Append(sr.DOColor(Color.red, 0.2f)) // Fade to red
+                        .AppendInterval(warningDuration)      // Stay red
+                        .Append(sr.DOColor(originalColor, 0.2f)); // Fade back to original
+        }
     }
 
     public void ResetPlatform(Vector3 resetPosition)
