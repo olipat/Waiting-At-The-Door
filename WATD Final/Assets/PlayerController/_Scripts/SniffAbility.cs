@@ -14,7 +14,7 @@ public class SniffAbility : MonoBehaviour
 
     private static readonly int SniffTrigger = Animator.StringToHash("TriggerSniff");
 
-
+    
     void Update()
     {
         if (Input.GetKeyDown(sniffKey) || Input.GetButtonDown("Fire2"))

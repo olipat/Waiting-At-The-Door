@@ -12,6 +12,8 @@ public class BarkAbility : MonoBehaviour
     [SerializeField] private Animator _animator; // Drag in Player's Animator in Inspector
     private static readonly int BarkTrigger = Animator.StringToHash("TriggerBark");
 
+    public GameObject barkFXobject;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -31,6 +33,7 @@ public class BarkAbility : MonoBehaviour
 
     void Bark()
     {
+        barkFXobject.GetComponent<abilityFX>().bark();
     
         if (_animator != null)
         {
