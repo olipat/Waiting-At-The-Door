@@ -559,7 +559,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bark-sprite-fixed_0: -2841726370701788552
+      bark-sprite-fixed_1: 5909221546673964645
+      bark-sprite-fixed_10: 2292979427550871503
+      bark-sprite-fixed_11: 4374850941579624402
+      bark-sprite-fixed_12: -1303579854469431107
+      bark-sprite-fixed_13: 6478477228052656299
+      bark-sprite-fixed_14: 3764776129512251565
+      bark-sprite-fixed_15: 7311158042005944900
+      bark-sprite-fixed_16: -2415236616588918528
+      bark-sprite-fixed_17: 3019221645916856617
+      bark-sprite-fixed_2: 5324486149901238961
+      bark-sprite-fixed_3: 5172483118223258305
+      bark-sprite-fixed_4: 7075501526316906365
+      bark-sprite-fixed_5: -454117212176271564
+      bark-sprite-fixed_6: -60175588377163502
+      bark-sprite-fixed_7: 8188189226554019904
+      bark-sprite-fixed_8: 5400318453347111360
+      bark-sprite-fixed_9: -3724958705758125683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
