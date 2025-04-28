@@ -80,6 +80,8 @@ public class UIController : MonoBehaviour
     private Coroutine endScreenRoutine;
 
 
+    public Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -482,6 +484,8 @@ public class UIController : MonoBehaviour
 
     public void ApplyDamage(int damageAmount = 1)
     {
+        //change player sprite to hurt, or play hurt animation
+        animator.SetTrigger("hurt");
         playerHealth -= damageAmount;
         playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesn't go below 0
 
