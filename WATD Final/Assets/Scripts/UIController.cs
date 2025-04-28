@@ -174,7 +174,7 @@ public class UIController : MonoBehaviour
             }
         }
 
-            CheckPlatformCount();
+        CheckPlatformCount();
 
         CheckButton();
 
@@ -756,6 +756,6 @@ public class UIController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
 
         ToastNotification.Hide(); // Optional: clear the stack first
-        ToastNotification.Show("New ability unlocked: Hold 3 to unleash brickbreaker Bark.", 6f, "info");
+        ToastNotification.Show("New ability unlocked: Hold 3 to rebuild platforms.", 6f, "info");
     }
 }
