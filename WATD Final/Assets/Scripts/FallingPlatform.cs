@@ -22,14 +22,23 @@ public class FallingPlatform : MonoBehaviour
     {
         if (!hasFallen && collision.collider.CompareTag("Player"))
         {
-            StartCoroutine(FallAfterDelay());
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                if (contact.normal.y <= -0.5f) 
+                {
+                    StartCoroutine(FallAfterDelay());
+                    break;
+                }
+            }
         }
     }
 
     private System.Collections.IEnumerator FallAfterDelay()
     {
         hasFallen = true;
-        yield return new WaitForSeconds(fallDelay);
+        transform.DOShakePosition(0.5f, new Vector3(0.2f, 0.2f, 0), 10, 90, false, true);
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fallDelay-0.5f);
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1f; 

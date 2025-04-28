@@ -82,9 +82,17 @@ public class UIController : MonoBehaviour
 
     public Animator animator;
 
+    //Adding these variable to play whine clip when player hurt
+    public AudioClip hurtClip;
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null){
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         saveGame();
 
         if (AudioManager.instance.playingBGM == false)
@@ -486,6 +494,11 @@ public class UIController : MonoBehaviour
     {
         //change player sprite to hurt, or play hurt animation
         animator.SetTrigger("hurt");
+        if (hurtClip != null && audioSource != null){
+            audioSource.clip = hurtClip;
+            audioSource.Play();
+            StartCoroutine(StopHurtSoundAfterDelay(1f));
+        }
         playerHealth -= damageAmount;
         playerHealth = Mathf.Clamp(playerHealth, 0, numHearts); // Ensure health doesn't go below 0
 
@@ -507,7 +520,11 @@ public class UIController : MonoBehaviour
             PlayerDeath();
         }
     }
-
+    private System.Collections.IEnumerator StopHurtSoundAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        audioSource.Stop();
+    }
     public void RestoreHealth(int healAmount = 1)
     {
         playerHealth += healAmount;
@@ -653,7 +670,6 @@ public class UIController : MonoBehaviour
         }
         if (abilityIndex != 0 && isUnlocked[abilityIndex])
         {
-            Debug.Log("Entered Sprite Change");
             // Change sprite using the new index logic (2i = available, 2i+1 = not available)
             int spriteIndex = abilityIndex * 2 + 1;
             if (spriteIndex < abilitySprites.Length)
