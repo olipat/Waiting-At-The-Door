@@ -99,8 +99,8 @@ public class AngerBarkAbility : MonoBehaviour
             BreakableObject bo = obj.GetComponent<BreakableObject>();
             if (bo != null)
             {
-                obj.transform.DOPunchScale(Vector3.one * 0.2f, 0.2f, 10, 1)
-                    .OnComplete(() => bo.Break());
+                //obj.transform.DOPunchScale(Vector3.one * 0.2f, 0.2f, 10, 1)
+                    //.OnComplete(() => bo.Break());
 
                 bo.Break();
                 Debug.Log(obj.name + " was broken by Anger Bark");

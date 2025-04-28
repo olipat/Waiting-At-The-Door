@@ -24,7 +24,12 @@ public class BreakableObject : MonoBehaviour
             Sequence breakSequence = DOTween.Sequence();
 
             breakSequence.Append(transform.DOScale(Vector3.zero, 0.3f).SetEase(Ease.InBack));
-            breakSequence.Join(GetComponent<SpriteRenderer>().DOFade(0f, 0.3f));
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                breakSequence.Join(sr.DOFade(0f, 0.3f));
+            }
+            //breakSequence.Join(GetComponent<SpriteRenderer>().DOFade(0f, 0.3f));
             breakSequence.OnComplete(() => Destroy(gameObject));
         }
     }
