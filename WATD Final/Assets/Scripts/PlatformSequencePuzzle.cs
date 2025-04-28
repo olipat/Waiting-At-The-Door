@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PlatformGroupGateOpener : MonoBehaviour
 {
-    [Tooltip("Platforms that must all be rebuilt.")]
     public BargainingPlatform[] requiredPlatforms;
 
-    [Tooltip("The object (like a gate) to activate once all are rebuilt.")]
     public GameObject gate;
+
+    public Sprite openGate;
+    private SpriteRenderer gateRenderer;
+    private Collider2D gateCollider;
 
     private bool gateOpened = false;
 
@@ -25,7 +27,14 @@ public class PlatformGroupGateOpener : MonoBehaviour
             platform.OnRebuilt -= CheckPlatforms;
         }
     }
-
+    private void Start()
+    {
+        if (gate != null)
+        {
+            gateRenderer = gate.GetComponent<SpriteRenderer>();
+            gateCollider = gate.GetComponent<Collider2D>();
+        }
+    }
     private void CheckPlatforms(BargainingPlatform _)
     {
         if (gateOpened) return;
@@ -36,9 +45,24 @@ public class PlatformGroupGateOpener : MonoBehaviour
                 return;
         }
 
-        Debug.Log("All platforms rebuilt — opening gate!");
+        OpenGate();
+    }
+     private void OpenGate()
+    {
         if (gate != null)
-            gate.SetActive(true);
+        {
+            if (openGate != null && gateRenderer != null)
+            {
+                gateRenderer.sprite = openGate; 
+            }
+
+            if (gateCollider != null)
+            {
+                gateCollider.enabled = false; 
+            }
+
+            Debug.Log("Gate opened!");
+        }
 
         gateOpened = true;
     }

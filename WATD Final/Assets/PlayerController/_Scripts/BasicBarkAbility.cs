@@ -68,6 +68,16 @@ public class BarkAbility : MonoBehaviour
                
 
             }
+            else if (hit.CompareTag("StoneEnemy"))
+            {
+                Debug.Log(hit.name + " was hit by Shatter Bark!");
+
+                stoneEnemy stone = hit.GetComponent<stoneEnemy>();
+                if (stone != null)
+                {
+                    stone.HandleNormalBark();
+                }
+            }
         }
     }
     System.Collections.IEnumerator PlayBarkForOneSecond()

@@ -90,6 +90,21 @@ public class AngerBarkAbility : MonoBehaviour
                 }
 
             }
+            else if (enemy.CompareTag("StoneEnemy"))
+            {
+                Debug.Log(enemy.name + " was hit by Shatter Bark!");
+
+                stoneEnemy stone = enemy.GetComponent<stoneEnemy>();
+                if (stone != null)
+                {
+                    stone.HandleShatterBark();
+                }
+                SpriteRenderer sr = enemy.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.DOColor(Color.red, 0.1f).OnComplete(() => sr.DOColor(Color.white, 0.1f));
+                }
+            }
         }
 
         Collider2D[] breakables = Physics2D.OverlapCircleAll(transform.position, barkRange, breakableLayer);
