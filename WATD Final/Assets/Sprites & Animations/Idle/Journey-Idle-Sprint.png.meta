@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: b9d5a5beb3166024a84fcaf2f8dc51df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5249601218503956329
+    second: Journey-Idle-Sprint_0
+  - first:
+      213: -3929374213001205624
+    second: Journey-Idle-Sprint_1
+  - first:
+      213: 8881603225737168815
+    second: Journey-Idle-Sprint_2
+  - first:
+      213: -7900538415726827746
+    second: Journey-Idle-Sprint_3
+  - first:
+      213: 4653380046716839936
+    second: Journey-Idle-Sprint_4
+  - first:
+      213: 5304670882822537973
+    second: Journey-Idle-Sprint_5
+  - first:
+      213: -5328277847558195720
+    second: Journey-Idle-Sprint_6
+  - first:
+      213: 563396443076440052
+    second: Journey-Idle-Sprint_7
+  - first:
+      213: -4132197061328964215
+    second: Journey-Idle-Sprint_8
+  - first:
+      213: -4024415693191105694
+    second: Journey-Idle-Sprint_9
+  - first:
+      213: 7856111835008818109
+    second: Journey-Idle-Sprint_10
+  - first:
+      213: -510622098304217482
+    second: Journey-Idle-Sprint_11
+  - first:
+      213: 7402022573827970464
+    second: Journey-Idle-Sprint_12
+  - first:
+      213: 7915872236037119105
+    second: Journey-Idle-Sprint_13
+  - first:
+      213: 3621428908399123061
+    second: Journey-Idle-Sprint_14
+  - first:
+      213: -3533551126592956647
+    second: Journey-Idle-Sprint_15
+  - first:
+      213: -2746759549431249771
+    second: Journey-Idle-Sprint_16
+  - first:
+      213: -6080322895794388958
+    second: Journey-Idle-Sprint_17
+  - first:
+      213: -6705168060508244764
+    second: Journey-Idle-Sprint_18
+  - first:
+      213: 5903749321809757531
+    second: Journey-Idle-Sprint_19
+  - first:
+      213: 4779245414030444736
+    second: Journey-Idle-Sprint_20
+  - first:
+      213: 6116180044543995295
+    second: Journey-Idle-Sprint_21
+  - first:
+      213: -3660070794185823380
+    second: Journey-Idle-Sprint_22
+  - first:
+      213: -1037782056756449525
+    second: Journey-Idle-Sprint_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2291
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7982d9e518ba527b0800000000000000
+      internalID: -5249601218503956329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_1
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2291
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888ab74d8fe0879c0800000000000000
+      internalID: -3929374213001205624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_2
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 2292
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7070ab31bc14b70800000000000000
+      internalID: 8881603225737168815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_3
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2293
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1766447b26ab5290800000000000000
+      internalID: -7900538415726827746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_4
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 2292
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008a2717f70249040800000000000000
+      internalID: 4653380046716839936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1724
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2cef4001afd9940800000000000000
+      internalID: 5304670882822537973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_6
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1724
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5f5bf27872e06b0800000000000000
+      internalID: -5328277847558195720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_7
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1725
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff2a49741691d700800000000000000
+      internalID: 563396443076440052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_8
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1726
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985f2918aac77a6c0800000000000000
+      internalID: -4132197061328964215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_9
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1725
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26336d2df376628c0800000000000000
+      internalID: -4024415693191105694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1158
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb51792714860d60800000000000000
+      internalID: 7856111835008818109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_11
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1158
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ecc1038e7e9e8f0800000000000000
+      internalID: -510622098304217482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_12
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1158
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a55074305449b660800000000000000
+      internalID: 7402022573827970464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_13
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1159
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c9e5ccbd3dadd60800000000000000
+      internalID: 7915872236037119105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_14
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 1157
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ad570b766e14230800000000000000
+      internalID: 3621428908399123061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 591
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 917debfc8fd46fec0800000000000000
+      internalID: -3533551126592956647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_16
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 592
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5940db42ebc81e9d0800000000000000
+      internalID: -2746759549431249771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_17
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 592
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220408c8a8a5e9ba0800000000000000
+      internalID: -6080322895794388958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_18
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 592
+        width: 565
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e47c1aac2572f2a0800000000000000
+      internalID: -6705168060508244764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_19
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 590
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b558c619ab45ee150800000000000000
+      internalID: 5903749321809757531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c803bde16a435240800000000000000
+      internalID: 4779245414030444736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_21
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 24
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9da069785901e450800000000000000
+      internalID: 6116180044543995295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_22
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 24
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ba5cb2101d43dc0800000000000000
+      internalID: -3660070794185823380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-Idle-Sprint_23
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 24
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0fe1c0c7be0991f0800000000000000
+      internalID: -1037782056756449525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Journey-Idle-Sprint_0: -5249601218503956329
+      Journey-Idle-Sprint_1: -3929374213001205624
+      Journey-Idle-Sprint_10: 7856111835008818109
+      Journey-Idle-Sprint_11: -510622098304217482
+      Journey-Idle-Sprint_12: 7402022573827970464
+      Journey-Idle-Sprint_13: 7915872236037119105
+      Journey-Idle-Sprint_14: 3621428908399123061
+      Journey-Idle-Sprint_15: -3533551126592956647
+      Journey-Idle-Sprint_16: -2746759549431249771
+      Journey-Idle-Sprint_17: -6080322895794388958
+      Journey-Idle-Sprint_18: -6705168060508244764
+      Journey-Idle-Sprint_19: 5903749321809757531
+      Journey-Idle-Sprint_2: 8881603225737168815
+      Journey-Idle-Sprint_20: 4779245414030444736
+      Journey-Idle-Sprint_21: 6116180044543995295
+      Journey-Idle-Sprint_22: -3660070794185823380
+      Journey-Idle-Sprint_23: -1037782056756449525
+      Journey-Idle-Sprint_3: -7900538415726827746
+      Journey-Idle-Sprint_4: 4653380046716839936
+      Journey-Idle-Sprint_5: 5304670882822537973
+      Journey-Idle-Sprint_6: -5328277847558195720
+      Journey-Idle-Sprint_7: 563396443076440052
+      Journey-Idle-Sprint_8: -4132197061328964215
+      Journey-Idle-Sprint_9: -4024415693191105694
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

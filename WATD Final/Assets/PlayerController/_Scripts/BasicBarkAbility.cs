@@ -27,6 +27,7 @@ public class BarkAbility : MonoBehaviour
     {
         if (Input.GetKeyDown(barkKey) || Input.GetButtonDown("Fire3"))
         {
+            transform.DOPunchScale(Vector3.one * 0.1f, 0.3f, 8, 1);
             Bark();
         }
     }

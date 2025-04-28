@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 5c7538fe061911c4398458d86a56c662
+guid: 4c103069017c7cb45bd4377310d2ecf7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1066378612522768681
-    second: dog-bowl_0
+      213: 3685362119480601460
+    second: Journey-idle-sprint_0
+  - first:
+      213: 4144623498596591845
+    second: Journey-idle-sprint_1
+  - first:
+      213: 1141029234984789244
+    second: Journey-idle-sprint_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog-bowl_0
+      name: Journey-idle-sprint_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 12
-        width: 207
-        height: 163
+        x: 14
+        y: 43
+        width: 565
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9295e7bb2b98cce00800000000000000
-      internalID: 1066378612522768681
+      spriteID: 47b62506259052330800000000000000
+      internalID: 3685362119480601460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-idle-sprint_1
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 42
+        width: 566
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e82691ec19a48930800000000000000
+      internalID: 4144623498596591845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey-idle-sprint_2
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 41
+        width: 562
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4aa953b00c5df00800000000000000
+      internalID: 1141029234984789244
       vertices: []
       indices: 
       edges: []
@@ -148,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dog-bowl_0: 1066378612522768681
+      Journey-idle-sprint_0: 3685362119480601460
+      Journey-idle-sprint_1: 4144623498596591845
+      Journey-idle-sprint_2: 1141029234984789244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
