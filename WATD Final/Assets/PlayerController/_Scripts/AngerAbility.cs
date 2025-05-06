@@ -41,7 +41,7 @@ public class AngerBarkAbility : MonoBehaviour
         if (barkclip != null && audioSource != null)
         {
             audioSource.clip = barkclip;
-            audioSource.time = 0.5f;
+            audioSource.time = 0.6f;
             audioSource.pitch = 0.7f;
             audioSource.Play();
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8966181958324405124
+--- !u!1 &4283091006513271849
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7560636880888760396}
-  - component: {fileID: 7440080950670555195}
-  - component: {fileID: 1874905027362270932}
-  - component: {fileID: 3130262094625658431}
-  - component: {fileID: 9132977950150310147}
+  - component: {fileID: 3350238650493836122}
+  - component: {fileID: 4528536824350241809}
   m_Layer: 0
-  m_Name: BargainPlatHorizontal
+  m_Name: visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7560636880888760396
+--- !u!4 &3350238650493836122
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8966181958324405124}
+  m_GameObject: {fileID: 4283091006513271849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 360.55, y: 78.15, z: -2.1499944}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7560636880888760396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7440080950670555195
+--- !u!212 &4528536824350241809
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8966181958324405124}
+  m_GameObject: {fileID: 4283091006513271849}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,12 +81,47 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.055, y: 1.529}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8966181958324405124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7560636880888760396}
+  - component: {fileID: 1874905027362270932}
+  - component: {fileID: 3130262094625658431}
+  - component: {fileID: 9132977950150310147}
+  m_Layer: 0
+  m_Name: BargainPlatHorizontal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7560636880888760396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966181958324405124}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 360.55, y: 78.15, z: -2.1499944}
+  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3350238650493836122}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1874905027362270932
 Rigidbody2D:
   serializedVersion: 5
@@ -178,3 +210,5 @@ MonoBehaviour:
   platformType: 0
   brokenSprite: {fileID: -8918340484480793104, guid: 5b4c091fc7e4fbf4daf3dc376a80d218, type: 3}
   rebuiltSprite: {fileID: 2740765400182095318, guid: 5b4c091fc7e4fbf4daf3dc376a80d218, type: 3}
+  breakingTransitionSprites: []
+  rebuildingTransitionSprites: []

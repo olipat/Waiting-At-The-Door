@@ -86,6 +86,9 @@ public class UIController : MonoBehaviour
     public AudioClip hurtClip;
     private AudioSource audioSource;
 
+    //add flag to make player invincible after taking damage for a short duration
+    private bool isInvincible = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -492,10 +495,16 @@ public class UIController : MonoBehaviour
 
     public void ApplyDamage(int damageAmount = 1)
     {
+        if (isInvincible) {
+            return;
+        }
+        isInvincible = true;
+        StartCoroutine(ResetInvincibility(3f));
         //change player sprite to hurt, or play hurt animation
         animator.SetTrigger("hurt");
         if (hurtClip != null && audioSource != null){
             audioSource.clip = hurtClip;
+            audioSource.volume = 0.75f;
             audioSource.Play();
             StartCoroutine(StopHurtSoundAfterDelay(1f));
         }
@@ -519,6 +528,11 @@ public class UIController : MonoBehaviour
 
             PlayerDeath();
         }
+    }
+
+    private IEnumerator ResetInvincibility(float duration){
+        yield return new WaitForSeconds(duration);
+        isInvincible = false;
     }
     private System.Collections.IEnumerator StopHurtSoundAfterDelay(float delay)
     {

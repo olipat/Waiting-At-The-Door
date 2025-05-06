@@ -11,11 +11,15 @@ public class FallingPlatform : MonoBehaviour
     public float fallDuration = 3f;
     public bool hasFallen = false;
     private SpriteRenderer[] spriteRenderers;
+    public Transform visualParent;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        if (visualParent == null){
+            visualParent = transform.Find("visualParent");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,7 +40,12 @@ public class FallingPlatform : MonoBehaviour
     private System.Collections.IEnumerator FallAfterDelay()
     {
         hasFallen = true;
-        transform.DOShakePosition(0.5f, new Vector3(0.2f, 0.2f, 0), 10, 90, false, true);
+        //transform.DOShakePosition(0.5f, new Vector3(0.2f, 0.2f, 0), 10, 90, false, true);
+        if (visualParent != null)
+        {
+            visualParent.DOShakePosition(0.5f, new Vector3(0.15f, 0.15f, 0), 10, 90, false, true)
+                        .SetRelative(true);
+        }
         yield return new WaitForSeconds(0.5f);
         yield return new WaitForSeconds(fallDelay-0.5f);
 

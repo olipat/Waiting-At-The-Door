@@ -176,5 +176,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformType: 0
+  visualTransform: {fileID: 0}
   brokenSprite: {fileID: 8159180038140297874, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
   rebuiltSprite: {fileID: -3518945094560601158, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  breakingTransitionSprites:
+  - {fileID: 2328199862162032767, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: 4771615867467919081, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: -6013229012031232912, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: 7803609901089586187, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  rebuildingTransitionSprites:
+  - {fileID: 7803609901089586187, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: -6013229012031232912, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: 4771615867467919081, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}
+  - {fileID: 2328199862162032767, guid: 49ac64d28dc6c4446a9e96b12c914b3a, type: 3}

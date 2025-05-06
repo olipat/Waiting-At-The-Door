@@ -5,6 +5,7 @@ public class BargainingAbility : MonoBehaviour
 {
     public static BargainingAbility Instance;
 
+
     public void Awake()
     {
         if (Instance == null)
@@ -20,6 +21,9 @@ public class BargainingAbility : MonoBehaviour
     public float holdTimeToBreak = 0.5f; 
     private float holdTimer = 0f;
     public bool unlocked = false;
+    public GameObject ghostPrefab;
+    private GameObject currentGhost;
+    private BargainingPlatform currentTarget;
 
     private List<BargainingPlatform> stablePlatforms = new List<BargainingPlatform>();
     private List<BargainingPlatform> temporaryPlatforms = new List<BargainingPlatform>();
@@ -28,9 +32,52 @@ public class BargainingAbility : MonoBehaviour
     {
      if (unlocked && Time.timeScale != 0)
         {
+            ShowRebuildPreview();
             UseBargainingAbility();
         }   
     }
+    private void ShowRebuildPreview()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
+        Vector2 facingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
+        if (facingDirection == Vector2.zero)
+            facingDirection = Vector2.right;
+
+        BargainingPlatform bestCandidate = null;
+        float bestScore = float.MinValue;
+
+        foreach (var hit in hits)
+        {
+            BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
+            if (platform != null && !platform.IsRebuilt())
+            {
+                Vector2 toPlatform = ((Vector2)platform.transform.position - (Vector2)transform.position).normalized;
+                float dot = Vector2.Dot(facingDirection, toPlatform);
+                float distance = Vector2.Distance(transform.position, platform.transform.position);
+                float score = dot * 2f - distance;
+
+                if (score > bestScore)
+                {
+                    bestScore = score;
+                    bestCandidate = platform;
+                }
+            }
+        }
+
+        if (bestCandidate != currentTarget)
+        {
+            currentTarget = bestCandidate;
+
+            if (currentGhost != null)
+                Destroy(currentGhost);
+
+            if (currentTarget != null)
+            {
+                currentGhost = Instantiate(ghostPrefab, currentTarget.transform.position, Quaternion.identity);
+            }
+        }
+    }
+
 
     public void UseBargainingAbility()
     {
@@ -63,16 +110,49 @@ public class BargainingAbility : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
         Debug.Log("Found " + hits.Length + " colliders in range");
 
+        Vector2 facingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
+        if (facingDirection == Vector2.zero)
+            facingDirection = Vector2.right;
+
+        float bestScore = float.MinValue;
+        Component bestCandidate = null;
+
         foreach (var hit in hits)
         {
-            BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
-            if (platform != null && !platform.IsRebuilt())
+            Vector2 toTarget = ((Vector2)hit.transform.position - (Vector2)transform.position).normalized;
+            float dot = Vector2.Dot(facingDirection, toTarget);
+            float distance = Vector2.Distance(transform.position, hit.transform.position);
+            float score = dot * 2f - distance;
+
+            if (score > bestScore)
             {
-                RebuildPlatform(platform);
-                break;
+                // Check if it's a bridge or platform
+                BridgePlatform bridge = hit.GetComponent<BridgePlatform>();
+                BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
+
+                if (bridge != null && !bridge.IsRebuilt())
+                {
+                    bestScore = score;
+                    bestCandidate = bridge;
+                }
+                else if (platform != null && !platform.IsRebuilt())
+                {
+                    bestScore = score;
+                    bestCandidate = platform;
+                }
             }
         }
+
+        if (bestCandidate is BridgePlatform bridgeTarget)
+        {
+            bridgeTarget.Rebuild();
+        }
+        else if (bestCandidate is BargainingPlatform platformTarget)
+        {
+            RebuildPlatform(platformTarget);
+        }
     }
+
 
     public void TryBreakPlatform()
     {
