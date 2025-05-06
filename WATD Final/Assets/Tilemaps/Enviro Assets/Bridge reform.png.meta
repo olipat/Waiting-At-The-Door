@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bridge reform_0: 8846064850126336705
+      Bridge reform_1: -1645323088295624929
+      Bridge reform_10: 1418380177727265499
+      Bridge reform_11: -7301703673901910526
+      Bridge reform_12: 8133999565430554830
+      Bridge reform_2: 6734689431435799347
+      Bridge reform_3: -2441116014396302635
+      Bridge reform_4: -1556860688936850548
+      Bridge reform_5: -5587970765794823649
+      Bridge reform_6: 4510770348194764761
+      Bridge reform_7: 2154541378972626723
+      Bridge reform_8: 4169530067380163673
+      Bridge reform_9: 8754695763246748520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
