@@ -27,6 +27,8 @@ public class BarkAbility : MonoBehaviour
     {
         if (Input.GetKeyDown(barkKey) || Input.GetButtonDown("Fire3"))
         {
+            transform.DOKill(true); // Kill any running tweens and complete instantly
+            transform.localScale = Vector3.one; // Reset to original scale
             transform.DOPunchScale(Vector3.one * 0.1f, 0.3f, 8, 1);
             Bark();
         }
