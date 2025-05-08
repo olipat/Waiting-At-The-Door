@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,9 +14,15 @@ public class MainMenu : MonoBehaviour
     public TMP_Text title;
     public float fadeDuration = 1f;
 
-    public RawImage cutsceneImage;         
-    public CanvasGroup cutsceneGroup;     
+    public RawImage cutsceneImage;
+    public CanvasGroup cutsceneGroup;
     public VideoPlayer videoPlayer;
+
+    [Header("Level Select")]
+    public GameObject levelSelectPanel;
+    public Button startButton;
+    public Button continueButton;
+    public Button quitButton;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +30,7 @@ public class MainMenu : MonoBehaviour
         videoPlayer.Play();
         videoPlayer.Pause();
         AudioManager.instance.PlayMenuMusic();
-        //StartCoroutine(FadeLoop());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        levelSelectPanel.SetActive(false);  // Ensure hidden on start
     }
 
     public void StartGame()
@@ -36,14 +38,12 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.PlaySFX(0);
         AudioManager.instance.StopMusic();
         StartCoroutine(PlayCutsceneThenLoad());
-
     }
 
     IEnumerator PlayCutsceneThenLoad()
     {
         yield return new WaitForSeconds(1f);
 
-        // Show the cutscene screen
         cutsceneImage.gameObject.SetActive(true);
         cutsceneGroup.alpha = 0;
 
@@ -55,11 +55,8 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
 
-
-        // Start the video and wait for it to finish
         videoPlayer.Play();
-        AudioManager.instance.PlayCutsceneMusic(); 
-
+        AudioManager.instance.PlayCutsceneMusic();
         yield return new WaitForSeconds(0.3f);
 
         while (videoPlayer.isPlaying)
@@ -68,46 +65,41 @@ public class MainMenu : MonoBehaviour
         }
 
         AudioManager.instance.StopMusic();
-
-        // Cutscene is done — now load the next level
         LevelLoader.Instance.LoadNextLevel();
     }
-
 
     public void QuitGame()
     {
         Application.Quit();
-
         Debug.Log("Quitting Game");
-
         AudioManager.instance.PlaySFX(0);
     }
 
-    IEnumerator FadeLoop()
+    // === Level Select Methods ===
+
+    public void OpenLevelSelect()
     {
-        while (true) // Infinite loop for continuous fading
+        GameObject clicked = EventSystem.current.currentSelectedGameObject;
+        if (clicked != null)
         {
-            yield return StartCoroutine(FadeText(0f, 1f, fadeDuration)); // Fade in
-            yield return new WaitForSeconds(0.5f);
-            yield return StartCoroutine(FadeText(1f, 0f, fadeDuration)); // Fade out
-            yield return new WaitForSeconds(fadeDuration);
+            clicked.transform.DOShakePosition(0.3f, new Vector3(10f, 10f, 0), 10, 90);
         }
+        AudioManager.instance.PlaySFX(0);
+        levelSelectPanel.SetActive(true);
+        SetMainButtonsInteractable(false);
     }
 
-    IEnumerator FadeText(float startAlpha, float endAlpha, float duration)
+    public void CloseLevelSelect()
     {
-        float elapsedTime = 0f;
-        Color color = title.color;
+        AudioManager.instance.PlaySFX(0);
+        levelSelectPanel.SetActive(false);
+        SetMainButtonsInteractable(true);
+    }
 
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            title.color = new Color(color.r, color.g, color.b, newAlpha);
-            yield return null;
-        }
-
-        // Ensure final value is exact
-        title.color = new Color(color.r, color.g, color.b, endAlpha);
+    private void SetMainButtonsInteractable(bool state)
+    {
+        startButton.interactable = state;
+        continueButton.interactable = state;
+        quitButton.interactable = state;
     }
 }

@@ -35,6 +35,12 @@ public class LevelLoader : MonoBehaviour
 
     }
 
+    public void LoadThatLevel(int level)
+    {
+        StartCoroutine(LoadLevel(level));
+
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         Debug.Log("Entered loadlevel: " + levelIndex);
