@@ -25,7 +25,7 @@ public class DeathZone : MonoBehaviour
             if (UIController.Instance.playerHealth <= 1)
             {
                 Debug.Log("Fell into void, stopping player.");
-                playerController.enabled = false;
+                playerController.canMove = false;
                 playerRB.linearVelocity = Vector2.zero;
                 UIController.Instance.ApplyDamage(3);
                 AudioManager.instance.PlaySFX(6);
@@ -41,6 +41,7 @@ public class DeathZone : MonoBehaviour
                     UIController.Instance.ApplyDamage(1);
                     AudioManager.instance.PlaySFX(6);
                     PlayerGroundTracker.instance.RespawnAtLastGround();
+                    playerController.StartInvincibility(3.0f);
                 }
             }
         }

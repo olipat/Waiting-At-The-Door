@@ -428,6 +428,7 @@ public class UIController : MonoBehaviour
 
         Controller.PlayerController playerController = FindFirstObjectByType<Controller.PlayerController>();
         playerController.enabled = true;
+        playerController.canMove = true;
 
         endScreen.SetActive(false);
 

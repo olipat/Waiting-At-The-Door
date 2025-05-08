@@ -67,7 +67,7 @@ public class PlayerGroundTracker : MonoBehaviour
 
         playerController = FindFirstObjectByType<Controller.PlayerController>();
 
-        playerController.canMove = false;
+        //playerController.canMove = false;
         playerController.enabled = false;
 
         StartCoroutine(ReenableAfterDelay());

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -51,6 +52,41 @@ namespace Controller
         private const float slopeTolerance = 0.3f;
         private float slopeLDTimer = 0f;
         private const float slopeLDTime = 0.3f;
+
+        public bool isInvincible { get; private set; } = false;
+        [SerializeField] private SpriteRenderer playerSprite;
+
+        public void StartInvincibility(float duration)
+        {
+            isInvincible = true;
+            StartCoroutine(InvincibilityRoutine(duration));
+        }
+
+        private System.Collections.IEnumerator InvincibilityRoutine(float duration)
+        {
+            isInvincible = true;
+            Debug.Log("[PlayerController] Invincibility started");
+
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy Layer"), true);
+
+
+            // Flicker using DOTween
+            float flickerInterval = 0.3f;
+            int flickers = Mathf.CeilToInt(duration / (flickerInterval * 2));
+
+            Sequence flickerSequence = DOTween.Sequence();
+            for (int i = 0; i < flickers; i++)
+            {
+                flickerSequence.Append(playerSprite.DOFade(0f, flickerInterval));
+                flickerSequence.Append(playerSprite.DOFade(1f, flickerInterval));
+            }
+
+            yield return flickerSequence.WaitForCompletion();
+
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy Layer"), false);
+            isInvincible = false;
+            Debug.Log("[PlayerController] Invincibility ended");
+        }
 
         private void Awake()
         {
