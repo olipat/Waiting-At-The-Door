@@ -4,6 +4,8 @@ using System.Collections;
 public class stoneEnemy : MonoBehaviour
 {
     Animator animator;
+    public enum EnemyType{chase, shoot}
+    public EnemyType enemyType = EnemyType.chase;
     private bool angry = false;
     public Transform player;
     public float chaseSpeed;
@@ -14,6 +16,12 @@ public class stoneEnemy : MonoBehaviour
     private Sprite og;
     private SpriteRenderer sr;
     public GameObject UIcontrolReferemce;
+
+    //projectile stuff
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+    public float shootCooldown = 2f;
+    private float shootTimer = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,24 +38,68 @@ public class stoneEnemy : MonoBehaviour
     {
         if (angry && !stunned)
         {
-            float direction = player.position.x > transform.position.x ? 1 : -1;
-
-            //enemyRB.linearVelocity = new Vector2(direction * chaseSpeed, enemyRB.linearVelocity.y);
-
-            float Direction = Mathf.Sign(player.position.x - transform.position.x);
-            Vector2 MovePos = new Vector2(
-                transform.position.x + Direction * chaseSpeed,
-                transform.position.y
-            );
-            transform.position = MovePos;
-
-            // Ensure the enemy faces the player
-            if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
+            switch (enemyType)
             {
-                Flip();
+                case EnemyType.chase:
+                    HandleChaseBehavior();
+                    break;
+                case EnemyType.shoot:
+                    HandleShootBehavior();
+                    break;
             }
         }
     }
+
+    void HandleChaseBehavior()
+    {
+        float direction = player.position.x > transform.position.x ? 1 : -1;
+        float Direction = Mathf.Sign(player.position.x - transform.position.x);
+        Vector2 MovePos = new Vector2(
+            transform.position.x + Direction * chaseSpeed,
+            transform.position.y
+        );
+        transform.position = MovePos;
+
+        if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
+        {
+            Flip();
+        }
+    }
+
+    void HandleShootBehavior()
+    {
+        float direction = player.position.x > transform.position.x ? 1 : -1;
+        float Direction = Mathf.Sign(player.position.x - transform.position.x);
+        Vector2 MovePos = new Vector2(
+            transform.position.x + Direction * chaseSpeed,
+            transform.position.y
+        );
+        transform.position = MovePos;
+
+        if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
+        {
+            Flip();
+        }
+
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0f)
+        {
+            ShootProjectile();
+            shootTimer = shootCooldown;
+        }
+    }
+
+
+    void ShootProjectile()
+    {
+        if (projectilePrefab != null && firePoint != null)
+        {
+            GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Vector2 dir = (player.position - firePoint.position).normalized;
+            proj.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f; 
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
