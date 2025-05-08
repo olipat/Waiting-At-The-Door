@@ -7,8 +7,7 @@ public class BridgePlatform : MonoBehaviour
     public GameObject[] rebuildTransitionObjects; 
     public GameObject[] builtLevel;
     public GameObject[] builtForeground; 
-    public GameObject[] broken;      
-
+    public GameObject[] broken;     
     public Transform visualParent;            
 
     private bool isRebuilt = false;
@@ -76,7 +75,7 @@ public class BridgePlatform : MonoBehaviour
 
             obj.SetActive(enable);
 
-            PolygonCollider2D col = obj.GetComponent<PolygonCollider2D>();
+            Collider2D col = obj.GetComponent<Collider2D>();
             if(col != null){
                 col.enabled = enable;
             }

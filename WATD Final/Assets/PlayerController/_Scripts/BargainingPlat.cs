@@ -5,6 +5,8 @@ using UnityEngine;
 public class BargainingPlatform : MonoBehaviour
 {
     public enum PlatformType { Stable, Temporary }
+    public enum PlatformVisualType { Horizontal, Vertical, HorizontalLarge }
+    public PlatformVisualType visualType = PlatformVisualType.Horizontal;
     public PlatformType platformType = PlatformType.Stable;
     public event System.Action<BargainingPlatform> OnRebuilt;
     public Transform visualTransform;

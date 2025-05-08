@@ -5,6 +5,24 @@ public class BargainingAbility : MonoBehaviour
 {
     public static BargainingAbility Instance;
 
+    public float interactRange = 10f;
+    public LayerMask platformLayer;
+    public int maxStableRebuilt = 3;
+    public int maxTemporaryRebuilt = 3;
+    public float holdTimeToBreak = 0.5f;
+    private float holdTimer = 0f;
+    public bool unlocked = false;
+
+    public GameObject ghostHorizontal;
+    public GameObject ghostVertical;
+    public GameObject ghostHorizontalLarge;
+    public GameObject ghostBridge;
+
+    private GameObject currentGhost;
+    private Component currentTarget;
+
+    private List<BargainingPlatform> stablePlatforms = new List<BargainingPlatform>();
+    private List<BargainingPlatform> temporaryPlatforms = new List<BargainingPlatform>();
 
     public void Awake()
     {
@@ -14,28 +32,15 @@ public class BargainingAbility : MonoBehaviour
         }
     }
 
-    public float interactRange = 10f;
-    public LayerMask platformLayer;
-    public int maxStableRebuilt = 3;
-    public int maxTemporaryRebuilt = 3;
-    public float holdTimeToBreak = 0.5f; 
-    private float holdTimer = 0f;
-    public bool unlocked = false;
-    public GameObject ghostPrefab;
-    private GameObject currentGhost;
-    private BargainingPlatform currentTarget;
-
-    private List<BargainingPlatform> stablePlatforms = new List<BargainingPlatform>();
-    private List<BargainingPlatform> temporaryPlatforms = new List<BargainingPlatform>();
-
     void Update()
     {
-     if (unlocked && Time.timeScale != 0)
+        if (unlocked && Time.timeScale != 0)
         {
             ShowRebuildPreview();
             UseBargainingAbility();
-        }   
+        }
     }
+
     private void ShowRebuildPreview()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
@@ -43,23 +48,25 @@ public class BargainingAbility : MonoBehaviour
         if (facingDirection == Vector2.zero)
             facingDirection = Vector2.right;
 
-        BargainingPlatform bestCandidate = null;
+        Component bestCandidate = null;
         float bestScore = float.MinValue;
 
         foreach (var hit in hits)
         {
-            BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
-            if (platform != null && !platform.IsRebuilt())
+            var platform = hit.GetComponent<BargainingPlatform>();
+            var bridge = hit.GetComponent<BridgePlatform>();
+
+            if ((platform != null && !platform.IsRebuilt()) || (bridge != null && !bridge.IsRebuilt()))
             {
-                Vector2 toPlatform = ((Vector2)platform.transform.position - (Vector2)transform.position).normalized;
+                Vector2 toPlatform = ((Vector2)hit.transform.position - (Vector2)transform.position).normalized;
                 float dot = Vector2.Dot(facingDirection, toPlatform);
-                float distance = Vector2.Distance(transform.position, platform.transform.position);
+                float distance = Vector2.Distance(transform.position, hit.transform.position);
                 float score = dot * 2f - distance;
 
                 if (score > bestScore)
                 {
                     bestScore = score;
-                    bestCandidate = platform;
+                    bestCandidate = (Component)(platform != null ? platform : bridge);
                 }
             }
         }
@@ -73,18 +80,40 @@ public class BargainingAbility : MonoBehaviour
 
             if (currentTarget != null)
             {
-                currentGhost = Instantiate(ghostPrefab, currentTarget.transform.position, Quaternion.identity);
+                GameObject ghostToSpawn = null;
+
+                if (currentTarget is BargainingPlatform platform)
+                {
+                    switch (platform.visualType)
+                    {
+                        case BargainingPlatform.PlatformVisualType.Horizontal:
+                            ghostToSpawn = ghostHorizontal;
+                            break;
+                        case BargainingPlatform.PlatformVisualType.Vertical:
+                            ghostToSpawn = ghostVertical;
+                            break;
+                        case BargainingPlatform.PlatformVisualType.HorizontalLarge:
+                            ghostToSpawn = ghostHorizontalLarge;
+                            break;
+                    }
+                }
+                else if (currentTarget is BridgePlatform)
+                {
+                    ghostToSpawn = ghostBridge;
+                }
+
+                if (ghostToSpawn != null)
+                {
+                    currentGhost = Instantiate(ghostToSpawn, currentTarget.transform.position, Quaternion.identity);
+                }
             }
         }
     }
 
-
     public void UseBargainingAbility()
     {
-        
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            
             holdTimer += Time.deltaTime;
 
             if (holdTimer > holdTimeToBreak)
@@ -95,7 +124,6 @@ public class BargainingAbility : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            Debug.Log("Using bargaining build Ability");
             if (holdTimer <= holdTimeToBreak && holdTimer > 0f)
             {
                 TryRebuildPlatform();
@@ -106,10 +134,7 @@ public class BargainingAbility : MonoBehaviour
 
     public void TryRebuildPlatform()
     {
-        Debug.Log("trying to rebuild");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
-        Debug.Log("Found " + hits.Length + " colliders in range");
-
         Vector2 facingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
         if (facingDirection == Vector2.zero)
             facingDirection = Vector2.right;
@@ -124,18 +149,20 @@ public class BargainingAbility : MonoBehaviour
             float distance = Vector2.Distance(transform.position, hit.transform.position);
             float score = dot * 2f - distance;
 
-            if (score > bestScore)
-            {
-                // Check if it's a bridge or platform
-                BridgePlatform bridge = hit.GetComponent<BridgePlatform>();
-                BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
+            BridgePlatform bridge = hit.GetComponent<BridgePlatform>();
+            BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
 
-                if (bridge != null && !bridge.IsRebuilt())
+            if (bridge != null && !bridge.IsRebuilt())
+            {
+                if (score > bestScore)
                 {
                     bestScore = score;
                     bestCandidate = bridge;
                 }
-                else if (platform != null && !platform.IsRebuilt())
+            }
+            else if (platform != null && !platform.IsRebuilt())
+            {
+                if (score > bestScore)
                 {
                     bestScore = score;
                     bestCandidate = platform;
@@ -153,7 +180,6 @@ public class BargainingAbility : MonoBehaviour
         }
     }
 
-
     public void TryBreakPlatform()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, platformLayer);
@@ -161,16 +187,16 @@ public class BargainingAbility : MonoBehaviour
         foreach (var hit in hits)
         {
             BargainingPlatform platform = hit.GetComponent<BargainingPlatform>();
-            if (platform != null && platform.IsRebuilt()) 
+            if (platform != null && platform.IsRebuilt())
             {
                 platform.BreakPlatform();
                 stablePlatforms.Remove(platform);
                 temporaryPlatforms.Remove(platform);
-                Debug.Log("Manually broke platform: " + platform.name);
                 break;
             }
         }
     }
+
     void RebuildPlatform(BargainingPlatform platform)
     {
         if (platform.IsStable())
@@ -181,7 +207,6 @@ public class BargainingAbility : MonoBehaviour
                 oldest.BreakPlatform();
                 stablePlatforms.RemoveAt(0);
             }
-            Debug.Log("calling platform rebuild next");
             platform.Rebuild();
             stablePlatforms.Add(platform);
         }
@@ -199,5 +224,6 @@ public class BargainingAbility : MonoBehaviour
         }
     }
 }
+
 
 
