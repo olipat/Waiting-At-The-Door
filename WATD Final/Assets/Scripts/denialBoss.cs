@@ -39,18 +39,21 @@ public class denialBoss : MonoBehaviour
         }
         if(health == 2 && flag)
         {
+            animator.SetTrigger("green");
             int randomIndex = Random.Range(3, 6);
             tennisBalls[randomIndex].SetActive(true);
             flag = false;
         }
         else if(health == 1 && flag)
         {
+            animator.SetTrigger("yellow");
             int randomIndex = Random.Range(6, 9);
             tennisBalls[randomIndex].SetActive(true);
             flag = false;
         }
         else if(health <= 0)
         {
+            animator.SetTrigger("red");
             StartCoroutine(deathExplosion());
             this.gameObject.SetActive(false);
             GameManager.instance.FightingBoss = false;
