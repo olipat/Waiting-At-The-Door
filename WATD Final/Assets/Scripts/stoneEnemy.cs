@@ -16,6 +16,7 @@ public class stoneEnemy : MonoBehaviour
     private Sprite og;
     private SpriteRenderer sr;
     public GameObject UIcontrolReferemce;
+    private Rigidbody2D rb;
 
     //projectile stuff
     public GameObject projectilePrefab;
@@ -27,6 +28,7 @@ public class stoneEnemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         if (sr != null){
             og = sr.sprite;
         }
@@ -36,7 +38,7 @@ public class stoneEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (angry && !stunned)
+        if (angry && !stunned && !animator.GetBool("isIdle"))
         {
             switch (enemyType)
             {
@@ -175,21 +177,21 @@ public class stoneEnemy : MonoBehaviour
         stunned = true;
         angry = false;
 
-        animator.SetBool("isWalking", false);
-        animator.SetBool("isIdle", true); 
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
 
-        if (sr != null && sleeping != null)
-            sr.sprite = sleeping;
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isIdle", true);
 
         yield return new WaitForSeconds(3f);
 
-        sr.sprite = og;
-
-        animator.SetBool("isIdle", false);  
+        animator.SetBool("isIdle", false);
         animator.SetTrigger("WakeUp 0"); 
-        yield return new WaitForSeconds(1f);
 
-        animator.SetBool("isWalking", true); 
+        yield return new WaitForSeconds(1f);
+        
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        animator.SetBool("isWalking", true);
         angry = true;
         stunned = false;
     }
