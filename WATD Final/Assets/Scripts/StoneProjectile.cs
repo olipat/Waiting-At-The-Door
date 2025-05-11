@@ -7,11 +7,13 @@ public class EnemyProjectile : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Projectile spawned: " + gameObject.name);
         Destroy(gameObject, lifetime); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Projectile hit: " + collision.name);
         if (collision.CompareTag("Player"))
         {
             if (UIController.Instance != null)
@@ -21,7 +23,7 @@ public class EnemyProjectile : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if (!collision.isTrigger)
+        else if (!collision.isTrigger && !collision.CompareTag("Enemy") && !collision.CompareTag("PhantomPlat"))
         {
             Destroy(gameObject);
         }

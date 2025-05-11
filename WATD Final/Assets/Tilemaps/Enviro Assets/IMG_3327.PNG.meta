@@ -155,10 +155,10 @@ TextureImporter:
       name: IMG_3327_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 107
-        width: 467
-        height: 292
+        x: 44
+        y: 47
+        width: 582
+        height: 411
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +177,10 @@ TextureImporter:
       name: IMG_3327_2
       rect:
         serializedVersion: 2
-        x: 660
-        y: 83
-        width: 509
-        height: 336
+        x: 643
+        y: 38
+        width: 582
+        height: 419
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,9 +200,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1264
-        y: 48
-        width: 549
-        height: 406
+        y: 40
+        width: 582
+        height: 419
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +221,10 @@ TextureImporter:
       name: IMG_3327_4
       rect:
         serializedVersion: 2
-        x: 1947
-        y: 85
-        width: 491
-        height: 332
+        x: 1927
+        y: 38
+        width: 582
+        height: 419
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

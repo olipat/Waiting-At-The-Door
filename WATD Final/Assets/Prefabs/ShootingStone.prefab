@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: -477642649
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7076415565392892902, guid: 9fb17972c664cd14d8c2850d59e54738, type: 3}
+  m_Sprite: {fileID: -4584204040702685527, guid: bcd54a172ed264643a9f817d6e38e5f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,7 +184,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.119999, y: 14.880382}
+    oldSize: {x: 15.028572, y: 17.91835}
     newSize: {x: 20.119999, y: 14.880382}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
-  player: {fileID: 0}
+  player: {fileID: 1544650614272011795, guid: 2f4a209cbbbde7c48a55e64f1112e327, type: 3}
   chaseSpeed: 0.01
   facingRight: 0
-  sleeping: {fileID: -7076415565392892902, guid: 9fb17972c664cd14d8c2850d59e54738, type: 3}
+  sleeping: {fileID: -4584204040702685527, guid: bcd54a172ed264643a9f817d6e38e5f6, type: 3}
   UIcontrolReferemce: {fileID: 0}
   projectilePrefab: {fileID: 2467334618931000233, guid: b9de930ce81a40f4da9e74a616ae6760, type: 3}
   firePoint: {fileID: 5942450587596641068}
@@ -251,7 +251,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.119999, y: 14.880382}
+    oldSize: {x: 15.028572, y: 17.91835}
     newSize: {x: 20.119999, y: 14.880382}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

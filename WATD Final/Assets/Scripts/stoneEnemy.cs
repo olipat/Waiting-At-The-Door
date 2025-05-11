@@ -52,6 +52,8 @@ public class stoneEnemy : MonoBehaviour
 
     void HandleChaseBehavior()
     {
+        //if (!angry || stunned) return;
+
         float direction = player.position.x > transform.position.x ? 1 : -1;
         float Direction = Mathf.Sign(player.position.x - transform.position.x);
         Vector2 MovePos = new Vector2(
@@ -59,6 +61,8 @@ public class stoneEnemy : MonoBehaviour
             transform.position.y
         );
         transform.position = MovePos;
+
+        animator.SetBool("isWalking", true);
 
         if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
         {
@@ -81,9 +85,19 @@ public class stoneEnemy : MonoBehaviour
             Flip();
         }
 
+        if (Mathf.Abs(Direction) > 0.01f)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0f)
         {
+            animator.SetTrigger("attack 0");
             ShootProjectile();
             shootTimer = shootCooldown;
         }
@@ -103,22 +117,17 @@ public class stoneEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !angry)
         {
-            comeAlive();
+            animator.SetTrigger("WakeUp 0");
+            StartCoroutine(waitBeforeAttack());
         }
-    }
-
-    void comeAlive()
-    {
-        animator.SetTrigger("awake");
-        StartCoroutine(waitBeforeAttack());
     }
 
     IEnumerator waitBeforeAttack()
     {;
         yield return new WaitForSeconds(1f);
-        animator.SetTrigger("attack");
+        animator.SetBool("isWalking", true);
         angry = true;
     }
 
@@ -164,24 +173,24 @@ public class stoneEnemy : MonoBehaviour
     private IEnumerator BreakCoroutine()
     {
         stunned = true;
+        angry = false;
 
-        if (animator != null)
-            animator.enabled = false; 
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isIdle", true); 
 
         if (sr != null && sleeping != null)
-            sr.sprite = sleeping; 
+            sr.sprite = sleeping;
 
-        yield return new WaitForSeconds(3f); 
+        yield return new WaitForSeconds(3f);
 
-        if (animator != null)
-            animator.enabled = true; 
+        sr.sprite = og;
 
-        sr.sprite = og; 
+        animator.SetBool("isIdle", false);  
+        animator.SetTrigger("WakeUp 0"); 
+        yield return new WaitForSeconds(1f);
 
-        animator.SetTrigger("awake"); 
-        yield return new WaitForSeconds(1f); 
-        animator.SetTrigger("attack");
-
+        animator.SetBool("isWalking", true); 
+        angry = true;
         stunned = false;
     }
 
