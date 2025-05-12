@@ -39,13 +39,14 @@ public class StopSignEnemy : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if ((distanceToPlayer < detectionRange) && stop == false)
+        if ((distanceToPlayer < detectionRange) && !isBlocking)
         {
+            isBlocking = true;
+        }
+        if (isBlocking){
             MoveToBlockPlayer();
         }
-        else if(stop == false)
-        {
-            isBlocking = false;
+        else {
             Patrol();
         }
     }
@@ -69,20 +70,30 @@ public class StopSignEnemy : MonoBehaviour
 
     void MoveToBlockPlayer()
     {
-        isBlocking = true;
+        float direction = Mathf.Sign(player.position.x - transform.position.x);
+        float distance = Mathf.Abs(player.position.x - transform.position.x);
 
-        float direction = player.position.x > transform.position.x ? 1 : -1;
+        // Log movement info
+        Debug.Log($"Distance to player: {distance}");
 
-        //enemyRB.linearVelocity = new Vector2(direction * chaseSpeed, enemyRB.linearVelocity.y);
+        float stopThreshold = 0.5f;
+        float resumeThreshold = 0.7f;
 
-        float Direction = Mathf.Sign(player.position.x - transform.position.x);
-        Vector2 MovePos = new Vector2(
-            transform.position.x + Direction * chaseSpeed,
-            transform.position.y
-        );
-        transform.position = MovePos;
+        if (distance > resumeThreshold)
+        {
+            animator.SetBool("shouldStop", false);
+            animator.SetBool("isWalking", true);
 
-        // Ensure the enemy faces the player
+            Vector2 targetPos = new Vector2(player.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, chaseSpeed * Time.deltaTime);
+        }
+        else if (distance < stopThreshold )
+        {
+            animator.SetBool("shouldStop", true);
+            animator.SetBool("isWalking", false);
+        }
+
+        // Face the player
         if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
         {
             Flip();
@@ -130,19 +141,20 @@ public class StopSignEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.CompareTag("Player"))
         {
-            stop = true;
-            animator.SetBool("shouldStop", true);
+            //stop = true;
+            //animator.SetBool("shouldStop", true);
+            isBlocking = true;
             //this.GetComponent<SpriteRenderer>().sprite = someSprite;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if(collision.CompareTag("Player"))
         {
-            stop = false;
+            isBlocking = false;
             animator.SetBool("shouldStop", false);
         }
     }

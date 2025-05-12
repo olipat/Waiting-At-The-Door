@@ -56,13 +56,20 @@ public class stoneEnemy : MonoBehaviour
     {
         //if (!angry || stunned) return;
 
-        float direction = player.position.x > transform.position.x ? 1 : -1;
-        float Direction = Mathf.Sign(player.position.x - transform.position.x);
-        Vector2 MovePos = new Vector2(
-            transform.position.x + Direction * chaseSpeed,
-            transform.position.y
-        );
-        transform.position = MovePos;
+        //float direction = player.position.x > transform.position.x ? 1 : -1;
+        //float Direction = Mathf.Sign(player.position.x - transform.position.x);
+        //Vector2 MovePos = new Vector2(
+            //transform.position.x + Direction * chaseSpeed,
+            //transform.position.y
+        //);
+        //transform.position = MovePos;
+
+        float direction = Mathf.Sign(player.position.x - transform.position.x);
+        float xVelocity = direction * chaseSpeed;
+
+        Debug.Log("Chasing player. Setting velocity to: " + xVelocity);
+
+        rb.linearVelocity = new Vector2(xVelocity, rb.linearVelocity.y);
 
         animator.SetBool("isWalking", true);
 
@@ -70,30 +77,28 @@ public class stoneEnemy : MonoBehaviour
         {
             Flip();
         }
+        Debug.DrawLine(transform.position, player.position, Color.red);
     }
 
     void HandleShootBehavior()
     {
-        float direction = player.position.x > transform.position.x ? 1 : -1;
-        float Direction = Mathf.Sign(player.position.x - transform.position.x);
-        Vector2 MovePos = new Vector2(
-            transform.position.x + Direction * chaseSpeed,
-            transform.position.y
-        );
-        transform.position = MovePos;
+        //float direction = player.position.x > transform.position.x ? 1 : -1;
+        //float Direction = Mathf.Sign(player.position.x - transform.position.x);
+        //Vector2 MovePos = new Vector2(
+            //transform.position.x + Direction * chaseSpeed,
+            //transform.position.y
+        //);
+        //transform.position = MovePos;
+
+        float direction = Mathf.Sign(player.position.x - transform.position.x);
+        float xVelocity = direction * chaseSpeed;
+
+        rb.linearVelocity = new Vector2(xVelocity, rb.linearVelocity.y);
+        animator.SetBool("isWalking", Mathf.Abs(direction) > 0.01f);
 
         if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
         {
             Flip();
-        }
-
-        if (Mathf.Abs(Direction) > 0.01f)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
         }
 
         shootTimer -= Time.deltaTime;
@@ -136,7 +141,9 @@ public class stoneEnemy : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(new Vector3(0, 180, 0));
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -191,7 +198,7 @@ public class stoneEnemy : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         rb.bodyType = RigidbodyType2D.Dynamic;
-        animator.SetBool("isWalking", true);
+        //animator.SetBool("isWalking", true);
         angry = true;
         stunned = false;
     }
