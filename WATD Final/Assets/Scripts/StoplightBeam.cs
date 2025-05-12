@@ -3,107 +3,81 @@ using UnityEngine;
 
 public class StoplightBeam : MonoBehaviour
 {
-    public float maxTimeInLight = 2f; // Time before taking damage
-    public float damageInterval = 0.5f; // Time between damage ticks
-    public int damageAmount = 10;
+    public float timeToTrigger = 1f;
 
-    public SpriteRenderer beamRenderer; // Reference to the red light beam sprite
-    public Collider2D lightCollider; // The collider for detection
+    public GameObject redLightLeft;
+    public GameObject redLightRight;
+    public GameObject rollingBallPrefab;
 
-    public float minFlickerTime = 0.1f;
-    public float maxFlickerTime = 0.5f;
-    public float minOnTime = 3f;
-    public float maxOnTime = 5f;
-    public float minOffTime = 2f;
-    public float maxOffTime = 4f;
+    private Transform spawnPointLeft;
+    private Transform spawnPointRight;
 
+    private bool facingRight = false;
     private bool isPlayerInLight = false;
     private float timeInLight = 0f;
-    private bool isLightOn = true;
 
-    public GameObject rollingBallPrefab; // The rolling ball prefab
-    public Transform spawnPoint; // Where the ball will spawn
-
-    void Start()
+    private void Start()
     {
-        StartCoroutine(LightControlRoutine());
+        spawnPointLeft = redLightLeft.transform.Find("spawnLeft");
+        spawnPointRight = redLightRight.transform.Find("spawnRight");
+
+        SetFacingDirection(false);
+        StartCoroutine(FlipRoutine());
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnPlayerEnter()
     {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInLight = true;
-            timeInLight = 0f;
-            StartCoroutine(DamagePlayerRoutine(other.gameObject));
-        }
+        isPlayerInLight = true;
+        timeInLight = 0f;
+        StartCoroutine(PlayerLightCheck());
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    public void OnPlayerExit()
     {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInLight = false;
-            StopCoroutine(DamagePlayerRoutine(other.gameObject));
-        }
+        isPlayerInLight = false;
+        timeInLight = 0f;
     }
 
-    IEnumerator DamagePlayerRoutine(GameObject player)
+    private IEnumerator PlayerLightCheck()
     {
         while (isPlayerInLight)
         {
-            timeInLight += damageInterval;
-            if (timeInLight >= maxTimeInLight)
+            timeInLight += Time.deltaTime;
+
+            if (timeInLight >= timeToTrigger)
             {
-                //spawn tire
-                //Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
+                Transform spawnPoint = facingRight ? spawnPointRight : spawnPointLeft;
                 GameObject tire = Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
-                tire.GetComponent<Projectile>().direction = 1;
-                print("player was in light too long and should take damage or spawn enemy");
-                timeInLight = 0;//reset time
+                tire.GetComponent<Projectile>().direction = facingRight ? 1 : -1;
+
+                Debug.Log("Spawned from " + (facingRight ? "Right" : "Left"));
+                timeInLight = 0f;
             }
-            yield return new WaitForSeconds(damageInterval);
+
+            yield return null;
         }
     }
 
-    IEnumerator LightControlRoutine()
+    private IEnumerator FlipRoutine()
     {
         while (true)
         {
-            //flicker before turning off
-            float flickerDuration = Random.Range(minFlickerTime, maxFlickerTime);
-            for (int i = 0; i < Random.Range(3, 6); i++)
-            {
-                ToggleLight();
-                yield return new WaitForSeconds(flickerDuration);
-            }
-
-            //light off for a random duration
-            SetLightState(false);
-            yield return new WaitForSeconds(Random.Range(minOffTime, maxOffTime));
-
-            //flicker before turning on
-            for (int i = 0; i < Random.Range(3, 6); i++)
-            {
-                ToggleLight();
-                yield return new WaitForSeconds(flickerDuration);
-            }
-
-            //light on for a random duration
-            SetLightState(true);
-            yield return new WaitForSeconds(Random.Range(minOnTime, maxOnTime));
+            yield return new WaitForSeconds(5f);
+            SetFacingDirection(!facingRight);
         }
     }
 
-    void ToggleLight()
+    private void SetFacingDirection(bool right)
     {
-        SetLightState(!isLightOn);
-    }
+        facingRight = right;
 
-    void SetLightState(bool state)
-    {
-        isLightOn = state;
-        beamRenderer.enabled = state;
-        lightCollider.enabled = state;
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * (facingRight ? 1 : -1);
+        transform.localScale = scale;
+
+        redLightLeft.SetActive(!facingRight);
+        redLightRight.SetActive(facingRight);
     }
 }
+
+

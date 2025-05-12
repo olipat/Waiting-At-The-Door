@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 3e9fe6a6ed6e10449a577d5fc761cb3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 30353077113966200
+    second: shatter-bark-sprite-fixed 1_0
+  - first:
+      213: 8218084716393205679
+    second: shatter-bark-sprite-fixed 1_1
+  - first:
+      213: -2179728759355272226
+    second: shatter-bark-sprite-fixed 1_2
+  - first:
+      213: 3712631794168814386
+    second: shatter-bark-sprite-fixed 1_3
+  - first:
+      213: -597866262156319351
+    second: shatter-bark-sprite-fixed 1_4
+  - first:
+      213: 1663685786754010042
+    second: shatter-bark-sprite-fixed 1_5
+  - first:
+      213: 2380617552895711154
+    second: shatter-bark-sprite-fixed 1_6
+  - first:
+      213: -2677712837152231227
+    second: shatter-bark-sprite-fixed 1_7
+  - first:
+      213: 2531838883331977213
+    second: shatter-bark-sprite-fixed 1_8
+  - first:
+      213: -8507272288754154094
+    second: shatter-bark-sprite-fixed 1_9
+  - first:
+      213: -1275809278664219972
+    second: shatter-bark-sprite-fixed 1_10
+  - first:
+      213: 4007845945969866318
+    second: shatter-bark-sprite-fixed 1_11
+  - first:
+      213: 436309568191444515
+    second: shatter-bark-sprite-fixed 1_12
+  - first:
+      213: 5760679965336090673
+    second: shatter-bark-sprite-fixed 1_13
+  - first:
+      213: 1125409185339642801
+    second: shatter-bark-sprite-fixed 1_14
+  - first:
+      213: -616185472130911319
+    second: shatter-bark-sprite-fixed 1_15
+  - first:
+      213: 739097596104395425
+    second: shatter-bark-sprite-fixed 1_16
+  - first:
+      213: -6271163137326287712
+    second: shatter-bark-sprite-fixed 1_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 12
+        width: 210
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbc6519869961710800000000000000
+      internalID: 1663685786754010042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_6
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 22
+        width: 159
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b798622d07a90120800000000000000
+      internalID: 2380617552895711154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_7
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 28
+        width: 158
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0b90b9c5ad6dad0800000000000000
+      internalID: -2677712837152231227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_8
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 26
+        width: 148
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff2685dc06e22320800000000000000
+      internalID: 2531838883331977213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 16
+        width: 109
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb26218783a6b4ee0800000000000000
+      internalID: -1275809278664219972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shatter-bark-sprite-fixed 1_11
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 15
+        width: 125
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e46f50447aabe9730800000000000000
+      internalID: 4007845945969866318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b3bc47297d88e4846981053d3fa9163b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shatter-bark-sprite-fixed 1_10: -1275809278664219972
+      shatter-bark-sprite-fixed 1_11: 4007845945969866318
+      shatter-bark-sprite-fixed 1_5: 1663685786754010042
+      shatter-bark-sprite-fixed 1_6: 2380617552895711154
+      shatter-bark-sprite-fixed 1_7: -2677712837152231227
+      shatter-bark-sprite-fixed 1_8: 2531838883331977213
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

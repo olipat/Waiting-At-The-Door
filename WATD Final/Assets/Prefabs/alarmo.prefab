@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895511847
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 935795163482977227, guid: 2f8c02bdd6c322744819cea7335b2b07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,6 +116,11 @@ MonoBehaviour:
   isGrounded: 0
   isWall: 0
   UIcontrolReferemce: {fileID: 0}
+  loopClip: {fileID: 8300000, guid: 4a4a6fce801724348aaa2c89b72dbfdb, type: 3}
+  player: {fileID: 1544650614272011795, guid: 2f4a209cbbbde7c48a55e64f1112e327, type: 3}
+  soundDistance: 10
+  loopInterval: 2
+  volume: 2000
 --- !u!61 &7097992156136136690
 BoxCollider2D:
   m_ObjectHideFlags: 0
