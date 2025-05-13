@@ -172,7 +172,7 @@ public class UIController : MonoBehaviour
             ActivateAbility(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             ActivateAbility(1);
         }

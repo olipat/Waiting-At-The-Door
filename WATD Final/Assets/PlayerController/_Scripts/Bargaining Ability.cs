@@ -112,7 +112,7 @@ public class BargainingAbility : MonoBehaviour
 
     public void UseBargainingAbility()
     {
-        if (Input.GetKey(KeyCode.Alpha3))
+        if (Input.GetKey(KeyCode.E))
         {
             holdTimer += Time.deltaTime;
 
@@ -122,7 +122,7 @@ public class BargainingAbility : MonoBehaviour
                 holdTimer = 0f;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Alpha3))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             if (holdTimer <= holdTimeToBreak && holdTimer > 0f)
             {
