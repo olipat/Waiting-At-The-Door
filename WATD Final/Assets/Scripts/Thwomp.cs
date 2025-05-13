@@ -59,9 +59,12 @@ public class Thwomp : MonoBehaviour
     {
         if (collision.gameObject.layer == 6 && groundCollisionExplosionFlag == false)
         {
-            groundCollisionExplosionFlag = true;
             m_SpriteRenderer.enabled = false;
-            Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
+            if(groundCollisionExplosionFlag == false)
+            {
+                groundCollisionExplosionFlag = true;
+                Instantiate(explosionPreFab, this.transform.position, Quaternion.identity);
+            }
             StartCoroutine(ResetPosition());
         }
         else if (collision.gameObject.CompareTag("Player"))
@@ -74,7 +77,6 @@ public class Thwomp : MonoBehaviour
 
     IEnumerator ResetPosition()
     {
-        groundCollisionExplosionFlag = false;
         print("ground");
         rb.linearVelocity = Vector2.zero;
         rb.isKinematic = true;
@@ -94,6 +96,6 @@ public class Thwomp : MonoBehaviour
 
         rb.MovePosition(originalPosition);
         isFalling = false;
-        
+        groundCollisionExplosionFlag = false;
     }
 }

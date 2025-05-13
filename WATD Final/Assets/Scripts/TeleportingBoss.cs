@@ -96,7 +96,11 @@ public class TeleportingBoss : MonoBehaviour
             //Instantiate(attack2Prefab, transform.position, Quaternion.identity);
             foreach (Transform child in fallingBlocks.transform)
             {
-                child.GetComponent<thwompBoss>().fall();
+                //child.GetComponent<thwompBoss>().fall();
+                if (Random.value < 0.5f) // 50% chance
+                {
+                    child.GetComponent<thwompBoss>().fall();
+                }
             }
         }
     }
