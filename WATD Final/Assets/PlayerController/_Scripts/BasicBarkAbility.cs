@@ -5,7 +5,7 @@ public class BarkAbility : MonoBehaviour
 {
     public float barkRange = 10f;
     public float pushForce = 20f;
-    public KeyCode barkKey = KeyCode.E;
+    //public KeyCode barkKey = KeyCode.E;
     public LayerMask enemyLayer;
     public AudioClip barkClip;
     private AudioSource audioSource;
@@ -25,7 +25,8 @@ public class BarkAbility : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(barkKey) || Input.GetButtonDown("Fire3"))
+        //
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3"))
         {
             transform.DOKill(true); // Kill any running tweens and complete instantly
             transform.localScale = Vector3.one; // Reset to original scale

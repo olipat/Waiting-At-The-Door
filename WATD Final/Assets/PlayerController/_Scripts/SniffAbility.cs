@@ -17,7 +17,7 @@ public class SniffAbility : MonoBehaviour
     public GameObject barkFXobject;
     void Update()
     {
-        if (Input.GetKeyDown(sniffKey) || Input.GetButtonDown("Fire2"))
+        if (Input.GetMouseButtonDown(1) || Input.GetButtonDown("Fire2"))
         {
             AudioManager.instance.PlaySFX(11);
             if (_animator != null)
