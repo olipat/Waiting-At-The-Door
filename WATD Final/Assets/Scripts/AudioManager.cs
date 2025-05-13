@@ -78,10 +78,10 @@ public class AudioManager : MonoBehaviour
         }
         else if (playingCutsceneMusic)
         {
-            if (cutSceneMusic[cutSceneNum].isPlaying == false)
-            {
-                //cutSceneMusic[cutSceneNum].Play();
-            }
+            //if (cutSceneMusic[cutSceneNum].isPlaying == false)
+            //{
+            //    //cutSceneMusic[cutSceneNum].Play();
+            //}
         }
     }
 
