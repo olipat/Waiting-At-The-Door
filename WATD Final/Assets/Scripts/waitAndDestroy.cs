@@ -11,7 +11,7 @@ public class waitAndDestroy : MonoBehaviour
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

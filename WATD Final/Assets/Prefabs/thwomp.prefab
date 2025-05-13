@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeDuration: 0.5
   fallSpeed: 10
-  resetDelay: 2
+  resetDelay: 4
   UIcontrolReferemce: {fileID: 0}
   m_SpriteRenderer: {fileID: 4867955826721464354}
   explosionPreFab: {fileID: 142026557119947915, guid: 2e6d800196ba95641812ffce35da2704, type: 3}
