@@ -28,7 +28,7 @@ public class StoplightBeam : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
         {
-            audioSource.Play();
+            //audioSource.Play();
             Debug.Log(" AudioSource found. Playing clip: " + audioSource.clip?.name);
         }
         else

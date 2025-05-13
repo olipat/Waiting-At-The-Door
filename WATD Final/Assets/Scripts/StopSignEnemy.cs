@@ -16,6 +16,8 @@ public class StopSignEnemy : MonoBehaviour
     public bool isWall;
 
     private bool isBlocking;
+    private bool isStopping = false;
+    private float stopTime = 5f;
 
     Animator animator;
     //adding vars to handle basic bark ability
@@ -85,10 +87,9 @@ public class StopSignEnemy : MonoBehaviour
             Vector2 targetPos = new Vector2(player.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, targetPos, chaseSpeed * Time.deltaTime);
         }
-        else if (distance < stopThreshold )
+        else if (distance < stopThreshold && !isStopping)
         {
-            animator.SetBool("shouldStop", true);
-            animator.SetBool("isWalking", false);
+            StartCoroutine(StopAndWaitCoroutine());
         }
 
         // Face the player
@@ -96,6 +97,25 @@ public class StopSignEnemy : MonoBehaviour
         {
             Flip();
         }
+    }
+
+
+    private System.Collections.IEnumerator StopAndWaitCoroutine()
+    {
+        isStopping = true;
+        animator.SetBool("shouldStop", true);
+        animator.SetBool("isWalking", false);
+
+        yield return new WaitForSeconds(stopTime);
+
+        float distanceAfterWait = Mathf.Abs(player.position.x - transform.position.x);
+        if (distanceAfterWait > 0.7f) 
+        {
+            animator.SetBool("shouldStop", false);
+            animator.SetBool("isWalking", true);
+        }
+
+        isStopping = false;
     }
 
     void Flip()
