@@ -15,14 +15,30 @@ public class StoplightBeam : MonoBehaviour
     private bool facingRight = false;
     private bool isPlayerInLight = false;
     private float timeInLight = 0f;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        Debug.Log(" StoplightBeam.Start() ran on " + gameObject.name);
         spawnPointLeft = redLightLeft.transform.Find("spawnLeft");
         spawnPointRight = redLightRight.transform.Find("spawnRight");
 
         SetFacingDirection(false);
         StartCoroutine(FlipRoutine());
+        if (audioSource != null)
+        {
+            audioSource.Play();
+            Debug.Log(" AudioSource found. Playing clip: " + audioSource.clip?.name);
+        }
+        else
+        {
+            Debug.Log(" AudioSource not found on " + gameObject.name);
+        }
+    }
+
+    void Awake()
+    {
+        Debug.Log(" StoplightBeam.Awake() ran on " + gameObject.name);
     }
 
     public void OnPlayerEnter()
