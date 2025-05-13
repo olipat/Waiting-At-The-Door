@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1339131411977343866}
   m_Layer: 9
   m_Name: alarmo
-  m_TagString: Untagged
+  m_TagString: alarmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,11 +116,6 @@ MonoBehaviour:
   isGrounded: 0
   isWall: 0
   UIcontrolReferemce: {fileID: 0}
-  loopClip: {fileID: 8300000, guid: 4a4a6fce801724348aaa2c89b72dbfdb, type: 3}
-  player: {fileID: 1544650614272011795, guid: 2f4a209cbbbde7c48a55e64f1112e327, type: 3}
-  soundDistance: 10
-  loopInterval: 2
-  volume: 2000
 --- !u!61 &7097992156136136690
 BoxCollider2D:
   m_ObjectHideFlags: 0

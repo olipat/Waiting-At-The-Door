@@ -6,6 +6,7 @@ public class bossBeam : MonoBehaviour
     public bool IsActive { get; private set; } = false;
     private Collider2D beamCollider;
     private SpriteRenderer spriteRenderer;
+    private denialBoss bossRef;
 
     private bool isPlayerInLight = false;
     private float timeInLight = 0f;
@@ -23,6 +24,7 @@ public class bossBeam : MonoBehaviour
         beamCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         TurnOff();
+        bossRef = GetComponentInParent<denialBoss>();
     }
 
     public IEnumerator FlickerOn(float flickerDuration)
@@ -75,10 +77,12 @@ public class bossBeam : MonoBehaviour
             timeInLight += damageInterval;
             if (timeInLight >= maxTimeInLight)
             {
-                //spawn tire
-                //Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
-                Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
-                timeInLight = 0;//reset time
+                if (bossRef != null && bossRef.CanSpawnAlarmo())
+                {
+                    GameObject alarmo = Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
+                    bossRef.RegisterAlarmo(alarmo);
+                    timeInLight = 0;
+                }
             }
             yield return new WaitForSeconds(damageInterval);
         }

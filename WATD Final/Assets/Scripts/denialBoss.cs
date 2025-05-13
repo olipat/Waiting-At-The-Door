@@ -12,6 +12,12 @@ public class denialBoss : MonoBehaviour
     public float flickerDuration = 1f;
     public int maxActiveBeams = 2;
 
+    //adding alarmo limits
+    public int maxAlarmos = 15;
+    [HideInInspector] public int currentAlarmos = 0;
+    public List<GameObject> spawnedAlarmos = new List<GameObject>();
+
+
     private List<bossBeam> activeBeams = new List<bossBeam>();
     public GameObject[] tennisBalls; // Prefab to spawn
     public HealthBar hb;
@@ -31,6 +37,25 @@ public class denialBoss : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public bool CanSpawnAlarmo()
+    {
+        return currentAlarmos < maxAlarmos;
+    }
+    public void RegisterAlarmo(GameObject alarmo)
+    {
+        currentAlarmos++;
+        spawnedAlarmos.Add(alarmo);
+    }
+    public void ClearAllAlarmos()
+    {
+        foreach (GameObject a in spawnedAlarmos)
+        {
+            if (a != null)
+                a.SetActive(false);
+        }
+        spawnedAlarmos.Clear();
+        currentAlarmos = 0;
+    }
     private void Update()
     {
         if (Input.GetKey(KeyCode.M))
@@ -67,7 +92,7 @@ public class denialBoss : MonoBehaviour
 
             AudioManager.instance.PlayBGM();
 
-            
+            ClearAllAlarmos();
         }
     }
 

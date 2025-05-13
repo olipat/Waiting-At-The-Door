@@ -58,6 +58,9 @@ public class crawler : MonoBehaviour
             UIcontrolReferemce.GetComponent<UIController>().ApplyDamage();
             StartCoroutine(Freeze());
         }
+        if (col.gameObject.CompareTag("Wall")){
+            Flip();
+        }
     }
 
     private void OnDrawGizmosSelected()
