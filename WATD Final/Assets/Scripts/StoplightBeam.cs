@@ -19,12 +19,13 @@ public class StoplightBeam : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(" StoplightBeam.Start() ran on " + gameObject.name);
+        //Debug.Log(" StoplightBeam.Start() ran on " + gameObject.name);
         spawnPointLeft = redLightLeft.transform.Find("spawnLeft");
         spawnPointRight = redLightRight.transform.Find("spawnRight");
 
         SetFacingDirection(false);
         StartCoroutine(FlipRoutine());
+        audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
         {
             audioSource.Play();
@@ -62,7 +63,7 @@ public class StoplightBeam : MonoBehaviour
 
             if (timeInLight >= timeToTrigger)
             {
-                Transform spawnPoint = facingRight ? spawnPointRight : spawnPointLeft;
+                Transform spawnPoint = facingRight ? spawnPointLeft : spawnPointRight;
                 GameObject tire = Instantiate(rollingBallPrefab, spawnPoint.position, Quaternion.identity);
                 tire.GetComponent<Projectile>().direction = facingRight ? 1 : -1;
 
@@ -91,8 +92,8 @@ public class StoplightBeam : MonoBehaviour
         scale.x = Mathf.Abs(scale.x) * (facingRight ? 1 : -1);
         transform.localScale = scale;
 
-        redLightLeft.SetActive(!facingRight);
-        redLightRight.SetActive(facingRight);
+        redLightLeft.SetActive(facingRight);
+        redLightRight.SetActive(!facingRight);
     }
 }
 

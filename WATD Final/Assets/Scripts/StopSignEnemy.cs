@@ -35,7 +35,7 @@ public class StopSignEnemy : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.2f, groundLayer);
         isWall = Physics2D.OverlapCircle(wallCheck.transform.position, 0.2f, groundLayer);
 
-        if (pushedBack || player == null) return; // Avoid errors if no player is assigned
+        if (pushedBack || player == null) return; 
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -53,7 +53,7 @@ public class StopSignEnemy : MonoBehaviour
 
     void Patrol()
     {
-        if (isBlocking) return; // Prevent patrolling while blocking
+        if (isBlocking) return; 
 
         //enemyRB.linearVelocity = new Vector2((facingRight ? 1 : -1) * patrolSpeed, enemyRB.linearVelocity.y);
         transform.Translate(Vector2.right * patrolSpeed * Time.deltaTime);
@@ -73,8 +73,6 @@ public class StopSignEnemy : MonoBehaviour
         float direction = Mathf.Sign(player.position.x - transform.position.x);
         float distance = Mathf.Abs(player.position.x - transform.position.x);
 
-        // Log movement info
-        Debug.Log($"Distance to player: {distance}");
 
         float stopThreshold = 0.5f;
         float resumeThreshold = 0.7f;
@@ -143,10 +141,10 @@ public class StopSignEnemy : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            //stop = true;
-            //animator.SetBool("shouldStop", true);
+            stop = true;
+            animator.SetBool("shouldStop", true);
             isBlocking = true;
-            //this.GetComponent<SpriteRenderer>().sprite = someSprite;
+            this.GetComponent<SpriteRenderer>().sprite = someSprite;
         }
     }
 
