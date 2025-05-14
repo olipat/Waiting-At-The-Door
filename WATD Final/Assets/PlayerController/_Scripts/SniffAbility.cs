@@ -10,6 +10,10 @@ public class SniffAbility : MonoBehaviour
     public LayerMask platformLayer;
     public LayerMask mementoLayer;
 
+    public GameObject redCaution;
+    public GameObject yellowCaution;
+    public GameObject greenCaution;
+
     [SerializeField] private Animator _animator; // Drag PlayerAnimator's Animator here in Inspector
 
     private static readonly int SniffTrigger = Animator.StringToHash("TriggerSniff");
@@ -33,28 +37,55 @@ public class SniffAbility : MonoBehaviour
         }
     }
 
+    void HideAllSymbols()
+    {
+        redCaution.SetActive(false);
+        yellowCaution.SetActive(false);
+        greenCaution.SetActive(false);
+    }
+
+
     void SniffForPlatforms()
     {
         barkFXobject.GetComponent<abilityFX>().sniff();
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, sniffRange, platformLayer);
-        foreach (Collider2D hit in hits)
-        {
-            FallingPlatform platform = hit.GetComponent<FallingPlatform>();
-            if (platform != null)
-            {
-                platform.WarnPlatform(glowDuration);
-            }
-        }
-        Collider2D[] mementoHits = Physics2D.OverlapCircleAll(transform.position, sniffRange, mementoLayer);
 
-        foreach (Collider2D hit in mementoHits)
+        Collider2D[] sniffHits = Physics2D.OverlapCircleAll(transform.position, sniffRange);
+        foreach (Collider2D hit in sniffHits)
         {
-            Memento memento = hit.GetComponent<Memento>();
-            if (memento != null)
+            
+            GameObject obj = hit.gameObject;
+            string name = obj.name.ToLower();
+            Vector3 spawnPos = obj.transform.position + Vector3.up * 1.5f;
+            Debug.Log("Detected object: " + obj.name + " | Tag: " + obj.tag);
+
+
+            if (name.Contains("alarmo") || name.Contains("fallingplatform1"))
             {
-                
-                memento.GlowGold(glowDuration);
+                Instantiate(redCaution, spawnPos, Quaternion.identity);
+            }
+            else if (name.Contains("lightleft") || name.Contains("stopsignguy") || name.Contains("lightright"))
+            {
+                Instantiate(yellowCaution, spawnPos, Quaternion.identity);
+            }
+            else if (name.Contains("trampoline") || name.Contains("obstaclebox") || name.Contains("fastballer_0"))
+            {
+                Instantiate(greenCaution, spawnPos, Quaternion.identity);
+            }
+            if (obj.CompareTag("sentry") || name.Contains("smalllightenemy") || name.Contains("stopsignguy"))
+            {
+                Instantiate(yellowCaution, spawnPos, Quaternion.identity);
+            }
+
+            // Existing memento glow (unchanged)
+            if (((1 << obj.layer) & mementoLayer) != 0)
+            {
+                Memento memento = obj.GetComponent<Memento>();
+                if (memento != null)
+                {
+                    memento.GlowGold(glowDuration);
+                }
             }
         }
     }
+
 }

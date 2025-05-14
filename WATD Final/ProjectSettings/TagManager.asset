@@ -16,6 +16,7 @@ TagManager:
   - StoneEnemy
   - alarmo
   - Wall
+  - sentry
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TennisBallLauncher : MonoBehaviour
 {
@@ -10,34 +12,52 @@ public class TennisBallLauncher : MonoBehaviour
     //{
     //    LaunchBall();
     //}
+    public TMP_Text interactionHint;
+    bool playerInRange = false;
     private bool shooting = false;
 
     private void Update()
     {
+
+        if (playerInRange && Input.GetKeyDown(KeyCode.F) && !shooting)
+        {
+            shooting = true;
+            ballPrefab.SetActive(true);
+        }
         if(shooting == true)
         {
             LaunchBall();
-        }
-        if(ballPrefab.transform.position == target.position)
-        {
-            ballPrefab.SetActive(false);
-            target.GetComponent<denialBoss>().health -= 1;
-            target.GetComponent<denialBoss>().hb.SetHealth(target.GetComponent<denialBoss>().health);
-            print(target.GetComponent<denialBoss>().health);
-            target.GetComponent<denialBoss>().flag = true;
-            this.gameObject.SetActive(false);
-            this.enabled = false;
+            if (Vector2.Distance(ballPrefab.transform.position, target.position) < 0.1f)
+            {
+                ballPrefab.SetActive(false);
+                var boss = target.GetComponent<denialBoss>();
+                boss.health -= 1;
+                boss.hb.SetHealth(boss.health);
+                boss.flag = true;
 
-            
+                interactionHint.enabled = false;
+                gameObject.SetActive(false);
+                enabled = false;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            ballPrefab.SetActive(true);
-            shooting = true;
+            playerInRange = true;
+            interactionHint.text = "Press F to launch!";
+            interactionHint.enabled = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerInRange = false;
+            interactionHint.enabled = false;
         }
     }
 
