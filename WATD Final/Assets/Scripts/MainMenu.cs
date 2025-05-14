@@ -68,7 +68,7 @@ public class MainMenu : MonoBehaviour
         }
 
         videoPlayer.Play();
-        AudioManager.instance.PlayCutsceneMusic();
+        AudioManager.instance.PlayCutsceneMusic(0);
         yield return new WaitForSeconds(0.3f);
 
         while (videoPlayer.isPlaying)

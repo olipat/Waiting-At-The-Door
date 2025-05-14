@@ -1,24 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelSelectBackgroundController : MonoBehaviour
+public class LevelSelectBackgroundSwapper : MonoBehaviour
 {
-    [Header("Background Images (One per level)")]
-    public GameObject[] backgrounds; // Assign one GameObject per level background
+    [Header("Background target")]
+    public Image backgroundImage;
 
-    public void ShowBackground(int index)
+    [Header("Idle backgrounds (one per level)")]
+    public Sprite[] idleSprites; // Size 5
+
+    [Header("Hover backgrounds (one per level)")]
+    public Sprite[] hoverSprites; // Size 5
+
+    private int lastHoveredIndex = -1;
+
+    public void SetHoverBackground(int levelIndex)
     {
-        for (int i = 0; i < backgrounds.Length; i++)
-        {
-            backgrounds[i].SetActive(i == index);
-        }
+        if (levelIndex < 0 || levelIndex >= hoverSprites.Length) return;
+        backgroundImage.sprite = hoverSprites[levelIndex];
+        lastHoveredIndex = levelIndex;
     }
 
-    public void HideAll()
+    public void SetIdleBackground()
     {
-        foreach (var bg in backgrounds)
-        {
-            bg.SetActive(false);
-        }
+        if (lastHoveredIndex < 0 || lastHoveredIndex >= idleSprites.Length) return;
+        backgroundImage.sprite = idleSprites[lastHoveredIndex];
     }
 }
