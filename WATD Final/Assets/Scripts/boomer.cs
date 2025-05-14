@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class boomer : MonoBehaviour
 {
     public float speed;
+    private float startY;
     public float chaseSpeed;
     public float radius;
     private Rigidbody2D EnemyRB;
@@ -43,7 +45,6 @@ public class boomer : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if(playerClose == false)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -95,10 +96,26 @@ public class boomer : MonoBehaviour
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
-        print("starting wait and explode");
-        yield return new WaitForSeconds(4f);
+        float totalTime = 0f;
+        float flashDuration = 0.5f;
+
+        while (totalTime < waitTime)
+        {
+            // Flash transparent
+            m_SpriteRenderer.DOFade(0f, flashDuration / 2f);
+            yield return new WaitForSeconds(flashDuration / 2f);
+
+            // Flash back to opaque
+            m_SpriteRenderer.DOFade(1f, flashDuration / 2f);
+            yield return new WaitForSeconds(flashDuration / 2f);
+
+            totalTime += flashDuration;
+        }
+        m_SpriteRenderer.DOFade(1f, 0f);
+
         Explode();
     }
+
 
     void Explode()
     {

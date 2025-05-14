@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1339131411977343866}
   m_Layer: 9
   m_Name: alarmo
-  m_TagString: alarmo
+  m_TagString: Small Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1895511847
-  m_SortingLayer: 6
+  m_SortingLayerID: -477642649
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 935795163482977227, guid: 2f8c02bdd6c322744819cea7335b2b07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

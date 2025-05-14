@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5657707433913632735}
   - component: {fileID: 7609929233700334543}
   - component: {fileID: 1233718943040401420}
+  - component: {fileID: 7642300384179335710}
   m_Layer: 0
   m_Name: spikeSmall_0
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 322.29422, y: 69.98196, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2201427718760498453}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895511847
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -4318080249809520509, guid: 81fb0477e9e039e40aa85c973becf74c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,6 +104,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigSpike: {fileID: 5462236313477634277}
   m_SpriteRenderer: {fileID: 7609929233700334543}
+--- !u!95 &7642300384179335710
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3888205789411329978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e121ba786b1cd7244b239c788b7e4ef4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5462236313477634277
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +202,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895511847
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -2751550028073735999, guid: 6992c5f44eff7664aa0b0faf5b4b0aa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
