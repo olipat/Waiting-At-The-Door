@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] sfx;
 
-    private int cutSceneNum = 0;
+    public int cutSceneNum = 0;
 
 
     // Start is called before the first frame update
@@ -78,10 +78,10 @@ public class AudioManager : MonoBehaviour
         }
         else if (playingCutsceneMusic)
         {
-            //if (cutSceneMusic[cutSceneNum].isPlaying == false)
-            //{
-            //    //cutSceneMusic[cutSceneNum].Play();
-            //}
+            if (cutSceneMusic[cutSceneNum].isPlaying == false)
+            {
+                cutSceneMusic[cutSceneNum].Play();
+            }
         }
     }
 
@@ -139,7 +139,7 @@ public class AudioManager : MonoBehaviour
         playingCutsceneMusic = false;
     }
 
-    public void PlayCutsceneMusic()
+    public void PlayCutsceneMusic(int cutSceneNum)
     {
         StopMusic();
 
@@ -148,7 +148,6 @@ public class AudioManager : MonoBehaviour
         playingBGM = false;
         playingMenuMusic = false;
         playingCutsceneMusic = true;
-        cutSceneNum++;
     }
 
     public void PlaySFX(int sfxToPlay)
