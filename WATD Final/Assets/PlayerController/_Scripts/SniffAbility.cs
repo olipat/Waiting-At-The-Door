@@ -1,6 +1,7 @@
 using UnityEngine;
 using Controller;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class SniffAbility : MonoBehaviour
 {
@@ -59,21 +60,17 @@ public class SniffAbility : MonoBehaviour
             Debug.Log("Detected object: " + obj.name + " | Tag: " + obj.tag);
 
 
-            if (name.Contains("alarmo") || name.Contains("fallingplatform1"))
+            if (name.Contains("alarmo") || name.Contains("fallingplatform1") || name.Contains("lava") || name.Contains("thwomp") || name.Contains("exploding") || name.Contains("foreground"))
             {
                 Instantiate(redCaution, spawnPos, Quaternion.identity);
             }
-            else if (name.Contains("lightleft") || name.Contains("stopsignguy") || name.Contains("lightright"))
+            else if (name.Contains("lightleft") || name.Contains("oneway") || obj.CompareTag("sentry") || name.Contains("smalllightenemy") || name.Contains("stopsignguy") || name.Contains("lightright"))
             {
                 Instantiate(yellowCaution, spawnPos, Quaternion.identity);
             }
-            else if (name.Contains("trampoline") || name.Contains("obstaclebox") || name.Contains("fastballer_0"))
+            else if (name.Contains("trampoline") || name.Contains("geyser") || name.Contains("obstaclebox") || name.Contains("fastballer_0") || name.Contains("bottom"))
             {
                 Instantiate(greenCaution, spawnPos, Quaternion.identity);
-            }
-            if (obj.CompareTag("sentry") || name.Contains("smalllightenemy") || name.Contains("stopsignguy"))
-            {
-                Instantiate(yellowCaution, spawnPos, Quaternion.identity);
             }
 
             // Existing memento glow (unchanged)
