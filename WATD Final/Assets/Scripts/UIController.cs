@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
 
     private bool[] isOnCooldown; // Track cooldown for each ability
     private Outline[] abilityOutlines; // Store outline components
-    private bool[] isUnlocked;
+    public bool[] isUnlocked;
 
     private CinemachineConfiner2D confiner;
     private CinemachineCamera vCam;
@@ -108,7 +108,7 @@ public class UIController : MonoBehaviour
         confiner = vCam.GetComponent<CinemachineConfiner2D>(); // Get Camera Confiner
         zoomSize = vCam.Lens.OrthographicSize;
 
-        ButtonSprite = saveButton.spriteState.selectedSprite;
+        //ButtonSprite = saveButton.spriteState.selectedSprite;
        
         bossEntrancePosition = bossEntrance.transform.position;
 
@@ -188,7 +188,7 @@ public class UIController : MonoBehaviour
 
         CheckPlatformCount();
 
-        CheckButton();
+        //CheckButton();
 
         CheckCooldown();
         
@@ -201,21 +201,21 @@ public class UIController : MonoBehaviour
         UpdateHealthUI();
     }
 
-    public void CheckButton()
-    {
-        if (GameManager.instance.FightingBoss) 
-        {
-            saveButton.GetComponent<Image>().sprite = buttonNotAvailable;
+    //public void CheckButton()
+    //{
+    //    if (GameManager.instance.FightingBoss) 
+    //    {
+    //        saveButton.GetComponent<Image>().sprite = buttonNotAvailable;
 
-            saveButton.enabled = false;
-        }
-        else
-        {
-            saveButton.GetComponent<Image>().sprite = ButtonSprite;
+    //        saveButton.enabled = false;
+    //    }
+    //    else
+    //    {
+    //        saveButton.GetComponent<Image>().sprite = ButtonSprite;
 
-            saveButton.enabled = true;
-        }
-    }
+    //        saveButton.enabled = true;
+    //    }
+    //}
 
     public void CheckCooldown()
     {
@@ -740,8 +740,12 @@ public class UIController : MonoBehaviour
 
     public void UnlockAbility(int abilityIndex)
     {
+
+        Debug.Log("Index: " + abilityIndex);
         isUnlocked[abilityIndex] = true;
+        Debug.Log("Length: " + isUnlocked.Length);
         int spriteIndex = abilityIndex * 2;
+        Debug.Log("Reached Here: " + spriteIndex);
         if (spriteIndex < abilitySprites.Length)
         {
             abilities[abilityIndex].sprite = abilitySprites[spriteIndex];
