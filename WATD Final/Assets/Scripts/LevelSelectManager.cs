@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; // Required for below
+using DG.Tweening;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class LevelSelectManager : MonoBehaviour
 
     [Header("Hover Backgrounds (5 total)")]
     public Sprite[] hoverSprites;
+
+    public Image backgroundBottom;
+    public Image backgroundTop;
+    public CanvasGroup topCanvasGroup;
 
     private int lastHoveredIndex = -1;
 
@@ -61,19 +66,41 @@ public class LevelSelectManager : MonoBehaviour
 
     void OnHoverEnter(int index)
     {
-        if (hoverSprites != null && index < hoverSprites.Length)
+        if (hoverSprites == null || index >= hoverSprites.Length)
+            return;
+
+        if (index != lastHoveredIndex)
         {
-            backgroundImage.sprite = hoverSprites[index];
+            backgroundTop.sprite = hoverSprites[index];
+            topCanvasGroup.alpha = 0f;
+
+            topCanvasGroup.DOFade(1f, 0.2f).OnComplete(() =>
+            {
+                backgroundBottom.sprite = hoverSprites[index];
+                topCanvasGroup.alpha = 0f;
+            });
+
             lastHoveredIndex = index;
+        }
+        else
+        {
+            backgroundBottom.sprite = hoverSprites[index];
         }
     }
 
     void OnHoverExit()
     {
-        if (lastHoveredIndex >= 0 && lastHoveredIndex < idleSprites.Length)
+        if (lastHoveredIndex < 0 || lastHoveredIndex >= idleSprites.Length)
+            return;
+
+        backgroundTop.sprite = idleSprites[lastHoveredIndex];
+        topCanvasGroup.alpha = 0f;
+
+        topCanvasGroup.DOFade(1f, 0.2f).OnComplete(() =>
         {
-            backgroundImage.sprite = idleSprites[lastHoveredIndex];
-        }
+            backgroundBottom.sprite = idleSprites[lastHoveredIndex];
+            topCanvasGroup.alpha = 0f;
+        });
     }
 
 }
