@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gameover-fall-0013_0: 8170571482100846026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
