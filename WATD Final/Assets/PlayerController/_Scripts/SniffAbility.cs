@@ -59,8 +59,20 @@ public class SniffAbility : MonoBehaviour
             Vector3 spawnPos = obj.transform.position + Vector3.up * 1.5f;
             Debug.Log("Detected object: " + obj.name + " | Tag: " + obj.tag);
 
-
-            if (name.Contains("alarmo") || name.Contains("fallingplatform1") || name.Contains("lava") || name.Contains("thwomp") || name.Contains("exploding") || name.Contains("foreground"))
+            BargainingPlatform platform = obj.GetComponent<BargainingPlatform>();
+        if (platform != null)
+            {
+                if (platform.platformType == BargainingPlatform.PlatformType.Temporary)
+                {
+                    Instantiate(yellowCaution, spawnPos, Quaternion.identity);
+                }
+                else if (platform.platformType == BargainingPlatform.PlatformType.Stable)
+                {
+                    Instantiate(greenCaution, spawnPos, Quaternion.identity);
+                }
+                continue; 
+            }
+                if (name.Contains("alarmo") || name.Contains("sleepingstone") || name.Contains("fallingplatform1") || name.Contains("lava") || name.Contains("thwomp") || name.Contains("exploding") || name.Contains("foreground"))
             {
                 Instantiate(redCaution, spawnPos, Quaternion.identity);
             }
@@ -68,7 +80,7 @@ public class SniffAbility : MonoBehaviour
             {
                 Instantiate(yellowCaution, spawnPos, Quaternion.identity);
             }
-            else if (name.Contains("trampoline") || name.Contains("geyser") || name.Contains("obstaclebox") || name.Contains("fastballer_0") || name.Contains("bottom"))
+            else if (name.Contains("trampoline") || name.Contains("sleepingenemyonly")  || name.Contains("boulder") || name.Contains("geyser") || name.Contains("obstaclebox") || name.Contains("fastballer_0") || name.Contains("bottom"))
             {
                 Instantiate(greenCaution, spawnPos, Quaternion.identity);
             }

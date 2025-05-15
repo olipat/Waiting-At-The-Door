@@ -17,6 +17,7 @@ TagManager:
   - alarmo
   - Wall
   - sentry
+  - fake
   layers:
   - Default
   - TransparentFX
