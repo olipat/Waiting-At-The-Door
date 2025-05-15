@@ -786,7 +786,7 @@ public class UIController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f); // wait for first toast to finish
 
         ToastNotification.Hide();
-        ToastNotification.Show("New ability unlocked: Shatter Bark! Press 2 to break weak walls.", 6f, "info");
+        ToastNotification.Show("New ability unlocked: Shatter Bark! Press 2 or W to break weak walls.", 6f, "info");
     }
 
     public IEnumerator PostAngerSequence()

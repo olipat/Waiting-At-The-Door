@@ -37,7 +37,8 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadThatLevel(int level)
     {
-        StartCoroutine(LoadLevel(level));
+        AudioManager.instance.StopMusic();
+        SceneManager.LoadScene(level);
 
     }
 
