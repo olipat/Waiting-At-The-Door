@@ -517,6 +517,7 @@ public class UIController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
+            player.GetComponent<PlayerController>().canMove = false;
             player.GetComponent<PlayerController>().enabled = false; 
             foreach (Projectile tire in tireList)
             {
