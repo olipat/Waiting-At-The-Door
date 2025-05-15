@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bargaining-boss_0: 3600500943105072740
+      bargaining-boss_1: 7008331929634657212
+      bargaining-boss_2: 8236998063155587169
+      bargaining-boss_3: -1808404687812912635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
