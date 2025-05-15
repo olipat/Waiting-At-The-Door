@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.Runtime.CompilerServices;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
+using Controller;
 
 public class UIController : MonoBehaviour
 {
@@ -500,7 +501,7 @@ public class UIController : MonoBehaviour
             return;
         }
         isInvincible = true;
-        StartCoroutine(ResetInvincibility(3f));
+        StartCoroutine(ResetInvincibility(1f));
         //change player sprite to hurt, or play hurt animation
         animator.SetTrigger("hurt");
         if (hurtClip != null && audioSource != null){
@@ -516,7 +517,7 @@ public class UIController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-           
+            player.GetComponent<PlayerController>().enabled = false; 
             foreach (Projectile tire in tireList)
             {
                 if (tire != null)
@@ -603,9 +604,12 @@ public class UIController : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / fadeDuration);
             yield return null;
         }
-        Time.timeScale = 0f;
+
+        DeathScreenAnimator.Instance.shouldPlay = true;
+        
         canvasGroup.alpha = 1f; // Ensure it's fully visible
 
+        
        
         foreach (var btn in buttons)
         {
