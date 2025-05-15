@@ -4848,22 +4848,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 3409400369338167919, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 17c86c86b2c27244a8761ba5f86e5589, type: 3}
-    - target: {fileID: 3409400369338167919, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 17c86c86b2c27244a8761ba5f86e5589, type: 3}
-    - target: {fileID: 3639342049316492522, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 8488ad96b33a8ce419cdd2993a2d180a, type: 3}
-    - target: {fileID: 3639342049316492522, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8488ad96b33a8ce419cdd2993a2d180a, type: 3}
     - target: {fileID: 8039424372573556921, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 935.45776
@@ -4904,14 +4888,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8044294766542181037, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 93f36dc8d7111384285274e065b1920a, type: 3}
-    - target: {fileID: 8044294766542181037, guid: 0d08b43f2e1d42d4d9b8531759aab8fe, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 93f36dc8d7111384285274e065b1920a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
