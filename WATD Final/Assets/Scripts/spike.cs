@@ -3,15 +3,29 @@ using System.Collections;
 
 public class spike : MonoBehaviour
 {
-    private Animator spikeAnimator;
+    public GameObject bigSpike;
+    public SpriteRenderer m_SpriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spikeAnimator = GetComponent<Animator>();
+        
     }
 
     public void attack()
     {
-       spikeAnimator.Play("Spike Animation");
+       // print("spike attack called");
+        m_SpriteRenderer.enabled = true;
+        StartCoroutine(spikeAttack());
+    }
+
+    IEnumerator spikeAttack()
+    {
+        yield return new WaitForSeconds(1f);
+
+        bigSpike.SetActive(true);
+        m_SpriteRenderer.enabled = false;
+        yield return new WaitForSeconds(1.5f);
+
+        bigSpike.SetActive(false);
     }
 }

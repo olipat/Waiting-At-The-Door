@@ -48,6 +48,7 @@ public class AngerBossManager : MonoBehaviour
 
     private bool stalactiteSpawned = false;
     private bool waterTriggered = false;
+    private Animator animator;
 
     public GameObject slider;
     public BoxCollider2D BossTrigger;
@@ -60,6 +61,8 @@ public class AngerBossManager : MonoBehaviour
 
         if (solidGroundCollider != null)
             solidGroundCollider.enabled = false;
+
+        animator = teleportingBoss.GetComponent<Animator>();
     }
 
     //spawn the stalactite once armor reaches 0 
@@ -101,7 +104,7 @@ public class AngerBossManager : MonoBehaviour
             }
         }
 
-        ToastNotification.Show("He’s cracked... but not broken. Maybe something else can end this.", 6f, "alert");
+        ToastNotification.Show("Heï¿½s cracked... but not broken. Maybe something else can end this.", 6f, "alert");
 
         SpawnStalactite();
     }
@@ -194,6 +197,16 @@ public class AngerBossManager : MonoBehaviour
         Debug.Log("Boss damaged");
 
         GetComponent<HealthBar>().SetHealth(bossArmor);
+
+        if (animator != null)
+            {
+                if (bossArmor == 4)
+                    animator.Play("Hurt2");
+                else if (bossArmor == 3)
+                    animator.Play("Hurt3");
+                else if (bossArmor == 0)
+                    animator.Play("Hurt4");
+            }
     }
 
     IEnumerator EndBoss()

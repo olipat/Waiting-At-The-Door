@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class TeleportingBoss : MonoBehaviour
 {
-    public Transform[] teleportPoints; // Set these in the inspector
+
+    public Transform pointA; 
+    public Transform pointB;
+    private Coroutine attackRoutine;
+
     public GameObject spikeSet1;
     public GameObject spikeSet2;
     public GameObject fallingBlocks;
@@ -13,13 +17,13 @@ public class TeleportingBoss : MonoBehaviour
     private bool isVulnerable = true;
     [HideInInspector] public bool attacksEnabled = false;
     private Coroutine bossRoutine;
-
     public int health = 5;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         bossCollider = GetComponent<Collider2D>();
+
     }
     public void BeginBossFight()
     {
@@ -33,36 +37,69 @@ public class TeleportingBoss : MonoBehaviour
 
     IEnumerator BossLoop()
     {
-        while (true) // Loop until defeated
+        float attackTimer = 0f;
+        while (true)
         {
-            //print("fi");
-            yield return new WaitForSeconds(5f); // Stay visible
-            //print("bitch");
-            isVulnerable = false;
-            spriteRenderer.enabled = false;
-            bossCollider.enabled = false;
-
-            yield return new WaitForSeconds(0.5f); // Short delay before attack
-
-            PerformAttack();
-
-            yield return new WaitForSeconds(1f); // Attack duration
-
-            Teleport();
-
-            yield return new WaitForSeconds(0.5f); // Brief delay before reappearing
-
+            // RISE TO POINT A
+            yield return StartCoroutine(MoveToPosition(pointA.position, 1f));
             spriteRenderer.enabled = true;
             bossCollider.enabled = true;
             isVulnerable = true;
+
+            float vulnerableTime = 5f;
+            float elapsedA = 0f;
+            while (elapsedA < vulnerableTime)
+            {
+                attackTimer += Time.deltaTime;
+                if (attackTimer >= 5f)
+                {
+                    PerformAttack();
+                    attackTimer = 0f;
+                }
+
+                elapsedA += Time.deltaTime;
+                yield return null;
+            }
+
+            // FALL TO POINT B
+            bossCollider.enabled = false;
+            isVulnerable = false;
+            yield return StartCoroutine(MoveToPosition(pointB.position, 1f));
+
+            float idleTime = 10f;
+            float elapsedB = 0f;
+            while (elapsedB < idleTime)
+            {
+                attackTimer += Time.deltaTime;
+                if (attackTimer >= 5f)
+                {
+                    PerformAttack();
+                    attackTimer = 0f;
+                }
+
+                elapsedB += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 
-    void Teleport()
+
+
+    IEnumerator MoveToPosition(Vector3 target, float duration)
     {
-        int randomIndex = Random.Range(0, teleportPoints.Length);
-        transform.position = teleportPoints[randomIndex].position;
+        Vector3 start = transform.position;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(start, target, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = target;
     }
+
 
     void PerformAttack()
     {
@@ -133,7 +170,7 @@ public class TeleportingBoss : MonoBehaviour
                 }
                 else if(manager.bossArmor == 0)
                 {
-                    ToastNotification.Show("He's too strong to finish head-on... but something’s shifted.", 4f, "error");
+                    ToastNotification.Show("He's too strong to finish head-on... but somethingï¿½s shifted.", 4f, "error");
                 }
             }
             else
