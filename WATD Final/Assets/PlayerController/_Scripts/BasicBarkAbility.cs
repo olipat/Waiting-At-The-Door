@@ -1,3 +1,4 @@
+using Controller;
 using DG.Tweening;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class BarkAbility : MonoBehaviour
     void Update()
     {
         //
-        if ((Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3")) && UIController.Instance.playerDied == false)
+        if ((Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire3")) && (UIController.Instance.playerDied == false && Time.timeScale == 1))
         {
             transform.DOKill(true); // Kill any running tweens and complete instantly
             transform.localScale = Vector3.one; // Reset to original scale
